@@ -1,3 +1,103 @@
+2004-06-05 01:42  warnes
+
+	* src/Makefile: Fix typo.
+
+2004-06-05 01:34  warnes
+
+	* src/Makefile: Fix Unix makefile so that it works when invoked
+	  directly.
+
+2004-06-05 01:30  warnes
+
+	* src/Makefile: Fixes for Windows
+
+2004-06-05 01:22  warnes
+
+	* man/read.xls.Rd: Minor enhancment to read.xls example.
+
+2004-06-05 00:05  warnes
+
+	* DESCRIPTION, NEWS, src/Makefile, src/Makefile.win, src/iris.xls,
+	  src/xls2csv.bat.in, src/xls2csv.in: - Merge Makefile.win into
+	  Makefile.  Makefile.win now just redirects   to Makefile.  -
+	  Update xls2csv.bat and xls2csv shell script to correctly obtain
+	  thier installion path and infer the location of the perl code and
+	  libraries.	- The xls2csv.pl script now assumes that the
+	  libraries it needs are   installed into the same directory where
+	  it is.
+
+2004-06-04 23:16  warnes
+
+	* src/: Makefile.win, xls2csv.bat.in, xls2csv.pl.in: Now things
+	  work happily on Windows 2000.
+
+2004-06-04 16:42  warnes
+
+	* src/: Makefile, Makefile.win: More changes, indended to improve
+	  installation reliabilty and to make Makefile and Makefile.win as
+	  similar as possible.
+
+2004-06-04 09:28  warnes
+
+	* src/Makefile.win: Add initial Makefile for Windows.  With this
+	  makefile, and with Microsoft's NMAKE installed into
+	  gregmisc/src/NMAKE/, RCMD INSTALL gregmisc succedes.
+	  Unfortunately. RCMD build --binary --use-zip gregmisc doesn't
+	  proplery include all files
+
+2004-05-27 18:39  warnes
+
+	* src/Makefile: Clean should remove scripts from source directory.
+
+2004-05-27 18:38  warnes
+
+	* src/xls2csv.pl: Moved to xls2csv.pl.in.
+
+2004-05-27 18:36  warnes
+
+	* NEWS: Clarify text describing xls2csv scripts.
+
+2004-05-27 18:30  warnes
+
+	* DESCRIPTION, NEWS: Updated for release.
+
+2004-05-27 18:20  warnes
+
+	* src/: Makefile, xls2csv.pl, xls2csv.pl.in: More fixes.
+
+2004-05-27 18:20  warnes
+
+	* man/elem.Rd: Fix missing brace.
+
+2004-05-27 17:43  warnes
+
+	* man/elem.Rd:
+	  Add explicit package name to see also links.
+
+2004-05-27 17:24  warnes
+
+	* src/: Makefile, xls2csv.pl: More xls2csv perl module support
+	  changes.
+
+2004-05-27 16:37  warnes
+
+	* src/: Makefile, xls2csv.pl.in: More changes to fix local
+	  installation of perl modules.
+
+2004-05-27 11:11  warnes
+
+	* man/plotCI.Rd: Fix spelling error.
+
+2004-05-26 12:21  warnes
+
+	* tests/: env.Ex.Rout.save, fast.prcomp.Ex.R,
+	  fast.prcomp.Ex.Rout.save, rtPCR.Ex.Rout.save: Match changes for
+	  release 1.11.0.
+
+2004-05-26 11:00  warnes
+
+	* NEWS: Update for 1.11.0 release.
+
 2004-05-26 10:56  warnes
 
 	* R/overplot.R: One more fix to get it right.

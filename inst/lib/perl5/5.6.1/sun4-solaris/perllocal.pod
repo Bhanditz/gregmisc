@@ -1,0 +1,132 @@
+=head2 Sat Jun  5 01:35:48 2004: C<Module> L<IO-stringy|IO-stringy>
+
+=over 4
+
+=item *
+
+C<installed into: /mss/srg3/warneg/src/R/gregmisc/src/../inst//perl>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.109>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sat Jun  5 01:35:56 2004: C<Module> L<OLE::Storage_Lite|OLE::Storage_Lite>
+
+=over 4
+
+=item *
+
+C<installed into: /mss/srg3/warneg/src/R/gregmisc/src/../inst//perl>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.11>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sat Jun  5 01:36:05 2004: C<Module> L<Spreadsheet::ParseExcel|Spreadsheet::ParseExcel>
+
+=over 4
+
+=item *
+
+C<installed into: /mss/srg3/warneg/src/R/gregmisc/src/../inst//perl>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.2602>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sat Jun  5 01:38:27 2004: C<Module> L<IO-stringy|IO-stringy>
+
+=over 4
+
+=item *
+
+C<installed into: /mss/srg3/warneg/src/R/gregmisc/src/../inst//perl>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.109>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sat Jun  5 01:38:35 2004: C<Module> L<OLE::Storage_Lite|OLE::Storage_Lite>
+
+=over 4
+
+=item *
+
+C<installed into: /mss/srg3/warneg/src/R/gregmisc/src/../inst//perl>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.11>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sat Jun  5 01:38:45 2004: C<Module> L<Spreadsheet::ParseExcel|Spreadsheet::ParseExcel>
+
+=over 4
+
+=item *
+
+C<installed into: /mss/srg3/warneg/src/R/gregmisc/src/../inst//perl>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.2602>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+

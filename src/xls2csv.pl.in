@@ -1,8 +1,9 @@
 #!/bin/env perl
 
-# Explicit specify path to our library directory
-# use lib ".";
-# DO NOT REMOVE THE ABOVE LINE!
+BEGIN {
+use File::Basename;
+unshift(@INC, dirname $0);
+}
 
 use strict;
 use Spreadsheet::ParseExcel;
