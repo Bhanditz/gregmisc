@@ -1,3 +1,151 @@
+2005-04-02 00:53  warnes
+
+	* TODO: Update TODO file.
+
+2005-04-01 23:19  tag release_2_0_5
+
+2005-04-01 23:19  warnes
+
+	* gdata/NAMESPACE, gdata/R/drop.levels.R, gdata/man/drop.levels.Rd,
+	  gtools/NAMESPACE, gtools/R/drop.levels.R,
+	  gtools/man/drop.levels.Rd: Move drop.levels() from gtools to
+	  gdata.
+
+2005-04-01 23:17  warnes
+
+	* gtools/R/mixedsort.R: Minor reordering of functions in file
+
+2005-04-01 23:14  warnes
+
+	* gdata/NAMESPACE, gdata/R/frameApply.R, gdata/man/frameApply.Rd,
+	  gtools/R/frameApply.R, gtools/NAMESPACE,
+	  gtools/man/frameApply.Rd: Move frameApply() to gdata package.
+
+2005-04-01 22:28  warnes
+
+	* gtools/R/mixedsort.R: Fix error if only one value passed to
+	  mixedorder.
+
+2005-04-01 21:37  warnes
+
+	* gtools/: man/quantcut.Rd, R/quantcut.R: Add proper handling where
+	  more than one quantile obtains the same value
+
+2005-04-01 18:00  warnes
+
+	* gtools/man/: ELISA.Rd, combinations.Rd, dirichlet.Rd,
+	  drop.levels.Rd, foldchange.Rd, invalid.Rd, logit.Rd,
+	  mixedsort.Rd, oddeven.Rd, permute.Rd, quantcut.Rd, running.Rd:
+	  Add CVS ID tag to file headers.
+
+2005-04-01 18:00  warnes
+
+	* gtools/: R/frameApply.R, man/frameApply.Rd: Fixes from Jim Rogers
+	  for R CMD check problems in frameApply
+
+2005-03-31 15:32  warnes
+
+	* gmodels/NAMESPACE: Add ceofFrame function to NAMESPACE
+
+2005-03-31 14:05  warnes
+
+	* gmodels/man/coefFrame.Rd: coefFrame example needs to properly
+	  load ELISA data from gtools package
+
+2005-03-31 14:02  warnes
+
+	* gtools/: R/drop.levels.R, R/frameApply.R, man/drop.levels.Rd,
+	  man/frameApply.Rd: Updates to drop.levels() and frameApply() from
+	  Jim Rogers
+
+2005-03-31 14:01  warnes
+
+	* gtools/: man/ELISA.Rd, data/ELISA.rda: Add ELISA data set used by
+	  frameApply and drop.levels examples
+
+2005-03-31 13:47  warnes
+
+	* DESCRIPTION, NEWS: Update for 2.0.5 release
+
+2005-03-31 13:31  warnes
+
+	* gmodels/: R/CrossTable.R, man/CrossTable.Rd, man/ci.Rd,
+	  man/estimable.Rd, man/fast.prcomp.Rd, man/fit.contrast.Rd,
+	  man/glh.test.Rd, man/make.contrasts.Rd: Ensure that each file has
+	  $Id$ header, and no $Log$
+
+2005-03-31 13:30  warnes
+
+	* gmodels/: R/coefFrame.R, man/coefFrame.Rd: Add coefFrame()
+	  function contributed by Jim Rogers
+
+2005-03-31 13:11  warnes
+
+	* gdata/man/elem.Rd: Comment out example to avoid R CMD check
+	  warnings
+
+2005-03-22 01:15  warnes
+
+	* DESCRIPTION, NEWS, gdata/NAMESPACE, gdata/R/ConvertMedUnits.R,
+	  gdata/data/MedUnits.Rda, gdata/data/MedUnits.rda,
+	  gdata/man/ConvertMedUnits.Rd, gdata/man/MedUnits.Rd: Fixes to
+	  pass `R CMD check'.
+
+2005-03-21 21:51  warnes
+
+	* gdata/: R/Args.R, R/env.R, R/ll.R, man/Args.Rd: Integrated fixes
+	  from Arni.
+
+2005-03-21 21:50  warnes
+
+	* gdata/man/read.xls.Rd: Improve documentation of 'perl' argument
+	  and give examples.
+
+2005-03-21 21:43  warnes
+
+	* gregmisc/: DESCRIPTION.in, DESCRIPTION.standalone, R/First.R:
+	  Create backwords compatibility sub-package 'gregmisc' which loads
+	  the other packages and warns the user.
+
+2005-03-09 18:39  warnes
+
+	* gdata/: R/ConvertMedUnits.R, man/ConvertMedUnits.Rd,
+	  man/MedUnits.Rd: - Add ConvertMedUnits() plus documentation - Add
+	  documentation for MedUnits data set.
+
+2005-03-09 18:37  warnes
+
+	* gdata/data/MedUnits.Rda: Update MedUnits data file.
+
+2005-03-09 17:00  warnes
+
+	* gdata/data/MedUnits.tab: Don't need both .Rda and .tab forms of
+	  the data.
+
+2005-03-09 16:55  warnes
+
+	* gdata/data/: MedUnits.Rda, MedUnits.tab: Add MedUnits data set,
+	  which provides conversions between American 'Conventional' and
+	  Standard Intertional (SI) medical units.
+
+2005-03-01 12:59  warnes
+
+	* gdata/man/: elem.Rd, ll.Rd: - Remove 'elem' call from ll example.
+	  - Add note to 'elem' man page that it is depreciated and 'll'
+	  should   be used instead.
+
+2005-02-25 20:15  nj7w
+
+	* gdata/NAMESPACE, gdata/man/elem.Rd, gdata/man/env.Rd,
+	  gdata/man/ll.Rd, gdata/man/read.xls.Rd, gplots/R/heatmap.2.R,
+	  gplots/man/heatmap.2.Rd, gplots/man/rich.color.Rd,
+	  gplots/man/sinkplot.Rd, gplots/man/textplot.Rd: [no log message]
+
+2005-02-25 18:32  warnes
+
+	* gdata/NAMESPACE: Remove ll methods since the base function now
+	  handles lists and data frames.
+
 2005-02-25 18:22  warnes
 
 	* gdata/R/elem.R, gdata/R/env.R, gdata/R/ll.R, gdata/man/Args.Rd,
@@ -46,9 +194,11 @@
 	* gplots/R/heatmap.2.R: Ignore missing values when computing
 	  symmetric range.
 
+2005-02-04 10:16  tag start
+
 2005-02-04 10:16  nj7w
 
-	* .tnatr:fnmap (tags: start): Initial import.
+	* .tnatr:fnmap: Initial import.
 
 2005-02-04 10:16  nj7w
 
@@ -155,16 +305,17 @@
 	* inst/doc/: Rnews.dtx, Rnews.sty, gregmisc.tex: Move
 	  gdata/inst/doc/* to inst/doc/*
 
+2004-09-27 17:01  tag rel_2_0_0
+
 2004-09-27 17:01  warneg
 
-	* .Rhistory, DESCRIPTION (tags: rel_2_0_0), gdata/DESCRIPTION,
-	  gdata/DESCRIPTION.in (tags: rel_2_0_0), gdata/NAMESPACE (tags:
-	  rel_2_0_0), gdata/man/.Rhistory, gmodels/DESCRIPTION,
-	  gmodels/DESCRIPTION.in (tags: rel_2_0_0), gplots/DESCRIPTION,
-	  gplots/DESCRIPTION.in (tags: rel_2_0_0), gplots/man/sinkplot.Rd
-	  (tags: rel_2_0_0), gplots/man/textplot.Rd (tags: rel_2_0_0),
-	  gtools/DESCRIPTION, gtools/DESCRIPTION.in (tags: rel_2_0_0),
-	  gtools/man/running.Rd: Updated to pass R CMD check.
+	* .Rhistory, DESCRIPTION, gdata/DESCRIPTION, gdata/DESCRIPTION.in,
+	  gdata/NAMESPACE, gdata/man/.Rhistory, gmodels/DESCRIPTION,
+	  gmodels/DESCRIPTION.in, gplots/DESCRIPTION,
+	  gplots/DESCRIPTION.in, gplots/man/sinkplot.Rd,
+	  gplots/man/textplot.Rd, gtools/DESCRIPTION,
+	  gtools/DESCRIPTION.in, gtools/man/running.Rd: Updated to pass R
+	  CMD check.
 
 2004-09-03 19:08  warneg
 
@@ -182,27 +333,27 @@
 
 2004-09-03 18:50  warneg
 
-	* gplots/man/heatmap.2.Rd (tags: rel_2_0_0): Fix typos.
+	* gplots/man/heatmap.2.Rd: Fix typos.
 
 2004-09-03 18:46  warneg
 
-	* gdata/R/read.xls.R (tags: rel_2_0_0): Need to look for files
-	  using the new package name.
+	* gdata/R/read.xls.R: Need to look for files using the new package
+	  name.
 
 2004-09-03 18:44  warneg
 
-	* gmodels/man/fit.contrast.Rd (tags: rel_2_0_0): Add explicit
-	  package to call to quantcut in example.
+	* gmodels/man/fit.contrast.Rd: Add explicit package to call to
+	  quantcut in example.
 
 2004-09-03 18:43  warneg
 
-	* gdata/man/read.xls.Rd (tags: rel_2_0_0): Need to use the new
-	  package name when looking for iris.xls.
+	* gdata/man/read.xls.Rd: Need to use the new package name when
+	  looking for iris.xls.
 
 2004-09-03 18:42  warneg
 
-	* gdata/man/ll.Rd (tags: rel_2_0_0): Add ll.list to the to the list
-	  of functions described
+	* gdata/man/ll.Rd: Add ll.list to the to the list of functions
+	  described
 
 2004-09-03 18:42  warneg
 
@@ -211,52 +362,35 @@
 2004-09-03 13:27  warneg
 
 	* gdata/DESCRIPTION, gdata/DESCRIPTION.in, gdata/NAMESPACE,
-	  gdata/R/Args.R (tags: rel_2_0_0), gdata/R/aggregate.table.R
-	  (tags: rel_2_0_0), gdata/R/combine.R (tags: rel_2_0_0),
-	  gdata/R/elem.R (tags: rel_2_0_0), gdata/R/env.R (tags:
-	  rel_2_0_0), gdata/R/interleave.R (tags: rel_2_0_0),
-	  gdata/R/is.what.R (tags: rel_2_0_0), gdata/R/keep.R (tags:
-	  rel_2_0_0), gdata/R/ll.R (tags: rel_2_0_0), gdata/R/matchcols.R
-	  (tags: rel_2_0_0), gdata/R/nobs.R (tags: rel_2_0_0),
-	  gdata/R/read.xls.R, gdata/R/rename.vars.R (tags: rel_2_0_0),
-	  gdata/R/reorder.R (tags: rel_2_0_0), gdata/R/trim.R (tags:
-	  rel_2_0_0), gdata/man/reorder.Rd (tags: rel_2_0_0),
-	  gmodels/DESCRIPTION, gmodels/NAMESPACE (tags: rel_2_0_0),
-	  gmodels/R/CrossTable.R (tags: rel_2_0_0), gmodels/R/ci.R (tags:
-	  rel_2_0_0), gmodels/R/estimable.R (tags: rel_2_0_0),
-	  gmodels/R/fast.prcomp.R (tags: rel_2_0_0),
-	  gmodels/R/fit.contrast.R (tags: rel_2_0_0), gmodels/R/glh.test.R
-	  (tags: rel_2_0_0), gmodels/R/make.contrasts.R (tags: rel_2_0_0),
-	  gmodels/man/estimable.Rd (tags: rel_2_0_0),
-	  gmodels/man/fit.contrast.Rd, gmodels/man/glh.test.Rd (tags:
-	  rel_2_0_0), gmodels/man/make.contrasts.Rd (tags: rel_2_0_0),
-	  gplots/DESCRIPTION, gplots/NAMESPACE (tags: rel_2_0_0),
-	  gplots/R/balloonplot.R (tags: rel_2_0_0), gplots/R/bandplot.R
-	  (tags: rel_2_0_0), gplots/R/barplot2.R (tags: rel_2_0_0),
-	  gplots/R/boxplot.n.R (tags: rel_2_0_0), gplots/R/colorpanel.R
-	  (tags: rel_2_0_0), gplots/R/heatmap.2.R (tags: rel_2_0_0),
-	  gplots/R/hist2d.R (tags: rel_2_0_0), gplots/R/lowess.R (tags:
-	  rel_2_0_0), gplots/R/ooplot.R (tags: rel_2_0_0),
-	  gplots/R/overplot.R (tags: rel_2_0_0), gplots/R/plotCI.R (tags:
-	  rel_2_0_0), gplots/R/plotmeans.R (tags: rel_2_0_0),
-	  gplots/R/qqnorm.aov.R (tags: rel_2_0_0), gplots/R/residplot.R
-	  (tags: rel_2_0_0), gplots/R/rich.color.R (tags: rel_2_0_0),
-	  gplots/R/sinkplot.R (tags: rel_2_0_0), gplots/R/smartlegend.R
-	  (tags: rel_2_0_0), gplots/R/space.R (tags: rel_2_0_0),
-	  gplots/R/textplot.R (tags: rel_2_0_0), gplots/R/wapply.R (tags:
-	  rel_2_0_0), gtools/DESCRIPTION, gtools/NAMESPACE (tags:
-	  rel_2_0_0), gtools/R/dirichlet.R (tags: rel_2_0_0),
-	  gtools/R/foldchange.R (tags: rel_2_0_0), gtools/R/invalid.R
-	  (tags: rel_2_0_0), gtools/R/mixedsort.R (tags: rel_2_0_0),
-	  gtools/R/oddeven.R (tags: rel_2_0_0), gtools/R/permute.R (tags:
-	  rel_2_0_0), gtools/R/quantcut.R (tags: rel_2_0_0),
-	  gtools/R/running.R (tags: rel_2_0_0), gtools/man/running.Rd:
+	  gdata/R/Args.R, gdata/R/aggregate.table.R, gdata/R/combine.R,
+	  gdata/R/elem.R, gdata/R/env.R, gdata/R/interleave.R,
+	  gdata/R/is.what.R, gdata/R/keep.R, gdata/R/ll.R,
+	  gdata/R/matchcols.R, gdata/R/nobs.R, gdata/R/read.xls.R,
+	  gdata/R/rename.vars.R, gdata/R/reorder.R, gdata/R/trim.R,
+	  gdata/man/reorder.Rd, gmodels/DESCRIPTION, gmodels/NAMESPACE,
+	  gmodels/R/CrossTable.R, gmodels/R/ci.R, gmodels/R/estimable.R,
+	  gmodels/R/fast.prcomp.R, gmodels/R/fit.contrast.R,
+	  gmodels/R/glh.test.R, gmodels/R/make.contrasts.R,
+	  gmodels/man/estimable.Rd, gmodels/man/fit.contrast.Rd,
+	  gmodels/man/glh.test.Rd, gmodels/man/make.contrasts.Rd,
+	  gplots/DESCRIPTION, gplots/NAMESPACE, gplots/R/balloonplot.R,
+	  gplots/R/bandplot.R, gplots/R/barplot2.R, gplots/R/boxplot.n.R,
+	  gplots/R/colorpanel.R, gplots/R/heatmap.2.R, gplots/R/hist2d.R,
+	  gplots/R/lowess.R, gplots/R/ooplot.R, gplots/R/overplot.R,
+	  gplots/R/plotCI.R, gplots/R/plotmeans.R, gplots/R/qqnorm.aov.R,
+	  gplots/R/residplot.R, gplots/R/rich.color.R, gplots/R/sinkplot.R,
+	  gplots/R/smartlegend.R, gplots/R/space.R, gplots/R/textplot.R,
+	  gplots/R/wapply.R, gtools/DESCRIPTION, gtools/NAMESPACE,
+	  gtools/R/dirichlet.R, gtools/R/foldchange.R, gtools/R/invalid.R,
+	  gtools/R/mixedsort.R, gtools/R/oddeven.R, gtools/R/permute.R,
+	  gtools/R/quantcut.R, gtools/R/running.R, gtools/man/running.Rd:
 	  initial bundle checkin
 
 2004-09-03 13:27  warneg
 
-	* DESCRIPTION, NEWS (tags: rel_2_0_0), TODO (tags: rel_2_0_0): [no
-	  log message]
+	* DESCRIPTION, NEWS, TODO: [no log message]
+
+2004-09-02 13:14  tag initial
 
 2004-09-02 13:14  warneg
 
@@ -272,10 +406,9 @@
 	* .Rhistory, gdata/DESCRIPTION, gdata/DESCRIPTION.in,
 	  gdata/NAMESPACE, gdata/man/.Rhistory, gmodels/DESCRIPTION,
 	  gmodels/DESCRIPTION.in, gmodels/NAMESPACE, gplots/DESCRIPTION,
-	  gplots/DESCRIPTION.in, gplots/NAMESPACE, gplots/man/1 (tags:
-	  rel_2_0_0), gplots/man/residplot.Rd (tags: rel_2_0_0),
-	  gtools/DESCRIPTION, gtools/DESCRIPTION.in, gtools/NAMESPACE
-	  (utags: initial): [no log message]
+	  gplots/DESCRIPTION.in, gplots/NAMESPACE, gplots/man/1,
+	  gplots/man/residplot.Rd, gtools/DESCRIPTION,
+	  gtools/DESCRIPTION.in, gtools/NAMESPACE: [no log message]
 
 2004-08-27 17:57  warnes
 
@@ -304,8 +437,8 @@
 
 2004-07-29 10:48  warnes
 
-	* gplots/: R/plotCI.R, man/plotCI.Rd (tags: rel_2_0_0): Integrate
-	  changes from the version of plotCI maintained by Martin Maechler.
+	* gplots/: R/plotCI.R, man/plotCI.Rd: Integrate changes from the
+	  version of plotCI maintained by Martin Maechler.
 
 2004-07-27 10:29  warnes
 
@@ -335,14 +468,13 @@
 
 2004-06-28 16:16  warnes
 
-	* gplots/: R/barplot2.R, man/barplot2.Rd (tags: rel_2_0_0): -
-	  Default 2-d color set to grey as in (v2.0.0) r-devel - The
-	  default (v1.9.1) barplot method now handles vectors and 1-d
-	  arrays   (e.g., obtained by table()) the same, and uses grey
-	  instead of   heat color palettes in these cases.  (Also fixes
-	  PR#6776.) - Updated to reflect the addition of 'offset' argument
-	  in base - Fix bug in stacked barplots, which would not be plotted
-	  properly
+	* gplots/: R/barplot2.R, man/barplot2.Rd: - Default 2-d color set
+	  to grey as in (v2.0.0) r-devel - The default (v1.9.1) barplot
+	  method now handles vectors and 1-d arrays   (e.g., obtained by
+	  table()) the same, and uses grey instead of	heat color palettes
+	  in these cases.  (Also fixes PR#6776.) - Updated to reflect the
+	  addition of 'offset' argument in base - Fix bug in stacked
+	  barplots, which would not be plotted properly
 
 2004-06-24 12:57  warnes
 
@@ -367,51 +499,53 @@
 
 	* gdata/inst/bin/: xls2csv, xls2csv.bat: Moved from gregmisc/src/.
 
+2004-06-07 22:35  tag rel_1_11_2
+
 2004-06-07 22:35  warnes
 
-	* DESCRIPTION (tags: rel_1_11_2): Add better acknowledgement of
-	  authors.
+	* DESCRIPTION: Add better acknowledgement of authors.
+
+2004-06-05 02:07  tag rel_1_11_1
 
 2004-06-05 02:07  warnes
 
-	* NEWS (tags: rel_1_11_2, rel_1_11_1): Update NEWS file for release
-	  1.11.1.
+	* NEWS: Update NEWS file for release 1.11.1.
 
 2004-06-05 01:22  warnes
 
-	* gdata/man/read.xls.Rd (tags: rel_1_11_2, rel_1_11_1): Minor
-	  enhancment to read.xls example.
+	* gdata/man/read.xls.Rd: Minor enhancment to read.xls example.
 
 2004-06-05 00:05  warnes
 
-	* DESCRIPTION (tags: rel_1_11_1), NEWS, gdata/inst/xls/iris.xls: -
-	  Merge Makefile.win into Makefile.  Makefile.win now just
-	  redirects   to Makefile.  - Update xls2csv.bat and xls2csv shell
-	  script to correctly obtain   thier installion path and infer the
-	  location of the perl code and   libraries.  - The xls2csv.pl
-	  script now assumes that the libraries it needs are   installed
-	  into the same directory where it is.
+	* DESCRIPTION, NEWS, gdata/inst/xls/iris.xls: - Merge Makefile.win
+	  into Makefile.  Makefile.win now just redirects   to Makefile.  -
+	  Update xls2csv.bat and xls2csv shell script to correctly obtain
+	  thier installion path and infer the location of the perl code and
+	  libraries.	- The xls2csv.pl script now assumes that the
+	  libraries it needs are   installed into the same directory where
+	  it is.
 
 2004-05-27 18:38  warnes
 
 	* gdata/inst/perl/xls2csv.pl: Moved to xls2csv.pl.in.
 
+2004-05-27 18:36  tag rel_1_11_0
+
 2004-05-27 18:36  warnes
 
-	* NEWS (tags: rel_1_11_0): Clarify text describing xls2csv scripts.
+	* NEWS: Clarify text describing xls2csv scripts.
 
 2004-05-27 18:30  warnes
 
-	* DESCRIPTION (tags: rel_1_11_0), NEWS: Updated for release.
+	* DESCRIPTION, NEWS: Updated for release.
 
 2004-05-27 18:20  warnes
 
-	* gdata/inst/perl/xls2csv.pl (tags: rel_1_11_0): More fixes.
+	* gdata/inst/perl/xls2csv.pl: More fixes.
 
 2004-05-27 18:20  warnes
 
-	* gdata/man/elem.Rd (tags: rel_2_0_0, rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0): Fix missing brace.
+	* gdata/man/elem.Rd: Fix missing brace.
 
 2004-05-27 17:43  warnes
 
@@ -425,8 +559,7 @@
 
 2004-05-27 11:11  warnes
 
-	* gplots/man/plotCI.Rd (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0):
-	  Fix spelling error.
+	* gplots/man/plotCI.Rd: Fix spelling error.
 
 2004-05-26 11:00  warnes
 
@@ -434,8 +567,7 @@
 
 2004-05-26 10:56  warnes
 
-	* gplots/R/overplot.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0):
-	  One more fix to get it right.
+	* gplots/R/overplot.R: One more fix to get it right.
 
 2004-05-26 09:50  warnes
 
@@ -444,20 +576,18 @@
 
 2004-05-26 09:40  warnes
 
-	* gtools/man/combinations.Rd (tags: rel_1_11_2, rel_1_11_1),
-	  gdata/man/read.xls.Rd (utags: rel_1_11_0): Escape underscores in
-	  email addresses so Latex is happy.
+	* gtools/man/combinations.Rd, gdata/man/read.xls.Rd: Escape
+	  underscores in email addresses so Latex is happy.
 
 2004-05-26 09:19  warnes
 
-	* gplots/man/rich.color.Rd (tags: rel_2_0_0, rel_1_11_2,
-	  rel_1_11_1, rel_1_11_0): Replace 'F' by 'FALSE' to pass R CMD
+	* gplots/man/rich.color.Rd: Replace 'F' by 'FALSE' to pass R CMD
 	  check.
 
 2004-05-26 09:18  warnes
 
-	* gtools/R/combinations.R (tags: rel_2_0_0, rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0): Replace 'T' with 'TRUE' to pass R CMD check.
+	* gtools/R/combinations.R: Replace 'T' with 'TRUE' to pass R CMD
+	  check.
 
 2004-05-25 14:45  warnes
 
@@ -470,19 +600,17 @@
 
 2004-05-25 13:35  warnes
 
-	* gdata/: R/Args.R, man/Args.Rd (tags: rel_2_0_0) (utags:
-	  rel_1_11_0, rel_1_11_1, rel_1_11_2): Add Args() function
-	  contributed by Arni Magnusson <arnima@u.washington.edu>.
+	* gdata/: R/Args.R, man/Args.Rd: Add Args() function contributed by
+	  Arni Magnusson <arnima@u.washington.edu>.
 
 2004-05-25 13:33  warnes
 
-	* gplots/: R/rich.color.R (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0), man/rich.color.Rd: Add rich.colors() submitted by
-	  Arni Magnusson <arnima@u.washington.edu>.
+	* gplots/: R/rich.color.R, man/rich.color.Rd: Add rich.colors()
+	  submitted by Arni Magnusson <arnima@u.washington.edu>.
 
 2004-05-25 13:14  warnes
 
-	* gdata/R/read.xls.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0):
+	* gdata/R/read.xls.R:
 	  - Change to call perl directly rather than depending on the
 	  installed shell script.  This should make the code more portable
 	  to MS-Windows systes.
@@ -512,45 +640,38 @@
 
 2004-05-24 22:58  warnes
 
-	* gplots/: R/ooplot.R, man/ooplot.Rd (tags: rel_2_0_0) (utags:
-	  rel_1_11_0, rel_1_11_1, rel_1_11_2): ??
+	* gplots/: R/ooplot.R, man/ooplot.Rd: ??
 
 2004-05-24 22:57  warnes
 
-	* gmodels/: R/CrossTable.R, man/CrossTable.Rd (tags: rel_2_0_0)
-	  (utags: rel_1_11_0, rel_1_11_1, rel_1_11_2): Updates from Mark
+	* gmodels/: R/CrossTable.R, man/CrossTable.Rd: Updates from Mark
 	  Schwartz.
 
 2004-05-24 19:46  warnes
 
-	* gdata/inst/: perl/xls2csv.pl, xls/iris.xls (tags: rel_1_11_0):
-	  Add files to enable inclusion and installation of xls2csv.pl as
-	  part of the package.
+	* gdata/inst/: perl/xls2csv.pl, xls/iris.xls: Add files to enable
+	  inclusion and installation of xls2csv.pl as part of the package.
 
 2004-05-24 19:43  warnes
 
-	* gplots/R/: plotCI.R, plotmeans.R (utags: rel_1_11_0, rel_1_11_1,
-	  rel_1_11_2): Modified to use invalid() to check arguments instead
-	  of missing().  This fixes some build errors under
-	  R-1.9.0-Patched.
+	* gplots/R/: plotCI.R, plotmeans.R: Modified to use invalid() to
+	  check arguments instead of missing().  This fixes some build
+	  errors under R-1.9.0-Patched.
 
 2004-05-24 13:36  warnes
 
-	* gtools/R/invalid.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0):
-	  Check if argument is a vector before doing is.na to avoid
-	  generating a warning.
+	* gtools/R/invalid.R: Check if argument is a vector before doing
+	  is.na to avoid generating a warning.
 
 2004-05-24 13:17  warnes
 
-	* gtools/: R/invalid.R, man/invalid.Rd (tags: rel_1_11_2,
-	  rel_1_11_1, rel_1_11_0): Add invalid() function for testing if a
-	  parameter value is non-missing, non-NA, non-NULL.
+	* gtools/: R/invalid.R, man/invalid.Rd: Add invalid() function for
+	  testing if a parameter value is non-missing, non-NA, non-NULL.
 
 2004-04-27 10:33  warnes
 
-	* gtools/: R/running.R, man/running.Rd (utags: rel_1_11_0,
-	  rel_1_11_1, rel_1_11_2): Replaced argument `as.list' with
-	  `simplify'.  Updated documentation, and updated examples
+	* gtools/: R/running.R, man/running.Rd: Replaced argument `as.list'
+	  with `simplify'.  Updated documentation, and updated examples
 	  appropriately.
 
 2004-04-26 12:37  warnes
@@ -565,41 +686,38 @@
 
 2004-04-13 09:42  warnes
 
-	* gplots/: R/space.R, man/space.Rd (tags: rel_2_0_0) (utags:
-	  rel_1_11_0, rel_1_11_1, rel_1_11_2): Add ability to space points
+	* gplots/: R/space.R, man/space.Rd: Add ability to space points
 	  along 'y' direction.
+
+2004-04-13 07:48  tag gregmisc_0_10_2
 
 2004-04-13 07:48  warnes
 
-	* DESCRIPTION (tags: gregmisc_0_10_2): Update for 0.10.2
+	* DESCRIPTION: Update for 0.10.2
 
 2004-04-13 07:46  warnes
 
-	* NEWS (tags: gregmisc_0_10_2): Updated for 0.10.2
+	* NEWS: Updated for 0.10.2
 
 2004-04-13 07:41  warnes
 
-	* gmodels/man/estimable.Rd (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2): Fix latex warning: it doesn't like
+	* gmodels/man/estimable.Rd: Fix latex warning: it doesn't like
 	  double subscripts.
 
 2004-04-02 14:06  warnes
 
-	* gplots/R/smartlegend.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2): Fixed smartlegend() positioning when x and/or y
-	  axis are log-scale.
+	* gplots/R/smartlegend.R: Fixed smartlegend() positioning when x
+	  and/or y axis are log-scale.
 
 2004-04-01 15:23  warnes
 
-	* gdata/: R/rename.vars.R, man/rename.vars.Rd (tags: rel_2_0_0)
-	  (utags: gregmisc_0_10_2, rel_1_11_0, rel_1_11_1, rel_1_11_2): Add
-	  function remove.vars().
+	* gdata/: R/rename.vars.R, man/rename.vars.Rd: Add function
+	  remove.vars().
 
 2004-03-30 14:04  warnes
 
-	* DESCRIPTION, gplots/R/textplot.R (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2): - Fix bug in textplot() reported by
-	  Wright, Kevin <kevin.d.wright@pioneer.com>.
+	* DESCRIPTION, gplots/R/textplot.R: - Fix bug in textplot()
+	  reported by Wright, Kevin <kevin.d.wright@pioneer.com>.
 
 2004-03-26 17:42  warnes
 
@@ -607,8 +725,7 @@
 
 2004-03-26 17:33  warnes
 
-	* TODO (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0, gregmisc_0_10_2):
-	  Change proposed names of new packages.
+	* TODO: Change proposed names of new packages.
 
 2004-03-26 17:32  warnes
 
@@ -617,41 +734,37 @@
 
 2004-03-26 17:31  warnes
 
-	* gdata/man/reorder.Rd (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2): Contents of package 'mva' moveed to 'stats'.
+	* gdata/man/reorder.Rd: Contents of package 'mva' moveed to
+	  'stats'.
 
 2004-03-26 17:28  warnes
 
-	* gmodels/man/fast.prcomp.Rd (tags: rel_2_0_0, rel_1_11_2,
-	  rel_1_11_1, rel_1_11_0, gregmisc_0_10_2): Reflect movement of
-	  code from  'mva' package to 'stats' in R 1.9.0.
+	* gmodels/man/fast.prcomp.Rd: Reflect movement of code from  'mva'
+	  package to 'stats' in R 1.9.0.
 
 2004-03-26 17:27  warnes
 
-	* gplots/man/textplot.Rd (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2): Update to match changes in textplot() code.
+	* gplots/man/textplot.Rd: Update to match changes in textplot()
+	  code.
 
 2004-03-26 17:25  warnes
 
-	* gplots/man/ooplot.Rd (tags: gregmisc_0_10_2): Remove Windows EOL
-	  characters.
+	* gplots/man/ooplot.Rd: Remove Windows EOL characters.
 
 2004-03-26 17:21  warnes
 
-	* gtools/man/combinations.Rd (tags: gregmisc_0_10_2): Uncomment and
-	  fix large 'n' example.
+	* gtools/man/combinations.Rd: Uncomment and fix large 'n' example.
 
 2004-03-26 17:20  warnes
 
-	* gplots/man/barplot2.Rd (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2): - Remove some commented-out code.  - Remove cvs
-	  log tag.
+	* gplots/man/barplot2.Rd: - Remove some commented-out code.  -
+	  Remove cvs log tag.
 
 2004-03-26 17:19  warnes
 
-	* gtools/man/running.Rd (tags: gregmisc_0_10_2): - Update to match
-	  changes in running() - Add examples to illustrate new arguments.
-	  - Modify running correlation plot example to be more clear.
+	* gtools/man/running.Rd: - Update to match changes in running() -
+	  Add examples to illustrate new arguments.  - Modify running
+	  correlation plot example to be more clear.
 
 2004-03-26 17:16  warnes
 
@@ -659,12 +772,11 @@
 
 2004-03-26 17:12  warnes
 
-	* gtools/R/running.R (tags: gregmisc_0_10_2): More of the same.
+	* gtools/R/running.R: More of the same.
 
 2004-03-26 17:02  warnes
 
-	* gdata/R/is.what.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2): - Fix is.what() for use under R 1.9.0 -
+	* gdata/R/is.what.R: - Fix is.what() for use under R 1.9.0 -
 	  is.what() now uses is.* functions found in any attached frame
 
 2004-03-26 10:34  warnes
@@ -679,8 +791,7 @@
 
 2004-03-25 15:09  warnes
 
-	* gmodels/: R/estimable.R (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2), man/estimable.Rd: - Estimable was
+	* gmodels/: R/estimable.R, man/estimable.Rd: - Estimable was
 	  reporting sqrt(X^2) rather than X^2 in the output.  - Provide
 	  latex math markup for linear algebra expressions in help text.  -
 	  Other clarifications in help text
@@ -705,92 +816,81 @@
 
 2004-02-17 17:21  warnes
 
-	* gplots/: R/ooplot.R (tags: gregmisc_0_10_2), man/ooplot.Rd:
-	  Integrate ooplot updates provided by Lodewijk Bonebakker
-	  <bonebakker@comcast.net>
+	* gplots/: R/ooplot.R, man/ooplot.Rd: Integrate ooplot updates
+	  provided by Lodewijk Bonebakker <bonebakker@comcast.net>
+
+2004-02-02 11:26  tag gregmisc_0_8_9
 
 2004-02-02 11:26  warnes
 
-	* gplots/: R/colorpanel.R, man/colorpanel.Rd (tags: rel_2_0_0)
-	  (utags: gregmisc_0_10_2, gregmisc_0_8_9, rel_1_11_0, rel_1_11_1,
-	  rel_1_11_2):
+	* gplots/: R/colorpanel.R, man/colorpanel.Rd:
 	  - Add colorpanel function, which generates a smoothly varying
 	  band of   colors over a three color range (lo, mid, high).
 
 2004-02-02 11:21  warnes
 
-	* DESCRIPTION (tags: gregmisc_0_8_9): Update version number for new
-	  release.
+	* DESCRIPTION: Update version number for new release.
+
+2004-01-21 07:10  tag rel_0_8_8
 
 2004-01-21 07:10  warnes
 
-	* TODO (tags: gregmisc_0_8_9, rel_0_8_8): Add TODO to contain 'to
-	  do' list.
+	* TODO: Add TODO to contain 'to do' list.
 
 2004-01-21 07:07  warnes
 
-	* gplots/man/textplot.Rd (tags: gregmisc_0_8_9, rel_0_8_8): -
-	  Correct arguments to halign to match code.
+	* gplots/man/textplot.Rd: - Correct arguments to halign to match
+	  code.
 
 2004-01-21 07:06  warnes
 
-	* gdata/: R/reorder.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2), man/reorder.Rd (utags: gregmisc_0_8_9,
-	  rel_0_8_8): - Add ... argument to match generic provided in mva.
+	* gdata/: R/reorder.R, man/reorder.Rd: - Add ... argument to match
+	  generic provided in mva.
 
 2004-01-21 00:17  warnes
 
-	* gplots/R/lowess.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8): Track R 1.9.0's move
-	  of 'lowess' from the base package to the (new) stats package.
+	* gplots/R/lowess.R: Track R 1.9.0's move of 'lowess' from the base
+	  package to the (new) stats package.
 
 2004-01-20 23:48  warnes
 
-	* DESCRIPTION (tags: rel_0_8_8): Updated for 0.8.8 release.
+	* DESCRIPTION: Updated for 0.8.8 release.
 
 2004-01-20 23:44  warnes
 
-	* gplots/man/sinkplot.Rd (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8): - Fix sinkplot()
-	  example by replacing 'T' with 'TRUE'.
+	* gplots/man/sinkplot.Rd: - Fix sinkplot() example by replacing 'T'
+	  with 'TRUE'.
 
 2004-01-20 23:42  warnes
 
-	* gplots/man/ooplot.Rd (tags: gregmisc_0_8_9, rel_0_8_8): - Add
-	  some more details to the ooplot() documentation.  The
-	  documentation is *not* complete.
+	* gplots/man/ooplot.Rd: - Add some more details to the ooplot()
+	  documentation.  The	documentation is *not* complete.
 
 2004-01-20 23:31  warnes
 
-	* gplots/R/textplot.R, gtools/R/capture.R (tags: rel_1_11_2,
-	  rel_1_11_1, rel_1_11_0, gregmisc_0_10_2) (utags: gregmisc_0_8_9,
-	  rel_0_8_8): - Mark sprint() as depreciated.  - Replace references
-	  to sprint with capture.output() - Use match.arg for halign and
-	  valign arguments to textplot.default.  - Fix textplot.character
-	  so that a vector of characters is properly   displayed.
-	  Previouslt, character vectors were plotted on top of each
-	  other.
+	* gplots/R/textplot.R, gtools/R/capture.R: - Mark sprint() as
+	  depreciated.	- Replace references to sprint with
+	  capture.output() - Use match.arg for halign and valign arguments
+	  to textplot.default.	- Fix textplot.character so that a vector
+	  of characters is properly   displayed. Previouslt, character
+	  vectors were plotted on top of each	other.
 
 2004-01-19 18:43  warnes
 
-	* gplots/: R/sinkplot.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8), man/sinkplot.Rd:
+	* gplots/: R/sinkplot.R, man/sinkplot.Rd:
 	  New function sinkplot(), as requested on R-devel by Kevin Wright
 	  <kwright@eskimo.com> in
 	  https://www.stat.math.ethz.ch/pipermail/r-devel/2004-January/028483.html.
 
 2004-01-19 17:45  warnes
 
-	* gdata/: R/elem.R, R/env.R, R/ll.R, man/keep.Rd (tags: rel_2_0_0),
-	  man/ll.Rd (utags: gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_1_11_0, rel_1_11_1, rel_1_11_2): - Integrated (partial) patch
-	  submitted by Arni Magnusson to clarify help text.  - Modifed code
-	  to use match.arg().
+	* gdata/: R/elem.R, R/env.R, R/ll.R, man/keep.Rd, man/ll.Rd: -
+	  Integrated (partial) patch submitted by Arni Magnusson to clarify
+	  help text.  - Modifed code to use match.arg().
 
 2004-01-15 00:14  warnes
 
-	* gplots/: R/ooplot.R (tags: gregmisc_0_8_9, rel_0_8_8),
-	  man/ooplot.Rd:
+	* gplots/: R/ooplot.R, man/ooplot.Rd:
 	  Add initial code and docs for ooplot() function submitted by
 	  Lodewijk Bonebakker <bonebakker@comcast.net>.
 
@@ -800,29 +900,25 @@
 	  - Applied patch from Arni that fixed a bug that caused env() to
 	  crash   if any environment was completely empty
 
+2003-12-02 21:49  tag rel_0_8_7
+
 2003-12-02 21:49  warnes
 
-	* DESCRIPTION (tags: rel_0_8_7):
+	* DESCRIPTION:
 	  - Updated for version 0.8.7
+
+2003-12-02 21:46  tag rel_0_8_5
 
 2003-12-02 21:46  warnes
 
-	* gdata/man/elem.Rd (tags: gregmisc_0_10_2, gregmisc_0_8_9,
-	  rel_0_8_8, rel_0_8_5), gdata/man/ll.Rd (tags: rel_0_8_5),
-	  gplots/man/lowess.Rd (tags: rel_2_0_0, rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8),
-	  gplots/man/textplot.Rd, gplots/man/wapply.Rd (tags: rel_2_0_0,
-	  rel_1_11_2, rel_1_11_1, rel_1_11_0, gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_8), gtools/man/foldchange.Rd (tags:
-	  rel_1_11_2, rel_1_11_1, rel_1_11_0, gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_8, rel_0_8_5) (utags: rel_0_8_7): - match
-	  function argument defaults with 'usage'
+	* gdata/man/elem.Rd, gdata/man/ll.Rd, gplots/man/lowess.Rd,
+	  gplots/man/textplot.Rd, gplots/man/wapply.Rd,
+	  gtools/man/foldchange.Rd: - match function argument defaults with
+	  'usage'
 
 2003-12-02 21:42  warnes
 
-	* gplots/: R/heatmap.2.R, man/heatmap.2.Rd (utags: gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_5, rel_0_8_7, rel_0_8_8, rel_1_11_0,
-	  rel_1_11_1, rel_1_11_2):
+	* gplots/: R/heatmap.2.R, man/heatmap.2.Rd:
 	  - Fix buglets in heatmap function - Make a slight enhancement to
 	  the example code.
 
@@ -844,14 +940,12 @@
 
 2003-12-02 11:58  warnes
 
-	* gplots/man/barplot2.Rd (tags: gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7):
+	* gplots/man/barplot2.Rd:
 	  - Remove '%' character from example code to avoid errors.
 
 2003-12-02 11:54  warnes
 
-	* gplots/R/plotCI.R (tags: gregmisc_0_10_2, gregmisc_0_8_9,
-	  rel_0_8_8, rel_0_8_7):
+	* gplots/R/plotCI.R:
 	  - Add '...' parameter to call to text to allow user to control
 	  size/color/etc.
 
@@ -862,24 +956,18 @@
 
 2003-12-01 10:59  warnes
 
-	* gplots/data/rtPCR.rda (tags: rel_2_0_0, rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5):
+	* gplots/data/rtPCR.rda:
 	  - Renamed rtPCR.Rda to rtPCR.rda so that R will properly load the
 	  file	 when data(rtPCR) is executed.
 
 2003-12-01 10:56  warnes
 
-	* gdata/R/: elem.R, env.R, is.what.R (tags: gregmisc_0_8_9,
-	  rel_0_8_8), keep.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8), ll.R (utags:
-	  rel_0_8_5, rel_0_8_7):
+	* gdata/R/: elem.R, env.R, is.what.R, keep.R, ll.R:
 	  - Apply changes submitted by Arni Magnusson
 
 2003-12-01 10:55  warnes
 
-	* gplots/R/barplot2.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8, rel_0_8_7):
+	* gplots/R/barplot2.R:
 	  - Follow patches applied to barplot() in base.
 
 2003-11-24 16:32  warnes
@@ -894,9 +982,7 @@
 
 2003-11-24 10:09  warnes
 
-	* gplots/: R/overplot.R, man/overplot.Rd (tags: rel_2_0_0,
-	  rel_1_11_2, rel_1_11_1, rel_1_11_0) (utags: gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_5, rel_0_8_7, rel_0_8_8):
+	* gplots/: R/overplot.R, man/overplot.Rd:
 	  Fix errors reported by R CMD check.
 
 2003-11-21 18:13  warnes
@@ -906,9 +992,7 @@
 
 2003-11-21 18:08  warnes
 
-	* gplots/man/rtPCR.Rd (tags: rel_2_0_0, rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5):
+	* gplots/man/rtPCR.Rd:
 	  Initial addition of these files.  Used in examples of overplot().
 
 2003-11-21 18:00  warnes
@@ -935,22 +1019,16 @@
 
 2003-11-21 15:54  warnes
 
-	* gtools/man/logit.Rd (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8, rel_0_8_7): Add email
-	  address to author field
+	* gtools/man/logit.Rd: Add email address to author field
 
 2003-11-21 15:35  warnes
 
-	* gtools/: R/foldchange.R (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5), man/foldchange.Rd:
+	* gtools/: R/foldchange.R, man/foldchange.Rd:
 	  - new files
 
 2003-11-21 14:54  warnes
 
-	* gtools/: R/mixedsort.R, man/mixedsort.Rd (utags: gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_5, rel_0_8_7, rel_0_8_8, rel_1_11_0,
-	  rel_1_11_1, rel_1_11_2):
+	* gtools/: R/mixedsort.R, man/mixedsort.Rd:
 	  - Change 'T' to 'TRUE' in mixedsort.R - Add missing brace in
 	  mixedsort.Rd
 
@@ -962,27 +1040,18 @@
 
 2003-11-20 10:56  warnes
 
-	* gtools/: R/oddeven.R, man/oddeven.Rd (utags: gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_5, rel_0_8_7, rel_0_8_8, rel_1_11_0,
-	  rel_1_11_1, rel_1_11_2):
+	* gtools/: R/oddeven.R, man/oddeven.Rd:
 	  - Move 'odd' and 'even' functions to a separate file & provide
 	  documentation
 
 2003-11-19 09:54  warnes
 
-	* gdata/man/: env.Rd (tags: rel_2_0_0, rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5), is.what.Rd (tags: rel_2_0_0, rel_1_11_2,
-	  rel_1_11_1, rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9,
-	  rel_0_8_8, rel_0_8_7, rel_0_8_5), keep.Rd (tags: rel_0_8_7,
-	  rel_0_8_5), ll.Rd:
+	* gdata/man/: env.Rd, is.what.Rd, keep.Rd, ll.Rd:
 	  Changes to pass R CMD check.
 
 2003-11-19 09:52  warnes
 
-	* gplots/man/bandplot.Rd (tags: rel_2_0_0, rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7):
+	* gplots/man/bandplot.Rd:
 	  Remove extranious NULL that confused R CMD check.
 
 2003-11-18 17:47  warnes
@@ -997,9 +1066,7 @@
 
 2003-11-18 13:58  warnes
 
-	* gplots/man/smartlegend.Rd (tags: rel_2_0_0, rel_1_11_2,
-	  rel_1_11_1, rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9,
-	  rel_0_8_8, rel_0_8_7, rel_0_8_5):
+	* gplots/man/smartlegend.Rd:
 	  - Added missing closing brace.
 
 2003-11-18 13:45  warnes
@@ -1016,15 +1083,11 @@
 
 2003-11-17 17:09  warnes
 
-	* gdata/man/aggregate.table.Rd (tags: rel_2_0_0, rel_1_11_2,
-	  rel_1_11_1, rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9,
-	  rel_0_8_8, rel_0_8_7): Fix syntax error.
+	* gdata/man/aggregate.table.Rd: Fix syntax error.
 
 2003-11-17 16:40  warnes
 
-	* gmodels/R/fit.contrast.R (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7):
+	* gmodels/R/fit.contrast.R:
 	  - Fix incorrect handling of glm objects by fit.contrast, as
 	  reported   by Ulrich Halekoh, Phd <ulrich.halekoh@agrsci.dk>.
 
@@ -1036,14 +1099,8 @@
 	  gdata/R/keep.R, gdata/R/ll.R, gdata/man/elem.Rd,
 	  gdata/man/env.Rd, gdata/man/is.what.Rd, gdata/man/keep.Rd,
 	  gdata/man/ll.Rd, gplots/R/heatmap.2.R, gplots/R/overplot.R,
-	  gplots/R/plotmeans.R (tags: gregmisc_0_10_2, gregmisc_0_8_9,
-	  rel_0_8_8, rel_0_8_7), gplots/R/space.R (tags: gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_8, rel_0_8_7), gplots/R/wapply.R (tags:
-	  rel_1_11_2, rel_1_11_1, rel_1_11_0, gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_8, rel_0_8_7), gtools/R/capture.R (tags:
-	  rel_0_8_7), gtools/man/capture.Rd (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7):
+	  gplots/R/plotmeans.R, gplots/R/space.R, gplots/R/wapply.R,
+	  gtools/R/capture.R, gtools/man/capture.Rd:
 	  - Add files contributed by Arni Magnusson
 	  <arnima@u.washington.edu>. As well as some of my own.
 
@@ -1059,9 +1116,8 @@
 
 2003-08-06 23:49  warnes
 
-	* gmodels/R/ci.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8, rel_0_8_7): - Fixed
-	  incorrect denominator in standard error for mean in ci.default.
+	* gmodels/R/ci.R: - Fixed incorrect denominator in standard error
+	  for mean in ci.default.
 
 2003-06-19 17:23  warnes
 
@@ -1075,30 +1131,23 @@
 
 2003-06-09 10:57  warnes
 
-	* gplots/R/smartlegend.R (tags: gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5): - New function smartlegend().
+	* gplots/R/smartlegend.R: - New function smartlegend().
 
 2003-06-07 13:58  warnes
 
-	* gdata/man/: aggregate.table.Rd, interleave.Rd (tags: rel_2_0_0,
-	  rel_1_11_2, rel_1_11_1, rel_1_11_0, gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_8, rel_0_8_7):
+	* gdata/man/: aggregate.table.Rd, interleave.Rd:
 	  - Fixed error in examples.  Had sqrt(var(x)/(n-1)) for the
 	  standard   error of the mean instead of sqrt(var(x)/n).
 
 2003-05-23 14:32  warnes
 
-	* gdata/: R/matchcols.R, man/matchcols.Rd (tags: rel_2_0_0) (utags:
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_5, rel_0_8_7, rel_0_8_8,
-	  rel_1_11_0, rel_1_11_1, rel_1_11_2):
+	* gdata/: R/matchcols.R, man/matchcols.Rd:
 	  - Fixed typos
 
 2003-05-23 14:14  warnes
 
-	* gdata/R/matchcols.R, gdata/man/matchcols.Rd, gtools/R/logit.R
-	  (tags: rel_2_0_0, rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8, rel_0_8_7,
-	  rel_0_8_5), gtools/man/logit.Rd (tags: rel_0_8_5):
+	* gdata/R/matchcols.R, gdata/man/matchcols.Rd, gtools/R/logit.R,
+	  gtools/man/logit.Rd:
 	  - library() backported from 1.7-devel.  This version of the
 	  function   adds the "pos=" argument to specify where in the
 	  search path the   library should be placed.
@@ -1112,47 +1161,41 @@
 
 2003-05-20 12:03  warnes
 
-	* gdata/R/interleave.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8, rel_0_8_7,
-	  rel_0_8_5):
+	* gdata/R/interleave.R:
 	  - Omit NULL variables.
 
 2003-05-20 09:16  warnes
 
-	* DESCRIPTION, gdata/R/trim.R (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7), gdata/man/trim.Rd (tags: rel_2_0_0, rel_1_11_2,
-	  rel_1_11_1, rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9,
-	  rel_0_8_8, rel_0_8_7) (utags: rel_0_8_5):
+	* DESCRIPTION, gdata/R/trim.R, gdata/man/trim.Rd:
 	  - Added function trim() and assocated docs.
+
+2003-04-22 14:29  tag rel_0_8_4
 
 2003-04-22 14:29  warnes
 
-	* DESCRIPTION (tags: rel_0_8_4):
+	* DESCRIPTION:
 	  - Update version number.
 
 2003-04-22 13:28  warnes
 
-	* gplots/R/plotmeans.R (tags: rel_0_8_5, rel_0_8_4):
+	* gplots/R/plotmeans.R:
 	  - Fixeed warning messing caused when 'connect' is a vector.
 
 2003-04-22 13:24  warnes
 
-	* gmodels/R/fit.contrast.R (tags: rel_0_8_5, rel_0_8_4):
+	* gmodels/R/fit.contrast.R:
 	  - the variable 'df' was used within the lme code section
 	  overwriting	the argument 'df'.
 
 2003-04-22 12:00  warnes
 
-	* gtools/man/combinations.Rd (tags: gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4): - Fixed tpyo in example that
-	  allowed combinations(500,2) to run when   it should have been
-	  ignred for testing..
+	* gtools/man/combinations.Rd: - Fixed tpyo in example that allowed
+	  combinations(500,2) to run when   it should have been ignred for
+	  testing..
 
 2003-04-22 11:42  warnes
 
-	* gdata/: R/reorder.R, man/reorder.Rd (utags: rel_0_8_4, rel_0_8_5,
-	  rel_0_8_7):
+	* gdata/: R/reorder.R, man/reorder.Rd:
 	  - The mva package (which is part of recommended) now provides a
 	  generic 'reorder' function.  Consequently, the 'reorder' function
 	    here has been renamed to 'reorder.factor'.
@@ -1161,8 +1204,8 @@
 
 2003-04-22 11:34  warnes
 
-	* gplots/R/barplot2.R (tags: rel_0_8_5, rel_0_8_4): Update from
-	  Marc Schwartz, modified by Gregory Warnes:
+	* gplots/R/barplot2.R: Update from Marc Schwartz, modified by
+	  Gregory Warnes:
 
 	  -  Modified dim() checks for 'ci.l' and 'ci.u' against 'height'
 	   to remove R v1.7.0 if() based error msgs for vector conditions.
@@ -1174,40 +1217,38 @@
 	  use	large values for 'n'.  Prompted by bug report from Huan
 	  Huang   <huan.huang@bnpparibas.com
 
+2003-04-04 08:59  tag rel_0_8_3
+
 2003-04-04 08:59  warnes
 
-	* DESCRIPTION (tags: rel_0_8_3):
+	* DESCRIPTION:
 	  - Version 0.8.3
 
 2003-04-04 08:58  warnes
 
-	* gtools/R/RSCompat.S (tags: rel_2_0_0, rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3):
+	* gtools/R/RSCompat.S:
 	  - Replace 'T' with 'TRUE'
 
 2003-04-04 08:49  warnes
 
 	* gplots/R/balloonplot.R, gtools/R/dirichlet.R,
-	  gplots/man/qqnorm.aov.Rd (tags: rel_2_0_0) (utags:
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_3, rel_0_8_4, rel_0_8_5,
-	  rel_0_8_7, rel_0_8_8, rel_1_11_0, rel_1_11_1, rel_1_11_2):
+	  gplots/man/qqnorm.aov.Rd:
 	  - Change occurences of 'T' to 'TRUE'
 
 2003-04-04 08:46  warnes
 
-	* gtools/man/capture.Rd (tags: rel_0_8_5, rel_0_8_4, rel_0_8_3):
+	* gtools/man/capture.Rd:
 	  - Allow optional arguments to sprint to be passed to print - Fix
 	  R CMD check errors
 
 2003-04-04 08:45  warnes
 
-	* gtools/R/capture.R (tags: rel_0_8_5, rel_0_8_4, rel_0_8_3):
+	* gtools/R/capture.R:
 	  - Allow optional arguments to sprint to be passed to print
 
 2003-04-04 08:44  warnes
 
-	* gplots/man/textplot.Rd (tags: rel_0_8_5, rel_0_8_4, rel_0_8_3):
+	* gplots/man/textplot.Rd:
 	  - Updated to match changes in textplot function:   - Added
 	  textplot.character   - Renamed arguments "col.margin" and
 	  "row.margin" to "cmar", and	  "rmar" so that specifying
@@ -1216,8 +1257,7 @@
 
 2003-04-04 08:41  warnes
 
-	* gplots/R/textplot.R (tags: rel_0_8_7, rel_0_8_5, rel_0_8_4,
-	  rel_0_8_3):
+	* gplots/R/textplot.R:
 
 	  - Added textplot.character to handle character strings.  - Moved
 	  test for vector and matrix arguments to textplot.default.  -
@@ -1245,49 +1285,37 @@
 
 2003-03-12 12:58  warnes
 
-	* gmodels/man/fit.contrast.Rd (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3):
+	* gmodels/man/fit.contrast.Rd:
 	  - Fixed a typo in the example - Added to lme example
+
+2003-03-08 11:30  tag rel_0_8_2
 
 2003-03-08 11:30  warnes
 
-	* gplots/man/balloonplot.Rd (tags: rel_2_0_0, rel_1_11_2,
-	  rel_1_11_1, rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9,
-	  rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3,
-	  rel_0_8_2):
+	* gplots/man/balloonplot.Rd:
 	  - Forgot to update arglist in \usage section.
 
 2003-03-08 11:26  warnes
 
-	* DESCRIPTION (tags: rel_0_8_2):
+	* DESCRIPTION:
 	  - Bumped up version number.
 
 2003-03-08 11:22  warnes
 
-	* gplots/: R/balloonplot.R (tags: rel_0_8_2), man/balloonplot.Rd:
+	* gplots/: R/balloonplot.R, man/balloonplot.Rd:
 	  - Added parameters for rotation of and amount of space allocated
 	  for	the row and column labels.
 
 2003-03-07 10:48  warnes
 
-	* DESCRIPTION, gmodels/R/fast.prcomp.R (tags: rel_1_11_2,
-	  rel_1_11_1, rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9,
-	  rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3,
-	  rel_0_8_2), gplots/R/hist2d.R (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2),
-	  gplots/R/qqnorm.aov.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5,
-	  rel_0_8_4, rel_0_8_3, rel_0_8_2), gtools/R/RSCompat.S (tags:
-	  rel_0_8_2):
+	* DESCRIPTION, gmodels/R/fast.prcomp.R, gplots/R/hist2d.R,
+	  gplots/R/qqnorm.aov.R, gtools/R/RSCompat.S:
 	  - Minor changes to code to allow the package to be provided as an
 	  S-Plus chapter.
 
 2003-03-07 10:43  warnes
 
-	* gplots/R/lowess.R (tags: rel_0_8_7, rel_0_8_5, rel_0_8_4,
-	  rel_0_8_3, rel_0_8_2): - Add 'NULL' as the last element of if
+	* gplots/R/lowess.R: - Add 'NULL' as the last element of if
 	  statement that defines   lowess.default so that when the file is
 	  sourced, S-Plus doesn't   display the function definition.
 
@@ -1299,31 +1327,30 @@
 
 2003-03-03 12:48  warnes
 
-	* gdata/man/reorder.Rd (tags: rel_0_8_3, rel_0_8_2): - Updated to
-	  match reorder.Rd which was exetended to handle factor   label
-	  names in addition to numeric indices.
+	* gdata/man/reorder.Rd: - Updated to match reorder.Rd which was
+	  exetended to handle factor   label names in addition to numeric
+	  indices.
 
 2003-03-03 12:24  warnes
 
-	* gdata/R/reorder.R (tags: rel_0_8_3, rel_0_8_2):
+	* gdata/R/reorder.R:
 	  - Added handling of factor level names in addition to numeric
 	  indexes.
 
+2003-01-30 17:00  tag rel_0_8_0
+
 2003-01-30 17:00  warnes
 
-	* DESCRIPTION (tags: rel_0_8_0):
+	* DESCRIPTION:
 	  - New release.
 
 2003-01-30 16:56  warnes
 
-	* gtools/man/running.Rd (tags: gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2,
-	  rel_0_8_0): - Fixed typo in email address.
+	* gtools/man/running.Rd: - Fixed typo in email address.
 
 2003-01-30 16:53  warnes
 
-	* gmodels/: R/fit.contrast.R (tags: rel_0_8_3), man/fit.contrast.Rd
-	  (utags: rel_0_8_0, rel_0_8_2):
+	* gmodels/: R/fit.contrast.R, man/fit.contrast.Rd:
 	  - Renamed 'contrast.lm' to 'fit.contrast'.  This new name is more
 	    descriptive and makes it easier to create and use methods for
 	  other   classes, eg lme.
@@ -1339,16 +1366,13 @@
 
 2003-01-30 16:43  warnes
 
-	* gplots/: R/barplot2.R, man/barplot2.Rd (tags: rel_0_8_5,
-	  rel_0_8_4) (utags: rel_0_8_0, rel_0_8_2, rel_0_8_3):
+	* gplots/: R/barplot2.R, man/barplot2.Rd:
 	  - Added argument 'add' to allow for the addition of a barplot to
 	  an   existing graphic. Default is FALSE
 
 2003-01-30 16:41  warnes
 
-	* gmodels/: R/CrossTable.R, man/CrossTable.Rd (utags:
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_0, rel_0_8_2, rel_0_8_3,
-	  rel_0_8_4, rel_0_8_5, rel_0_8_7, rel_0_8_8):
+	* gmodels/: R/CrossTable.R, man/CrossTable.Rd:
 	  - Removed argument 'correct' and now print separate corrected
 	  values   for 2 x 2 tables.  - Added arguments 'prop.r', 'prop.c'
 	  and 'prop.t' to toggle printing   of row, col and table
@@ -1361,10 +1385,7 @@
 
 2003-01-30 09:58  warnes
 
-	* gmodels/R/make.contrasts.R (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2,
-	  rel_0_8_0):
+	* gmodels/R/make.contrasts.R:
 	  - Added explicit check to ensure that the number of specified
 	  contrasts is less than or equal to the ncol - 1.  Previously,
 	  this	 failed with an obtuse error message when the contrast
@@ -1373,13 +1394,12 @@
 
 2003-01-20 13:35  warnes
 
-	* gplots/: R/balloonplot.R, man/balloonplot.Rd (utags: rel_0_8_0):
+	* gplots/: R/balloonplot.R, man/balloonplot.Rd:
 	  - Updated balloonplot help page.
 
 2003-01-20 12:13  warnes
 
-	* gplots/: R/wapply.R, man/wapply.Rd (utags: rel_0_8_0, rel_0_8_2,
-	  rel_0_8_3, rel_0_8_4, rel_0_8_5):
+	* gplots/: R/wapply.R, man/wapply.Rd:
 	  - Updated wapply.R to allow specification of evaluation points
 	  when	 method is 'width' or 'range' using the 'pts' argument.  -
 	  Updated wapply.Rd to add 'pts' argument - Fixed typos, spelling
@@ -1393,39 +1413,37 @@
 
 2003-01-03 14:23  warnes
 
-	* gplots/man/space.Rd (tags: gregmisc_0_10_2, gregmisc_0_8_9,
-	  rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2,
-	  rel_0_8_0): - Added reference to and comparison example of
-	  sunflowerplot.  - Added code to put example plots on same plot
+	* gplots/man/space.Rd: - Added reference to and comparison example
+	  of sunflowerplot.  - Added code to put example plots on same plot
 	  window using par(mfrow=...).
+
+2003-01-02 11:11  tag rel_0_7_5
 
 2003-01-02 11:11  warnes
 
-	* DESCRIPTION (tags: rel_0_7_5): Updated version number and added
-	  Kjetil to list of contributors.
+	* DESCRIPTION: Updated version number and added Kjetil to list of
+	  contributors.
 
 2003-01-02 11:09  warnes
 
-	* gplots/R/barplot2.R (tags: rel_0_7_5):
+	* gplots/R/barplot2.R:
 	  - Changed assignment statements that used "=" to "<-" to avoid
 	  syntax   errors in older versions of the S language.
 
 2003-01-02 11:07  warnes
 
-	* gplots/R/lowess.R (tags: rel_0_8_0, rel_0_7_5):
+	* gplots/R/lowess.R:
 	  - Added wrapper code so that R-specific fiddling won't be
 	  executed   under S-Plus.
 
 2003-01-02 10:42  warnes
 
-	* gtools/R/RSCompat.S (tags: rel_0_8_0, rel_0_7_5): - Add nlevels
-	  function.
+	* gtools/R/RSCompat.S: - Add nlevels function.
 
 2003-01-02 10:40  warnes
 
-	* gplots/: R/qqnorm.aov.R, man/qqnorm.aov.Rd (tags: rel_0_8_2)
-	  (utags: rel_0_7_5, rel_0_8_0): - Renamed first parameter to match
-	  qqnorm generic.
+	* gplots/: R/qqnorm.aov.R, man/qqnorm.aov.Rd: - Renamed first
+	  parameter to match qqnorm generic.
 
 2003-01-02 10:14  warnes
 
@@ -1445,8 +1463,8 @@
 
 2002-11-04 09:21  warnes
 
-	* gplots/: R/barplot2.R, man/barplot2.Rd (tags: rel_0_7_5): Updates
-	  from Marc Schwartz:
+	* gplots/: R/barplot2.R, man/barplot2.Rd: Updates from Marc
+	  Schwartz:
 
 	  - Updated underlying code to be based upon the new barplot() in R
 	  v1.6.1 - This now uses the 'axis.lty' and 'border' arguments - In
@@ -1462,40 +1480,34 @@
 
 2002-11-04 09:13  warnes
 
-	* gmodels/R/CrossTable.R (tags: rel_0_7_5):
+	* gmodels/R/CrossTable.R:
 	  - Moved fisher.test() to after table is printed, so that table is
 	  still printed in the event that fisher.test() results in
 	  errors.
 
+2002-10-29 21:32  tag rel_0_7_3
+
 2002-10-29 21:32  warnes
 
-	* DESCRIPTION (tags: rel_0_7_3):
+	* DESCRIPTION:
 	  Updated version number for 2002-10-29 release.
 
 2002-10-29 21:21  warnes
 
-	* gplots/R/plot.lm.R (tags: rel_2_0_0, rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0,
-	  rel_0_7_5, rel_0_7_3):
+	* gplots/R/plot.lm.R:
 	  - Commented out plot.lm() code since recent changes in R have
 	  broken it.
 
 2002-10-29 18:06  warnes
 
-	* gmodels/: R/fast.prcomp.R, man/fast.prcomp.Rd (tags:
-	  gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4,
-	  rel_0_8_3, rel_0_8_2) (utags: rel_0_7_3, rel_0_7_5, rel_0_8_0):
+	* gmodels/: R/fast.prcomp.R, man/fast.prcomp.Rd:
 	  - Fixes to fast.svd to make it actually work.  - Updates to man
 	  page to fix mistmatches between code and docs and to	 fix
 	  warnings.
 
 2002-10-29 18:00  warnes
 
-	* gmodels/: R/make.contrasts.R, man/make.contrasts.Rd (tags:
-	  rel_1_11_2, rel_1_11_1, rel_1_11_0, gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4,
-	  rel_0_8_3, rel_0_8_2, rel_0_8_0) (utags: rel_0_7_3, rel_0_7_5):
+	* gmodels/: R/make.contrasts.R, man/make.contrasts.Rd:
 	  - Moved make.contrasts to a separate file.  - Enhanced make
 	  contrasts to better label contrast matrix, to give   how.many a
 	  default value, and to coerce vectors into row matrixes.  - Added
@@ -1507,39 +1519,32 @@
 	* gmodels/: R/fast.prcomp.R, man/fast.prcomp.Rd: Initial checkin
 	  for fast.prcomp() and fast.svd().
 
+2002-10-11 14:38  tag rel_0_7_2
+
 2002-10-11 14:38  warnes
 
-	* DESCRIPTION (tags: rel_0_7_2):
+	* DESCRIPTION:
 	  - Updated version number in DESCRIPTION.
 
 2002-10-11 14:22  warnes
 
-	* gtools/: R/permute.R, man/permute.Rd (utags: gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_7_2, rel_0_7_3, rel_0_7_5, rel_0_8_0,
-	  rel_0_8_2, rel_0_8_3, rel_0_8_4, rel_0_8_5, rel_0_8_7, rel_0_8_8,
-	  rel_1_11_0, rel_1_11_1, rel_1_11_2):
+	* gtools/: R/permute.R, man/permute.Rd:
 	  - Add permute() function (wraper for sample) and man page
 
 2002-10-11 14:21  warnes
 
-	* gtools/man/dirichlet.Rd (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0,
-	  rel_0_7_5, rel_0_7_3, rel_0_7_2):
+	* gtools/man/dirichlet.Rd:
 	  - Escaped underscores in my email address that was causing a
 	  parse   error in the {r,p}dirichlet man page.
 
 2002-10-11 14:02  warnes
 
-	* gplots/R/barplot2.R (tags: rel_0_7_3, rel_0_7_2):
+	* gplots/R/barplot2.R:
 	  - Fixed log scale errors in legend() call
 
 2002-10-01 14:16  warnes
 
-	* gplots/man/hist2d.Rd (tags: rel_2_0_0, rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0,
-	  rel_0_7_5, rel_0_7_3, rel_0_7_2):
+	* gplots/man/hist2d.Rd:
 	  - Added examples of using 'contour' and 'filled.contour' for
 	  display.
 
@@ -1551,32 +1556,27 @@
 
 2002-09-30 16:43  warnes
 
-	* gtools/: R/dirichlet.R (tags: rel_0_8_2, rel_0_8_0, rel_0_7_5,
-	  rel_0_7_3, rel_0_7_2), man/dirichlet.Rd:
+	* gtools/: R/dirichlet.R, man/dirichlet.Rd:
 	  - Added rdirichlet() and ddirichlet() with accompaning help page
 	  and tests.
 
 2002-09-26 08:11  warnes
 
-	* gmodels/man/glh.test.Rd (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0,
-	  rel_0_7_5, rel_0_7_3, rel_0_7_2): - Added note and example code
-	  to illustrate how to properly compute   contrasts for the first
+	* gmodels/man/glh.test.Rd: - Added note and example code to
+	  illustrate how to properly compute   contrasts for the first
 	  factor in the model.
+
+2002-09-24 16:20  tag rel_0_7_0
 
 2002-09-24 16:20  warnes
 
-	* DESCRIPTION (tags: rel_0_7_0):
+	* DESCRIPTION:
 	  Update version number after fixing bugs and adding regression
 	  tests.
 
 2002-09-24 15:12  warnes
 
-	* gmodels/R/glh.test.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5,
-	  rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3,
-	  rel_0_7_2, rel_0_7_0):
+	* gmodels/R/glh.test.R:
 	  - Fixed a typo.
 
 2002-09-24 11:01  warnes
@@ -1586,128 +1586,65 @@
 
 2002-09-24 10:57  warnes
 
-	* gtools/R/running.R (tags: gregmisc_0_8_9, rel_0_8_8, rel_0_8_7,
-	  rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5,
-	  rel_0_7_3, rel_0_7_2, rel_0_7_0):
+	* gtools/R/running.R:
 	  - Fixed error where running was always calling running2 with
 	  'fun=mean', ignoring the specified funtion.
 
 2002-09-24 10:53  warnes
 
-	* gplots/R/plotmeans.R (tags: rel_0_8_3, rel_0_8_2, rel_0_8_0,
-	  rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0):
+	* gplots/R/plotmeans.R:
 	  - Changed digits=options("digits") which produces a list of
 	  length 1   to digits=getOption("digits") which returns a vector
 	  of length one.    The former was causing an error when passed to
 	  round().
 
+2002-09-23 10:27  tag rel_0_6_0
+
 2002-09-23 10:27  warnes
 
-	* gmodels/man/CrossTable.Rd (tags: rel_0_7_5, rel_0_7_3,
-	  rel_0_7_2), gmodels/man/glh.test.Rd, gplots/man/barplot2.Rd
-	  (tags: rel_0_7_3, rel_0_7_2) (utags: rel_0_6_0, rel_0_7_0):
+	* gmodels/man/CrossTable.Rd, gmodels/man/glh.test.Rd,
+	  gplots/man/barplot2.Rd:
 	  - Fixed syntax errors in barplot2.Rd and CrossTable.Rd - Fixed
 	  incorrect translation of 'F' (distribution) to 'FALSE' in
 	  glh.test.Rd
 
 2002-09-23 10:02  warnes
 
-	* gdata/inst/doc/: Rnews.dtx, Rnews.sty, gregmisc.pdf, gregmisc.tex
-	  (utags: gregmisc_0_10_2, gregmisc_0_8_9, rel_0_6_0, rel_0_7_0,
-	  rel_0_7_2, rel_0_7_3, rel_0_7_5, rel_0_8_0, rel_0_8_2, rel_0_8_3,
-	  rel_0_8_4, rel_0_8_5, rel_0_8_7, rel_0_8_8, rel_1_11_0,
-	  rel_1_11_1, rel_1_11_2):
+	* gdata/inst/doc/: Rnews.dtx, Rnews.sty, gregmisc.pdf,
+	  gregmisc.tex:
 	  Added inst/doc directory and contents to CVS.
 
 2002-09-23 09:59  warnes
 
-	* gdata/R/aggregate.table.R (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0,
-	  rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0),
-	  gdata/R/combine.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5,
-	  rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3,
-	  rel_0_7_2, rel_0_7_0, rel_0_6_0), gdata/R/interleave.R (tags:
-	  rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3,
-	  rel_0_7_2, rel_0_7_0, rel_0_6_0), gdata/R/nobs.R (tags:
-	  rel_1_11_2, rel_1_11_1, rel_1_11_0, gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4,
-	  rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2,
-	  rel_0_7_0, rel_0_6_0), gdata/man/aggregate.table.Rd (tags:
-	  rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5,
-	  rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0), gdata/man/combine.Rd
-	  (tags: rel_2_0_0, rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5,
-	  rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3,
-	  rel_0_7_2, rel_0_7_0, rel_0_6_0), gdata/man/interleave.Rd (tags:
-	  rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5,
-	  rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0), gdata/man/nobs.Rd
-	  (tags: rel_2_0_0, rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5,
-	  rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3,
-	  rel_0_7_2, rel_0_7_0, rel_0_6_0), gdata/man/rename.vars.Rd (tags:
-	  gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4,
-	  rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2,
-	  rel_0_7_0, rel_0_6_0), gdata/man/reorder.Rd (tags: rel_0_8_0,
-	  rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0),
-	  gmodels/R/ci.R (tags: rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2,
-	  rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0,
-	  rel_0_6_0), gmodels/man/estimable.Rd (tags: gregmisc_0_8_9,
-	  rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2,
-	  rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0,
-	  rel_0_6_0), gmodels/man/glh.test.Rd, gplots/R/boxplot.n.R (tags:
-	  rel_1_11_2, rel_1_11_1, rel_1_11_0, gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4,
-	  rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2,
-	  rel_0_7_0, rel_0_6_0), gplots/R/hist2d.R (tags: rel_0_8_0,
-	  rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0),
-	  gplots/R/lowess.R (tags: rel_0_7_3, rel_0_7_2, rel_0_7_0,
-	  rel_0_6_0), gplots/R/residplot.R (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0,
-	  rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0),
-	  gplots/man/bandplot.Rd (tags: rel_0_8_5, rel_0_8_4, rel_0_8_3,
-	  rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0,
-	  rel_0_6_0), gplots/man/hist2d.Rd (tags: rel_0_7_0, rel_0_6_0),
-	  gplots/man/lowess.Rd (tags: rel_0_8_5, rel_0_8_4, rel_0_8_3,
-	  rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0,
-	  rel_0_6_0), gplots/man/plotCI.Rd (tags: gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4,
-	  rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2,
-	  rel_0_7_0, rel_0_6_0), gplots/man/space.Rd (tags: rel_0_7_5,
-	  rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0),
-	  gtools/man/combinations.Rd (tags: rel_0_8_3, rel_0_8_2,
-	  rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0,
-	  rel_0_6_0), gtools/man/quantcut.Rd (tags: rel_1_11_2, rel_1_11_1,
-	  rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0,
-	  rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0): -
-	  Modified all files to include CVS Id and Log tags.
+	* gdata/R/aggregate.table.R, gdata/R/combine.R,
+	  gdata/R/interleave.R, gdata/R/nobs.R,
+	  gdata/man/aggregate.table.Rd, gdata/man/combine.Rd,
+	  gdata/man/interleave.Rd, gdata/man/nobs.Rd,
+	  gdata/man/rename.vars.Rd, gdata/man/reorder.Rd, gmodels/R/ci.R,
+	  gmodels/man/estimable.Rd, gmodels/man/glh.test.Rd,
+	  gplots/R/boxplot.n.R, gplots/R/hist2d.R, gplots/R/lowess.R,
+	  gplots/R/residplot.R, gplots/man/bandplot.Rd,
+	  gplots/man/hist2d.Rd, gplots/man/lowess.Rd, gplots/man/plotCI.Rd,
+	  gplots/man/space.Rd, gtools/man/combinations.Rd,
+	  gtools/man/quantcut.Rd: - Modified all files to include CVS Id
+	  and Log tags.
 
 2002-09-23 09:38  warnes
 
-	* DESCRIPTION (tags: rel_0_6_0), gmodels/R/CrossTable.R (tags:
-	  rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0),
-	  gmodels/man/CrossTable.Rd, gplots/R/barplot2.R (tags: rel_0_7_0,
-	  rel_0_6_0), gplots/man/barplot2.Rd, gtools/R/combinations.R
-	  (tags: gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8, rel_0_8_7,
-	  rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5,
-	  rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0):
+	* DESCRIPTION, gmodels/R/CrossTable.R, gmodels/man/CrossTable.Rd,
+	  gplots/R/barplot2.R, gplots/man/barplot2.Rd,
+	  gtools/R/combinations.R:
 	  - Added CrossTable() and barplot2() code and docs contributed by
 	  Marc Schwartz.  - Permit combinations() to be used when r>n
 	  provided repeat.allowed=TRUE - Bumped up version number
 
+2002-08-01 15:37  tag rel_0_5_5
+
 2002-08-01 15:37  warnes
 
-	* DESCRIPTION, gmodels/R/ci.R, gmodels/man/ci.Rd (tags: rel_2_0_0,
-	  rel_1_11_2, rel_1_11_1, rel_1_11_0, gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4,
-	  rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2,
-	  rel_0_7_0, rel_0_6_0), gmodels/man/estimable.Rd,
-	  gmodels/man/glh.test.Rd, gplots/R/hist2d.R, gplots/R/wapply.R
-	  (tags: rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0),
-	  gtools/R/running.R (tags: rel_0_6_0) (utags: rel_0_5_5):
+	* DESCRIPTION, gmodels/R/ci.R, gmodels/man/ci.Rd,
+	  gmodels/man/estimable.Rd, gmodels/man/glh.test.Rd,
+	  gplots/R/hist2d.R, gplots/R/wapply.R, gtools/R/running.R:
 	  - Corrected documentation mismatch for ci, ci.default.
 
 	  - Replaced all occurences of '_' for assignment with '<-'.
@@ -1717,102 +1654,77 @@
 
 	  - Updaded version number and date.
 
+2002-08-01 14:06  tag rel_0_5_4
+
 2002-08-01 14:06  warnes
 
-	* gdata/R/reorder.R (tags: rel_0_8_0, rel_0_7_5, rel_0_7_3,
-	  rel_0_7_2, rel_0_7_0, rel_0_6_0, rel_0_5_5, rel_0_5_4):
+	* gdata/R/reorder.R:
 	  Added reorder() function to reorder the levels of a factor.
+
+2002-04-08 20:51  tag rel_0_5_3
 
 2002-04-08 20:51  warneg
 
-	* DESCRIPTION, gmodels/R/ci.R, gplots/R/bandplot.R (tags:
-	  rel_1_11_2, rel_1_11_1, rel_1_11_0, gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4,
-	  rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2,
-	  rel_0_7_0, rel_0_6_0, rel_0_5_5), gplots/R/boxplot.n.R (tags:
-	  rel_0_5_5), gmodels/R/estimable.R (tags: gregmisc_0_8_9,
-	  rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2,
-	  rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0,
-	  rel_0_5_5), gmodels/R/glh.test.R (tags: rel_0_6_0, rel_0_5_5),
-	  gplots/R/hist2d.R, gtools/R/combinations.R (tags: rel_0_5_5),
-	  gdata/R/rename.vars.R (tags: gregmisc_0_8_9, rel_0_8_8,
-	  rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0,
-	  rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0,
-	  rel_0_5_5), gplots/R/plot.lm.R (tags: rel_0_7_2, rel_0_7_0,
-	  rel_0_6_0, rel_0_5_5), gplots/R/plotCI.R (tags: rel_0_8_5,
-	  rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3,
-	  rel_0_7_2, rel_0_7_0, rel_0_6_0, rel_0_5_5), gplots/R/plotmeans.R
-	  (tags: rel_0_6_0, rel_0_5_5), gplots/R/residplot.R (tags:
-	  rel_0_5_5), gdata/man/aggregate.table.Rd (tags: rel_0_5_5),
-	  gplots/R/space.R (tags: rel_0_8_5, rel_0_8_4, rel_0_8_3,
-	  rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0,
-	  rel_0_6_0, rel_0_5_5), gplots/R/wapply.R, gplots/man/bandplot.Rd
-	  (tags: rel_0_5_5), gplots/man/boxplot.n.Rd (tags: rel_2_0_0,
-	  rel_1_11_2, rel_1_11_1, rel_1_11_0, gregmisc_0_10_2,
-	  gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4,
-	  rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2,
-	  rel_0_7_0, rel_0_6_0, rel_0_5_5), gdata/man/interleave.Rd (tags:
-	  rel_0_5_5), gmodels/man/glh.test.Rd, gplots/man/hist2d.Rd (tags:
-	  rel_0_5_5), gplots/man/plotmeans.Rd (tags: rel_2_0_0, rel_1_11_2,
-	  rel_1_11_1, rel_1_11_0, gregmisc_0_10_2, gregmisc_0_8_9,
-	  rel_0_8_8, rel_0_8_7, rel_0_8_5, rel_0_8_4, rel_0_8_3, rel_0_8_2,
-	  rel_0_8_0, rel_0_7_5, rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0,
-	  rel_0_5_5), gtools/man/combinations.Rd (tags: rel_0_5_5),
-	  gdata/man/reorder.Rd (tags: rel_0_5_5), gplots/man/space.Rd
-	  (tags: rel_0_5_5), gplots/man/wapply.Rd (tags: rel_0_7_5,
-	  rel_0_7_3, rel_0_7_2, rel_0_7_0, rel_0_6_0, rel_0_5_5),
-	  gtools/man/running.Rd (tags: rel_0_7_5, rel_0_7_3, rel_0_7_2,
-	  rel_0_7_0, rel_0_6_0, rel_0_5_5) (utags: rel_0_5_3, rel_0_5_4):
+	* DESCRIPTION, gmodels/R/ci.R, gplots/R/bandplot.R,
+	  gplots/R/boxplot.n.R, gmodels/R/estimable.R,
+	  gmodels/R/glh.test.R, gplots/R/hist2d.R, gtools/R/combinations.R,
+	  gdata/R/rename.vars.R, gplots/R/plot.lm.R, gplots/R/plotCI.R,
+	  gplots/R/plotmeans.R, gplots/R/residplot.R,
+	  gdata/man/aggregate.table.Rd, gplots/R/space.R,
+	  gplots/R/wapply.R, gplots/man/bandplot.Rd,
+	  gplots/man/boxplot.n.Rd, gdata/man/interleave.Rd,
+	  gmodels/man/glh.test.Rd, gplots/man/hist2d.Rd,
+	  gplots/man/plotmeans.Rd, gtools/man/combinations.Rd,
+	  gdata/man/reorder.Rd, gplots/man/space.Rd, gplots/man/wapply.Rd,
+	  gtools/man/running.Rd:
 	  Checkin for version 0.5.3
 
 2002-04-08 20:46  warneg
 
-	* gdata/R/interleave.R (tags: rel_0_5_5, rel_0_5_4, rel_0_5_3): -
-	  Properly handle case when some or all arguments are vectors.
+	* gdata/R/interleave.R: - Properly handle case when some or all
+	  arguments are vectors.
 
 2002-03-27 15:51  warneg
 
-	* gplots/man/lowess.Rd (tags: rel_0_5_5, rel_0_5_4, rel_0_5_3):
+	* gplots/man/lowess.Rd:
 	  Added "..." argument to lowess.default.
 
 2002-03-27 14:48  warneg
 
-	* gplots/R/lowess.R (tags: rel_0_5_5, rel_0_5_4, rel_0_5_3): -
-	  Added code to append "..." to the argument list of
-	  lowess.default.
+	* gplots/R/lowess.R: - Added code to append "..." to the argument
+	  list of lowess.default.
 
 	  - Fixed a wrong default for f in lowess.formula.  Was 3, but
 	  should   have been 2/3.
 
+2002-03-26 16:22  tag rel_0_5_1
+
 2002-03-26 16:22  warneg
 
 	* gmodels/R/ci.R, gmodels/R/glh.test.R, gplots/R/lowess.R,
-	  gdata/man/reorder.Rd, gmodels/man/ci.Rd (tags: rel_0_5_4,
-	  rel_0_5_3), gmodels/man/glh.test.Rd, gplots/man/lowess.Rd (utags:
-	  rel_0_5_1):
+	  gdata/man/reorder.Rd, gmodels/man/ci.Rd, gmodels/man/glh.test.Rd,
+	  gplots/man/lowess.Rd:
 	  - Changed methods to include '...' to match the generic.  -
 	  Updated for version 0.5.1
 
 2002-03-26 16:21  warneg
 
-	* DESCRIPTION (tags: rel_0_5_1):
+	* DESCRIPTION:
 	  Updated for version 0.5.1
 
 2002-03-26 14:29  warneg
 
-	* gdata/R/nobs.R (tags: rel_0_5_5, rel_0_5_4, rel_0_5_3,
-	  rel_0_5_1):
+	* gdata/R/nobs.R:
 	  Added ... to methods.
 
 2002-03-26 14:29  warneg
 
-	* gdata/man/nobs.Rd (tags: rel_0_5_5, rel_0_5_4, rel_0_5_3,
-	  rel_0_5_1):
+	* gdata/man/nobs.Rd:
 	  Updated to add ... parameter to function calls.
 
 2002-03-26 14:24  warneg
 
-	* gplots/man/hist2d.Rd (tags: rel_0_5_1):
+	* gplots/man/hist2d.Rd:
 	  Initial checkin.
 
 2002-03-26 10:30  warneg
@@ -1827,17 +1739,12 @@
 
 2002-03-26 09:49  warneg
 
-	* gtools/man/quantcut.Rd (tags: rel_0_5_5, rel_0_5_4, rel_0_5_3,
-	  rel_0_5_1):
+	* gtools/man/quantcut.Rd:
 	  Initial Checkin
 
 2002-03-26 09:29  warneg
 
-	* gtools/R/quantcut.R (tags: rel_1_11_2, rel_1_11_1, rel_1_11_0,
-	  gregmisc_0_10_2, gregmisc_0_8_9, rel_0_8_8, rel_0_8_7, rel_0_8_5,
-	  rel_0_8_4, rel_0_8_3, rel_0_8_2, rel_0_8_0, rel_0_7_5, rel_0_7_3,
-	  rel_0_7_2, rel_0_7_0, rel_0_6_0, rel_0_5_5, rel_0_5_4, rel_0_5_3,
-	  rel_0_5_1):
+	* gtools/R/quantcut.R:
 	  Initial checkin.
 
 2002-03-26 09:28  warneg
@@ -1846,35 +1753,33 @@
 
 2002-03-19 23:17  warneg
 
-	* gplots/R/plotmeans.R (tags: rel_0_5_1): - Changes to add
-	  compatibility with S-Plus 2000
+	* gplots/R/plotmeans.R: - Changes to add compatibility with S-Plus
+	  2000
 
 2002-03-19 23:16  warneg
 
-	* gplots/R/plotCI.R (tags: rel_0_5_1): - Changes to add
-	  compatibility with S-Plus 2000.
+	* gplots/R/plotCI.R: - Changes to add compatibility with S-Plus
+	  2000.
 
 2002-03-19 22:48  warneg
 
-	* gplots/R/boxplot.n.R (tags: rel_0_5_1):
+	* gplots/R/boxplot.n.R:
 	  - Updated to work in S-Plus 2000 as well as R.
 
 2002-03-19 22:44  warneg
 
-	* gtools/R/RSCompat.S (tags: rel_0_7_3, rel_0_7_2, rel_0_7_0,
-	  rel_0_6_0, rel_0_5_5, rel_0_5_4, rel_0_5_3, rel_0_5_1): - Added
-	  definition of is.R function.
+	* gtools/R/RSCompat.S: - Added definition of is.R function.
 
 	  - Added boxplot.formula
 
 2002-03-07 18:39  warneg
 
-	* gtools/man/running.Rd (tags: rel_0_5_1): - Added documentation
-	  and example for running2
+	* gtools/man/running.Rd: - Added documentation and example for
+	  running2
 
 2002-03-07 18:38  warneg
 
-	* gtools/R/running.R (tags: rel_0_5_4, rel_0_5_3, rel_0_5_1):
+	* gtools/R/running.R:
 	  - Added "running2", which handles both univariate and bivariate
 	  cases - Modified "running" to call "running2"
 
@@ -1885,8 +1790,7 @@
 
 2002-02-21 16:45  warneg
 
-	* gdata/R/aggregate.table.R (tags: rel_0_5_5, rel_0_5_4, rel_0_5_3,
-	  rel_0_5_1):
+	* gdata/R/aggregate.table.R:
 	  - Fixed bug where row and column labels didn't always correspond
 	  to the contents.  This only occured when a factor was used for
 	  by1 or by2 and the factors levels weren't in the default sort
@@ -1899,13 +1803,12 @@
 
 2002-02-20 17:09  warneg
 
-	* gdata/man/aggregate.table.Rd (tags: rel_0_5_1):
+	* gdata/man/aggregate.table.Rd:
 	  Initial checkin.
 
 2002-02-20 16:41  warneg
 
-	* gdata/: man/interleave.Rd, R/interleave.R (utags: rel_0_5_1):
-	  Initial checkin.
+	* gdata/: man/interleave.Rd, R/interleave.R: Initial checkin.
 
 2002-02-20 16:31  warneg
 
@@ -1920,17 +1823,15 @@
 
 2002-02-20 15:09  warneg
 
-	* gmodels/man/ci.Rd, gmodels/man/estimable.Rd (tags: rel_0_5_4,
-	  rel_0_5_3, rel_0_5_1), gmodels/man/glh.test.Rd,
-	  gplots/man/lowess.Rd, gplots/man/plotCI.Rd (tags: rel_0_5_5,
-	  rel_0_5_4, rel_0_5_3, rel_0_5_1), gdata/man/rename.vars.Rd (tags:
-	  rel_0_5_5, rel_0_5_4, rel_0_5_3, rel_0_5_1), gplots/man/space.Rd
-	  (tags: rel_0_5_1):
+	* gmodels/man/ci.Rd, gmodels/man/estimable.Rd,
+	  gmodels/man/glh.test.Rd, gplots/man/lowess.Rd,
+	  gplots/man/plotCI.Rd, gdata/man/rename.vars.Rd,
+	  gplots/man/space.Rd:
 	  Minor changes, typo and formatting fixes.
 
 2002-02-20 15:06  warneg
 
-	* gplots/: R/bandplot.R, man/bandplot.Rd (utags: rel_0_5_1):
+	* gplots/: R/bandplot.R, man/bandplot.Rd:
 	  - Generalized to allow specification of the multiples of the
 	  standard deviation levels to be plotted (0=mean, 1=1 sd, ..).  -
 	  Now (invisibly) returnes computed smooths.
@@ -1946,7 +1847,7 @@
 
 2002-02-16 12:58  warneg
 
-	* gplots/R/wapply.R (tags: rel_0_5_1):
+	* gplots/R/wapply.R:
 	  - Fixed Bug: When method=="range", the absolute range of x was
 	  being   used to compute the relative width instead of the
 	  (correct) relative   range.
@@ -1966,12 +1867,12 @@
 
 2002-02-04 18:20  warneg
 
-	* gplots/R/space.R (tags: rel_0_5_1):
+	* gplots/R/space.R:
 	  - Add na.rm parameter and make the default TRUE.
 
 2002-02-04 18:19  warneg
 
-	* gplots/R/hist2d.R (tags: rel_0_5_1):
+	* gplots/R/hist2d.R:
 	  Initial checkin.
 
 2002-02-04 14:12  warneg
@@ -2025,7 +1926,7 @@
 
 2001-12-18 17:12  warneg
 
-	* gmodels/R/estimable.R (tags: rel_0_5_1):
+	* gmodels/R/estimable.R:
 	  - Modified to make confidence intervals optional.  Changed
 	  'alpha'   parameter giving significance level to 'conf.int'
 	  giving confidence   level.
@@ -2056,14 +1957,16 @@
 	* gmodels/: R/glh.test.R, man/glh.test.Rd:
 	  Initial checkin.
 
+2001-12-17 14:13  tag rel_0_5_0
+
 2001-12-17 14:13  warneg
 
-	* DESCRIPTION (tags: rel_0_5_0):
+	* DESCRIPTION:
 	  Updated to include new functions and thier contributors.
 
 2001-12-17 13:59  warneg
 
-	* gmodels/man/estimable.Rd (tags: rel_0_5_0):
+	* gmodels/man/estimable.Rd:
 	  - Fixed spelling errors.
 
 2001-12-17 13:52  warneg
@@ -2074,30 +1977,30 @@
 
 2001-12-11 20:41  warneg
 
-	* gplots/man/space.Rd (tags: rel_0_5_0):
+	* gplots/man/space.Rd:
 	  - Quoted underscore character in my email address.  - Added
 	  correct keyword.
 
 2001-12-11 20:39  warneg
 
-	* gdata/man/rename.vars.Rd (tags: rel_0_5_0):
+	* gdata/man/rename.vars.Rd:
 	  Added omitted documentaton for 'info' parameter.  Changed example
 	  code not to use 'Orthodont' data set so that the nlme package is
 	  not required.
 
 2001-12-11 20:37  warneg
 
-	* gplots/man/plotmeans.Rd (tags: rel_0_5_1, rel_0_5_0):
+	* gplots/man/plotmeans.Rd:
 	  Added documentation for xaxt parameter.
 
 2001-12-11 20:34  warneg
 
-	* gplots/R/lowess.R (tags: rel_0_5_0):
+	* gplots/R/lowess.R:
 	  Updated to explicitly list control arguments to lowess.formula.
 
 2001-12-11 20:34  warneg
 
-	* gplots/man/lowess.Rd (tags: rel_0_5_0):
+	* gplots/man/lowess.Rd:
 	  Initial checkin.  Code copied from R source package and extended.
 
 2001-12-10 14:35  warneg
@@ -2107,17 +2010,16 @@
 
 2001-12-10 14:26  warneg
 
-	* gmodels/R/estimable.R (tags: rel_0_5_0): renamed from
-	  contrast.coeff.R to estimable.R (incorrectly via contrast.lm.R)
+	* gmodels/R/estimable.R: renamed from contrast.coeff.R to
+	  estimable.R (incorrectly via contrast.lm.R)
 
 2001-12-07 20:54  warneg
 
-	* gdata/R/rename.vars.R (tags: rel_0_5_1, rel_0_5_0): Changed 'T'
-	  to 'TRUE' in parameter list.
+	* gdata/R/rename.vars.R: Changed 'T' to 'TRUE' in parameter list.
 
 2001-12-07 18:34  warneg
 
-	* gplots/man/wapply.Rd (tags: rel_0_5_1, rel_0_5_0):
+	* gplots/man/wapply.Rd:
 	  Fixed an problem where \code was incorrectly delimited by parens
 	  rather than curly brackets.
 
@@ -2138,8 +2040,7 @@
 
 2001-12-07 17:33  warneg
 
-	* gplots/R/: lowess.R, plot.lm.R (tags: rel_0_5_1, rel_0_5_0),
-	  residplot.R (tags: rel_0_5_1, rel_0_5_0):
+	* gplots/R/: lowess.R, plot.lm.R, residplot.R:
 	  Initial checkin.
 
 2001-12-07 17:29  warneg
@@ -2149,7 +2050,7 @@
 
 2001-12-07 17:24  warneg
 
-	* gplots/R/space.R (tags: rel_0_5_0):
+	* gplots/R/space.R:
 	  - Added cvs tags.
 
 2001-12-07 17:23  warneg
@@ -2173,13 +2074,12 @@
 
 2001-12-07 14:50  warneg
 
-	* gmodels/man/ci.Rd (tags: rel_0_5_0): - Added text noting that lme
-	  is now supported.
+	* gmodels/man/ci.Rd: - Added text noting that lme is now supported.
 
 2001-12-07 14:19  warneg
 
-	* gmodels/R/ci.R (tags: rel_0_5_0): - Fixed typo:  DF column was
-	  being filled in with p-value.
+	* gmodels/R/ci.R: - Fixed typo:  DF column was being filled in with
+	  p-value.
 
 2001-12-07 13:49  warneg
 
@@ -2187,21 +2087,19 @@
 
 2001-12-05 14:51  warneg
 
-	* gdata/R/combine.R (tags: rel_0_5_5, rel_0_5_4, rel_0_5_3,
-	  rel_0_5_1, rel_0_5_0):
+	* gdata/R/combine.R:
 	  - Renamed 'concat' function to 'combine' to avoid name conflict
 	  with	 an existing S-Plus function.
 
 2001-12-05 14:49  warneg
 
-	* gplots/R/plotmeans.R (tags: rel_0_5_0): - Added ability to use
-	  the t-distribution to compute confidence   intervals.  This is
-	  controlled using the 'use.t' parameter.
+	* gplots/R/plotmeans.R: - Added ability to use the t-distribution
+	  to compute confidence   intervals.  This is controlled using the
+	  'use.t' parameter.
 
 2001-12-05 14:44  warneg
 
-	* gdata/man/combine.Rd (tags: rel_0_5_5, rel_0_5_4, rel_0_5_3,
-	  rel_0_5_1, rel_0_5_0):
+	* gdata/man/combine.Rd:
 	  - Changed function name 'concat' to 'combine' and renamed
 	  concat.Rd to	 combine.Rd
 
@@ -2217,7 +2115,7 @@
 
 2001-12-05 14:29  warneg
 
-	* gplots/R/wapply.R (tags: rel_0_5_0):
+	* gplots/R/wapply.R:
 	  - Added a better default for "width" when method="nobs".  For
 	  this case,   width=max(5, length(x)/10).
 
@@ -2236,7 +2134,7 @@
 
 2001-10-16 19:06  warneg
 
-	* gplots/man/plotCI.Rd (tags: rel_0_5_0):
+	* gplots/man/plotCI.Rd:
 	  Added minbar and maxbar parameters.
 
 2001-10-16 19:04  warneg
@@ -2251,7 +2149,7 @@
 
 2001-10-16 19:00  warneg
 
-	* gplots/R/plotCI.R (tags: rel_0_5_0):
+	* gplots/R/plotCI.R:
 	  - Added minbar and maxbar parameters - Added cvs id and log tags
 	  to header
 
@@ -2276,8 +2174,8 @@
 
 2001-09-18 10:15  warneg
 
-	* DESCRIPTION, gtools/R/RSCompat.S (tags: rel_0_5_0),
-	  gplots/R/plotCI.R, gplots/R/plotmeans.R:
+	* DESCRIPTION, gtools/R/RSCompat.S, gplots/R/plotCI.R,
+	  gplots/R/plotmeans.R:
 	  Release 0.3.2
 
 2001-09-01 15:19  warneg
@@ -2287,9 +2185,8 @@
 
 2001-08-31 20:01  warneg
 
-	* DESCRIPTION, gtools/R/running.R (tags: rel_0_5_0),
-	  gplots/man/wapply.Rd, gtools/man/running.Rd (tags: rel_0_5_0):
-	  Release 0.3.0
+	* DESCRIPTION, gtools/R/running.R, gplots/man/wapply.Rd,
+	  gtools/man/running.Rd: Release 0.3.0
 
 2001-08-31 19:45  warneg
 
@@ -2298,7 +2195,7 @@
 
 2001-08-31 19:41  warneg
 
-	* gplots/R/bandplot.R (tags: rel_0_5_0):
+	* gplots/R/bandplot.R:
 	  Used wrong comment character (% instead of #) in header.  Fixed.
 
 2001-08-25 01:53  warneg
@@ -2311,8 +2208,7 @@
 
 2001-08-25 01:50  warneg
 
-	* gtools/man/combinations.Rd (tags: rel_0_5_1, rel_0_5_0): Fixed a
-	  typo and a syntax error.
+	* gtools/man/combinations.Rd: Fixed a typo and a syntax error.
 
 2001-08-25 01:48  warneg
 
@@ -2320,8 +2216,7 @@
 
 2001-08-25 01:46  warneg
 
-	* gplots/man/: boxplot.n.Rd (tags: rel_0_5_1, rel_0_5_0),
-	  plotmeans.Rd: Added CVS header.
+	* gplots/man/: boxplot.n.Rd, plotmeans.Rd: Added CVS header.
 
 2001-08-25 01:45  warneg
 
@@ -2333,8 +2228,7 @@
 
 2001-06-29 09:23  warneg
 
-	* gtools/: R/combinations.R (tags: rel_0_5_1, rel_0_5_0),
-	  man/combinations.Rd:
+	* gtools/: R/combinations.R, man/combinations.Rd:
 	  Initial revision.
 
 2001-06-05 14:39  warneg
@@ -2342,12 +2236,14 @@
 	* DESCRIPTION:
 	  Updated with addition of concat.R and concat.Rd.
 
+2001-05-30 09:23  tag null
+
 2001-05-30 09:23  warneg
 
 	* DESCRIPTION, gmodels/R/ci.R, gmodels/man/ci.Rd,
-	  gplots/R/boxplot.n.R (tags: rel_0_5_0), gplots/R/plotCI.R,
-	  gplots/R/plotmeans.R, gplots/man/boxplot.n.Rd,
-	  gplots/man/plotCI.Rd, gplots/man/plotmeans.Rd (utags: null):
+	  gplots/R/boxplot.n.R, gplots/R/plotCI.R, gplots/R/plotmeans.R,
+	  gplots/man/boxplot.n.Rd, gplots/man/plotCI.Rd,
+	  gplots/man/plotmeans.Rd:
 	  Initial CVS import
 
 2001-05-30 09:23  warneg

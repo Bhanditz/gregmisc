@@ -1,5 +1,5 @@
-% $Id: glh.test.Rd,v 1.13 2004/09/30 21:03:38 warneg Exp $
-
+% $Id: glh.test.Rd,v 1.14 2005/03/31 18:31:32 warnes Exp $
+%
 \name{glh.test}
 \alias{glh.test}
 \alias{print.glh.test}

@@ -1,5 +1,5 @@
-% $Id: logit.Rd,v 1.2 2003/11/21 20:54:06 warnes Exp $
-
+% $Id: logit.Rd,v 1.3 2005/04/01 23:00:50 warnes Exp $
+%
 \name{logit}
 \alias{logit}
 \alias{inv.logit}

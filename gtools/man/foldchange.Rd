@@ -1,3 +1,5 @@
+% $Id: foldchange.Rd,v 1.4 2005/04/01 23:00:50 warnes Exp $
+%
 \name{foldchange}
 \alias{foldchange}
 \alias{logratio2foldchange}

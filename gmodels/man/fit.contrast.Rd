@@ -1,5 +1,5 @@
-% $Id: fit.contrast.Rd,v 1.4 2004/09/03 22:44:59 warneg Exp $
-
+% $Id: fit.contrast.Rd,v 1.5 2005/03/31 18:31:32 warnes Exp $
+%
 \name{fit.contrast}
 \alias{fit.contrast}
 \alias{fit.contrast.lm}

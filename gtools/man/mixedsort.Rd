@@ -1,3 +1,5 @@
+% $Id: mixedsort.Rd,v 1.4 2005/04/01 23:00:50 warnes Exp $
+%
 \name{mixedsort}
 \alias{mixedsort}
 \alias{mixedorder}

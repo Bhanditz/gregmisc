@@ -1,3 +1,5 @@
+% $Id: invalid.Rd,v 1.2 2005/04/01 23:00:50 warnes Exp $
+%
 \name{invalid}
 \alias{invalid}
 \title{Test if a value is missing, empty, or contains only NA or NULL values}

@@ -2,6 +2,7 @@
 export(
        CrossTable,
        ci,
+       coefFrame,
        estimable,
        fast.prcomp,
        fast.svd,
@@ -26,4 +27,5 @@ S3method(fit.contrast,lm)
 S3method(fit.contrast,lme)
 
 importFrom(MASS, ginv)
+importFrom(gdata, frameApply)
 

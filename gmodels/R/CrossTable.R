@@ -1,4 +1,4 @@
-## $Id#$
+# $Id: CrossTable.R,v 1.10 2005/03/31 18:31:31 warnes Exp $
 
 CrossTable <- function (x, y,
                         digits = 3,

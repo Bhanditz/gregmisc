@@ -1,0 +1,16 @@
+* using log directory '/data/ncstat/warneg/src/R/gregmisc/gregmisc.Rcheck'
+* checking for file 'gregmisc/DESCRIPTION' ... OK
+* checking if this is a source package ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking package dependencies ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for syntax errors ... OK
+* checking R files for library.dynam ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking for missing documentation entries ... OK
+* checking DVI version of manual ... OK

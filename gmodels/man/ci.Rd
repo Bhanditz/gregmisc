@@ -1,37 +1,4 @@
-% $Id: ci.Rd,v 1.7 2002/08/01 19:37:14 warnes Exp $
-%
-% $Log: ci.Rd,v $
-% Revision 1.7  2002/08/01 19:37:14  warnes
-%
-% - Corrected documentation mismatch for ci, ci.default.
-%
-% - Replaced all occurences of '_' for assignment with '<-'.
-%
-% - Replaced all occurences of 'T' or 'F' for 'TRUE' and 'FALSE' with
-%   the spelled out version.
-%
-% - Updaded version number and date.
-%
-% Revision 1.6  2002/03/26 21:22:35  warneg
-%
-% - Changed methods to include '...' to match the generic.
-% - Updated for version 0.5.1
-%
-% Revision 1.5  2002/02/20 20:09:02  warneg
-%
-% Minor changes, typo and formatting fixes.
-%
-% Revision 1.4  2001/12/07 19:50:50  warneg
-% - Added text noting that lme is now supported.
-%
-% Revision 1.3  2001/10/16 23:14:46  warneg
-%
-% Fixed unbalanced brace.
-%
-% Revision 1.2  2001/08/25 05:52:06  warneg
-% - Added CVS header.
-% - Added my email address.
-%
+% $Id: ci.Rd,v 1.8 2005/03/31 18:31:32 warnes Exp $
 %
 \name{ci}
 \alias{ci}

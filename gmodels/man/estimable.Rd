@@ -1,4 +1,5 @@
-% $Id: estimable.Rd,v 1.12 2004/09/03 17:27:44 warneg Exp $
+% $Id: estimable.Rd,v 1.13 2005/03/31 18:31:32 warnes Exp $
+%
 \name{estimable}
 \alias{estimable}
 \alias{.wald}

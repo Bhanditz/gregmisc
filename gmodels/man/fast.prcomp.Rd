@@ -1,3 +1,5 @@
+% $Id: fast.prcomp.Rd,v 1.4 2005/03/31 18:31:32 warnes Exp $
+%
 \name{fast.prcomp}
 \alias{fast.prcomp}
 \alias{fast.svd}

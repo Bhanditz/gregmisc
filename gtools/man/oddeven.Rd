@@ -1,3 +1,5 @@
+% $Id: oddeven.Rd,v 1.2 2005/04/01 23:00:50 warnes Exp $
+%
 \name{odd}
 \alias{odd}
 \alias{even}

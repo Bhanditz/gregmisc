@@ -1,3 +1,5 @@
+% $Id: dirichlet.Rd,v 1.3 2005/04/01 23:00:50 warnes Exp $
+%
 \name{rdirichlet}
 \alias{rdirichlet}
 \alias{ddirichlet}

@@ -1,5 +1,5 @@
-% $Id: running.Rd,v 1.11 2004/09/27 21:01:21 warneg Exp $
-
+% $Id: running.Rd,v 1.12 2005/04/01 23:00:51 warnes Exp $
+%
 \name{running}
 \alias{running}
 \title{Apply a Function Over Adjacent Subsets of a Vector}
