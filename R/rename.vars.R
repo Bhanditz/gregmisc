@@ -1,6 +1,10 @@
-# $Id: rename.vars.R,v 1.3 2001/12/08 01:54:19 warneg Exp $
+# $Id: rename.vars.R,v 1.4 2002/04/09 00:51:30 warneg Exp $
 #
 # $Log: rename.vars.R,v $
+# Revision 1.4  2002/04/09 00:51:30  warneg
+#
+# Checkin for version 0.5.3
+#
 # Revision 1.3  2001/12/08 01:54:19  warneg
 # Changed 'TRUE' to 'TRUE' in parameter list.
 #

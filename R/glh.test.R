@@ -1,6 +1,10 @@
-# $Id: glh.test.R,v 1.6 2002/03/26 21:22:26 warneg Exp $
+# $Id: glh.test.R,v 1.7 2002/04/09 00:51:29 warneg Exp $
 #
 # $Log: glh.test.R,v $
+# Revision 1.7  2002/04/09 00:51:29  warneg
+#
+# Checkin for version 0.5.3
+#
 # Revision 1.6  2002/03/26 21:22:26  warneg
 #
 # - Changed methods to include '...' to match the generic.

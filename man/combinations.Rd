@@ -1,6 +1,10 @@
-% $Id: combinations.Rd,v 1.2 2001/08/25 05:50:58 warneg Exp $
+% $Id: combinations.Rd,v 1.3 2002/04/09 00:51:32 warneg Exp $
 %
 % $Log: combinations.Rd,v $
+% Revision 1.3  2002/04/09 00:51:32  warneg
+%
+% Checkin for version 0.5.3
+%
 % Revision 1.2  2001/08/25 05:50:58  warneg
 % Fixed a typo and a syntax error.
 %

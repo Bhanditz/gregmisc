@@ -1,6 +1,10 @@
-# $Id: plotCI.R,v 1.6 2002/03/20 04:16:32 warneg Exp $
+# $Id: plotCI.R,v 1.7 2002/04/09 00:51:30 warneg Exp $
 #
 # $Log: plotCI.R,v $
+# Revision 1.7  2002/04/09 00:51:30  warneg
+#
+# Checkin for version 0.5.3
+#
 # Revision 1.6  2002/03/20 04:16:32  warneg
 # - Changes to add compatibility with S-Plus 2000.
 #

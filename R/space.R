@@ -1,6 +1,10 @@
-# $Id: space.R,v 1.3 2002/02/04 23:20:29 warneg Exp $
+# $Id: space.R,v 1.4 2002/04/09 00:51:31 warneg Exp $
 #
 # $Log: space.R,v $
+# Revision 1.4  2002/04/09 00:51:31  warneg
+#
+# Checkin for version 0.5.3
+#
 # Revision 1.3  2002/02/04 23:20:29  warneg
 #
 # - Add na.rm parameter and make the default TRUE.

@@ -1,6 +1,27 @@
-# $Id: contrast.lm.Rd,v 1.4 2001/12/10 19:39:58 warneg Exp $
+# $Id: contrast.lm.Rd,v 1.7 2002/08/01 19:37:14 warnes Exp $
 #
 # $Log: contrast.lm.Rd,v $
+# Revision 1.7  2002/08/01 19:37:14  warnes
+#
+# - Corrected documentation mismatch for ci, ci.default.
+#
+# - Replaced all occurences of '_' for assignment with '<-'.
+#
+# - Replaced all occurences of 'T' or 'F' for 'TRUE' and 'FALSE' with
+#   the spelled out version.
+#
+# - Updaded version number and date.
+#
+# Revision 1.6  2002/04/15 21:30:39  warneg
+# - Separated out, then commented out mention of contrast.lme and lme
+#   objects.  The contrast.lme function will become part of Bates and
+#   Pinhiero's next NLME library.
+#
+# Revision 1.5  2002/04/05 18:27:25  warneg
+#
+# - Noted that contrats.lm can be applied to lme objects.
+# - Clarified return value when conf.int is specified.
+#
 # Revision 1.4  2001/12/10 19:39:58  warneg
 # renamed contrast.factor.Rd back to contrast.lm.Rd corresponding to rename of function.
 #
@@ -25,16 +46,18 @@
 
 \name{contrast.lm}
 \alias{contrast.lm}
+%\alias{contrast.lme}
 \title{Compute (and test) arbitrary contrasts for regression objects}
 \description{
  Compute (and test) arbitrary contrasts for regression objects.
 }
 \usage{
 contrast.lm(reg, varname, coeff, showall=FALSE, conf.int=NULL)
+%contrast.lme(reg, varname, coeff, showall=FALSE, conf.int=NULL)
 }
 \arguments{
-  \item{reg}{Regression (lm,aov) object for which the contrast(s) will
-    be computed.}
+  \item{reg}{Regression (lm,glm,aov) %,lme)
+    object for which the contrast(s) will be computed.}
   \item{varname}{variable name}
   \item{coeff}{vector or matrix specifying contrasts (one per row).}
   \item{showall}{return all regression coefficients. If \code{TRUE}, all
@@ -48,13 +71,14 @@ contrast.lm(reg, varname, coeff, showall=FALSE, conf.int=NULL)
   }
   
 \details{
-  Computes the specified contrast(s) by calling lm with the appropriate
-  arguments.  A contrast of the form \code{c(1,0,0,-1)} would compare
-  the mean of the first group with the mean of the fourth group.  A
+  Computes the specified contrast(s) by re-fitting the model with the
+  appropriate arguments.  A contrast of the form \code{c(1,0,0,-1)}
+  would compare the mean of the first group with the mean of the fourth group.
 }
 \value{
   Returns a matrix containing estimated coefficients, standard errors, t
-  values, and two-sided p-values.
+  values, two-sided p-values. If conf.int is specified lower and upper
+  confidence limits are also returned.
 }
 \references{Venables & Ripley, Section 6.2}
 \author{ Gregory R. Warnes \email{Gregory\_R\_Warnes\@groton.pfizer.com}}
@@ -63,10 +87,9 @@ contrast.lm(reg, varname, coeff, showall=FALSE, conf.int=NULL)
   \code{\link{contr.treatment}},  \code{\link{contr.poly}}  }
 
 \examples{
-
-y _ rnorm(100)
-x _  cut(rnorm(100, mean=y, sd=0.25),c(-4,-1.5,0,1.5,4))
-reg _ lm(y ~ x)
+y <- rnorm(100)
+x <-  cut(rnorm(100, mean=y, sd=0.25),c(-4,-1.5,0,1.5,4))
+reg <- lm(y ~ x)
 summary(reg)
 
 # look at the group means
@@ -100,7 +123,14 @@ x2 <- rnorm(100,mean=y,sd=0.5)
 reg2 <- lm(y ~ x + x2 )
 contrast.lm(reg2,x,c(-1,0,0,1))
 
-
+% \dontrun{
+% # will work in the next version of nlme
+% library(nlme)
+% data(Orthodont)
+% fm1 <- lme(distance ~ Sex, data = Orthodont,random=~1|Subject) 
+% intervals(fm1)
+% contrast.lme(fm1, "Sex", c(1,0) )
+% }
 }
 \keyword{ models }
 \keyword{ regression }

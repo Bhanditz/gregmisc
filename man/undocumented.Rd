@@ -1,6 +1,10 @@
-# $Id: undocumented.Rd,v 1.3 2002/03/26 21:22:35 warneg Exp $
+# $Id: undocumented.Rd,v 1.4 2002/04/09 00:51:33 warneg Exp $
 #
 # $Log: undocumented.Rd,v $
+# Revision 1.4  2002/04/09 00:51:33  warneg
+#
+# Checkin for version 0.5.3
+#
 # Revision 1.3  2002/03/26 21:22:35  warneg
 #
 # - Changed methods to include '...' to match the generic.

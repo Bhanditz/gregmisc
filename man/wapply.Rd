@@ -1,6 +1,10 @@
-% $Id: wapply.Rd,v 1.5 2001/12/07 23:34:35 warneg Exp $
+% $Id: wapply.Rd,v 1.6 2002/04/09 00:51:33 warneg Exp $
 %
 % $Log: wapply.Rd,v $
+% Revision 1.6  2002/04/09 00:51:33  warneg
+%
+% Checkin for version 0.5.3
+%
 % Revision 1.5  2001/12/07 23:34:35  warneg
 %
 % Fixed an problem where \code was incorrectly delimited by parens

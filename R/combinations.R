@@ -1,6 +1,10 @@
-# $Id: combinations.R,v 1.1 2001/06/29 13:23:55 warneg Exp $
+# $Id: combinations.R,v 1.2 2002/04/09 00:51:29 warneg Exp $
 #
 # $Log: combinations.R,v $
+# Revision 1.2  2002/04/09 00:51:29  warneg
+#
+# Checkin for version 0.5.3
+#
 # Revision 1.1  2001/06/29 13:23:55  warneg
 #
 # Initial revision.

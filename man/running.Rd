@@ -1,6 +1,10 @@
-% $Id: running.Rd,v 1.3 2002/03/07 23:39:00 warneg Exp $
+% $Id: running.Rd,v 1.4 2002/04/09 00:51:33 warneg Exp $
 %
 % $Log: running.Rd,v $
+% Revision 1.4  2002/04/09 00:51:33  warneg
+%
+% Checkin for version 0.5.3
+%
 % Revision 1.3  2002/03/07 23:39:00  warneg
 % - Added documentation and example for running2
 %

@@ -1,7 +1,11 @@
 #
-# $Id: interleave.Rd,v 1.1 2002/02/20 21:41:54 warneg Exp $
+# $Id: interleave.Rd,v 1.2 2002/04/09 00:51:32 warneg Exp $
 #
 # $Log: interleave.Rd,v $
+# Revision 1.2  2002/04/09 00:51:32  warneg
+#
+# Checkin for version 0.5.3
+#
 # Revision 1.1  2002/02/20 21:41:54  warneg
 # Initial checkin.
 #

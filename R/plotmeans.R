@@ -1,6 +1,10 @@
-# $Id: plotmeans.R,v 1.9 2002/03/20 04:17:05 warneg Exp $
+# $Id: plotmeans.R,v 1.10 2002/04/09 00:51:30 warneg Exp $
 #
 # $Log: plotmeans.R,v $
+# Revision 1.10  2002/04/09 00:51:30  warneg
+#
+# Checkin for version 0.5.3
+#
 # Revision 1.9  2002/03/20 04:17:05  warneg
 # - Changes to add compatibility with S-Plus 2000
 #

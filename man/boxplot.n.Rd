@@ -1,6 +1,10 @@
-% $Id: boxplot.n.Rd,v 1.2 2001/08/25 05:46:21 warneg Exp $
+% $Id: boxplot.n.Rd,v 1.3 2002/04/09 00:51:31 warneg Exp $
 %
 % $Log: boxplot.n.Rd,v $
+% Revision 1.3  2002/04/09 00:51:31  warneg
+%
+% Checkin for version 0.5.3
+%
 % Revision 1.2  2001/08/25 05:46:21  warneg
 % Added CVS header.
 %

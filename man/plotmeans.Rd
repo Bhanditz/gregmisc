@@ -1,6 +1,10 @@
-% $Id: plotmeans.Rd,v 1.7 2001/12/12 01:37:33 warneg Exp $
+% $Id: plotmeans.Rd,v 1.8 2002/04/09 00:51:32 warneg Exp $
 %
 % $Log: plotmeans.Rd,v $
+% Revision 1.8  2002/04/09 00:51:32  warneg
+%
+% Checkin for version 0.5.3
+%
 % Revision 1.7  2001/12/12 01:37:33  warneg
 %
 % Added documentation for xaxt parameter.

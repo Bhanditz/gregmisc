@@ -1,6 +1,34 @@
-# $Id: contrast.lm.R,v 1.7 2001/12/10 19:29:21 warneg Exp $
+# $Id: contrast.lm.R,v 1.11 2002/08/01 19:37:14 warnes Exp $
 #
 # $Log: contrast.lm.R,v $
+# Revision 1.11  2002/08/01 19:37:14  warnes
+#
+# - Corrected documentation mismatch for ci, ci.default.
+#
+# - Replaced all occurences of '_' for assignment with '<-'.
+#
+# - Replaced all occurences of 'T' or 'F' for 'TRUE' and 'FALSE' with
+#   the spelled out version.
+#
+# - Updaded version number and date.
+#
+# Revision 1.10  2002/04/15 21:28:51  warneg
+# - Separated out, then commented out contrast.lme code.  The
+#   contrast.lme function will become part of Bates and Pinhiero's NLME
+#   library.
+#
+# Revision 1.9  2002/04/09 00:51:29  warneg
+#
+# Checkin for version 0.5.3
+#
+# Revision 1.8  2002/04/05 18:23:17  warneg
+#
+# - Updated contrast.lm to handle lme objects
+# - Modified contrast.lm to compute confidence intervals even when
+#   showall is true.
+# - Added check and warning if conf.int is outside (0,1).  This will ensuere
+#   that conf.int=TRUE does not cause nonsense results.
+#
 # Revision 1.7  2001/12/10 19:29:21  warneg
 # incorrectly put contrast.coeff.R (now estimable.R) here.  Now correctly put contrast.factor.R back here
 #
@@ -30,8 +58,12 @@
 # work in S-Plus.
 #
 
-contrast.lm _ function(reg, varname, coeff, showall=FALSE, conf.int=NULL)
+contrast.lm <- function(reg, varname, coeff, showall=FALSE, conf.int=NULL)
 {
+  # check class of reg
+  if( !("lm" %in% class(reg)) )
+    stop("contrast.lm can only be applied to of or inheriting from 'lm'.")
+  
   # make sure we have the NAME of the variable
   if(!is.character(varname))
      varname <- deparse(substitute(varname))
@@ -56,7 +88,7 @@ contrast.lm _ function(reg, varname, coeff, showall=FALSE, conf.int=NULL)
   cn <- paste(" C",1:ncol(cmat),sep="")
   cn[1:nrow(coeff)] <- rownames(coeff)
   colnames(cmat) <- cn
-  
+
   # call lm with the specified contrast
   m <- reg$call
   if(is.null(m$contrasts))
@@ -66,35 +98,122 @@ contrast.lm _ function(reg, varname, coeff, showall=FALSE, conf.int=NULL)
     r <- eval(m, parent.frame())
   else
     r <- eval(m)
-	
+
   # now return the correct elements ....
-  retval <- coef(summary(r))
+  sreg <- summary(r)
+  retval <- cbind(coef(sreg), "DF"=sreg$df[2])
 
-  if(showall) return(retval)
-  
-  if( !is.R() && ncol(cmat)==1 )
+  if( !showall )
     {
-      retval <- retval[varname,,drop=FALSE]
-      rownames(retval) <- rn
-    }
-  else
-    {
-      rn <- paste(varname,rownames(coeff),sep="")
-      ind <- match(rn,rownames(retval))
-      retval <- retval[ind,,drop=FALSE]
-    }
+      if( !is.R() && ncol(cmat)==1 )
+        {
+          retval <- retval[varname,,drop=FALSE]
+          rownames(retval) <- rn
+        }
+      else
+        {
+          rn <- paste(varname,rownames(coeff),sep="")
+          ind <- match(rn,rownames(retval))
+          retval <- retval[ind,,drop=FALSE]
+        }
 
-  if(!is.null(conf.int)) # add confidence intervals
-    {
-      df <- summary(reg)$df[2]
-      alpha <- 1-conf.int
-      retval <- cbind( retval,
-                      "lower CI"=retval[,1] - qt(1-alpha/2,df)*retval[,2],
-                      "lower CI"=retval[,1] + qt(1-alpha/2,df)*retval[,2] )
+      if(!is.null(conf.int)) # add confidence intervals
+        {
+          alpha <- 1-conf.int
+          retval <- cbind( retval,
+                          "lower CI"=retval[,1] -
+                          qt(1-alpha/2,retval[,5])*retval[,2],
+                          "lower CI"=retval[,1] +
+                          qt(1-alpha/2,retval[,5])*retval[,2] )
+        }
     }
   
-  retval
+  return(retval[,-5])
 }
+
+
+
+#contrast.lme <- function(reg, varname, coeff, showall=FALSE, conf.int=NULL)
+#{
+#  # check class of reg
+#  if( !("lm" %in% class(reg)) && !("lme" %in% class(reg)) )
+#    stop("contrast.lme can only be applied to 'lme' objects")
+  
+#  # make sure we have the NAME of the variable
+#  if(!is.character(varname))
+#     varname <- deparse(substitute(varname))
+
+#  # make coeff into a matrix 
+#  if(!is.matrix(coeff))
+#    {
+#       coeff <- matrix(coeff, nrow=1)
+#     }
+
+#  # make sure columns are labeled
+#  if (is.null(rownames(coeff)))
+#     {
+#       rn <- vector(length=nrow(coeff))
+#       for(i in 1:nrow(coeff))
+#          rn[i] <- paste(" c=(",paste(coeff[i,],collapse=" "), ")")
+#       rownames(coeff) <- rn
+#     }
+
+#  # now convert into the proper form for the contrast matrix
+#  cmat <- make.contrasts(coeff, ncol(coeff) )
+#  cn <- paste(" C",1:ncol(cmat),sep="")
+#  cn[1:nrow(coeff)] <- rownames(coeff)
+#  colnames(cmat) <- cn
+
+#  # call lm with the specified contrast
+#  m <- reg$call
+#  if(is.null(m$contrasts))
+#    m$contrasts <- list()
+#  m$contrasts[[varname]] <- cmat 
+#  if(is.R())
+#    r <- eval(m, parent.frame())
+#  else
+#    r <- eval(m)
+
+#  # now return the correct elements ....
+#  est <- r$coefficients$fixed
+#  se  <- sqrt(diag(r$varFix))
+#  tval <- est/se
+#  df   <- r$fixDF$X
+#  retval <- cbind(
+#                  "Estimate"= est,
+#                  "Std. Error"= se,
+#                  "t-value"= tval,
+#                  "Pr(>|t|)"=  2 * (1 - pt(abs(tval), df)),
+#                  "DF"=df
+#                  )
+
+#  if( !showall )
+#    {
+#      if( !is.R() && ncol(cmat)==1 )
+#        {
+#          retval <- retval[varname,,drop=FALSE]
+#          rownames(retval) <- rn
+#        }
+#      else
+#        {
+#          rn <- paste(varname,rownames(coeff),sep="")
+#          ind <- match(rn,rownames(retval))
+#          retval <- retval[ind,,drop=FALSE]
+#        }
+
+#      if(!is.null(conf.int)) # add confidence intervals
+#        {
+#          alpha <- 1-conf.int
+#          retval <- cbind( retval,
+#                          "lower CI"=retval[,1] -
+#                          qt(1-alpha/2,retval[,5])*retval[,2],
+#                          "lower CI"=retval[,1] +
+#                          qt(1-alpha/2,retval[,5])*retval[,2] )
+#        }
+#    }
+  
+#  return(retval[,-5])
+#}
 
 
 "make.contrasts" <-  function (contr, how.many) 
