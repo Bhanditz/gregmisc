@@ -1,0 +1,65 @@
+
+R : Copyright 2004, The R Foundation for Statistical Computing
+Version 1.9.0 beta (2004-03-26), ISBN 3-900051-00-3
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for a HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(gregmisc)
+
+Attaching package 'gregmisc':
+
+
+	The following object(s) are masked from package:stats :
+
+	 lowess 
+
+> set.seed(1234)
+> 
+> 
+> ### simple examples
+> # show R version information
+> textplot(version)
+> 
+> # show the alphabet as a single string
+> textplot( paste(letters[1:26], collapse=" ") )
+> 
+> # show the alphabet as a matrix
+> textplot( matrix(letters[1:26], ncol=2))
+> 
+> ### Make a nice 4 way display with two plots and two text summaries
+> 
+> data(iris)
+> par(mfrow=c(2,2))
+> plot( Sepal.Length ~ Species, data=iris, border="blue", col="cyan",
++       main="Boxplot of Sepal Length by Species" )
+> plotmeans( Sepal.Length ~ Species, data=iris, barwidth=2, connect=FALSE,
++            main="Means and 95\% Confidence Intervals\nof Sepal Length by Species")
+> 
+> info <- sapply( split(iris$Sepal.Length, iris$Species),
++                 function(x) round(c(Mean=mean(x), SD=sd(x), N=nobs(x)),2) )
+> 
+> textplot( info, valign="top"  )
+> title("Sepal Length by Species")
+> 
+> reg <- lm( Sepal.Length ~ Species, data=iris )
+> textplot( capture.output(summary(reg)), valign="top")
+Warning messages: 
+1: font width unknown for character 9 
+2: font width unknown for character 9 
+3: font width unknown for character 9 
+4: font width unknown for character 9 
+> title("Regression of Sepal Length by Species")
+> 
+> par(mfrow=c(1,1))
+> 
+> 

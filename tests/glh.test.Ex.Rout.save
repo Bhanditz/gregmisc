@@ -1,0 +1,112 @@
+
+R : Copyright 2004, The R Foundation for Statistical Computing
+Version 1.9.0 beta (2004-03-26), ISBN 3-900051-00-3
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for a HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(gregmisc)
+
+Attaching package 'gregmisc':
+
+
+	The following object(s) are masked from package:stats :
+
+	 lowess 
+
+> set.seed(1234)
+> 
+> 
+> # fit a simple model
+> y <- rnorm(100)
+> x <-  cut(rnorm(100, mean=y, sd=0.25),c(-4,-1.5,0,1.5,4))
+> reg <- lm(y ~ x)
+> summary(reg)
+
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.26554 -0.33860  0.02518  0.35433  1.06396 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  -1.7821     0.1879  -9.482 1.93e-15 ***
+x(-1.5,0]     1.1164     0.1979   5.641 1.71e-07 ***
+x(0,1.5]      2.3240     0.2048  11.348  < 2e-16 ***
+x(1.5,4]      3.8231     0.2561  14.927  < 2e-16 ***
+---
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+
+Residual standard error: 0.4603 on 96 degrees of freedom
+Multiple R-Squared: 0.7963,	Adjusted R-squared: 0.7899 
+F-statistic: 125.1 on 3 and 96 DF,  p-value: < 2.2e-16 
+
+> 
+> # test both group 1 = group 2  and group 3 = group 4
+> # *Note the 0 in the column for the intercept term*
+> 
+> C <- rbind( c(0,-1,0,0), c(0,0,-1,1) )
+> ret <- glh.test(reg, C)
+> ret  # same as 'print(ret) '
+
+	 Test of General Linear Hypothesis 	
+Call:
+glh.test(reg = reg, cm = C)
+F = 46.3603, df1 =  2, df2 = 96, p-value = 8.105e-15 
+
+> summary(ret)
+
+	 Test of General Linear Hypothesis 	
+Regression:  reg 
+
+Null Hypothesis: C %*% Beta-hat = d 
+
+C matrix: 
+     (Intercept) x(-1.5,0] x(0,1.5] x(1.5,4]
+[1,]           0        -1        0        0
+[2,]           0         0       -1        1
+
+d vector: 
+[1] 0 0
+
+C %*% Beta-hat: 
+[1] -1.116398  1.499058
+
+F = 46.3603, df1 =  2, df2 = 96, p-value = 8.105e-15 
+
+> 
+> # To compute a contrast between the first and second level of the factor
+> # 'x' using 'contrast.lm' gives:
+> 
+> contrast.lm( reg, x,c(1,-1,0,0) )
+                  Estimate Std. Error   t value     Pr(>|t|)
+x c=( 1 -1 0 0 ) -1.116398  0.1979220 -5.640597 1.706186e-07
+Warning message: 
+'contrast.lm' is depreciated. Please use 'fit.contrast' instead. in: contrast.lm(reg, x, c(1, -1, 0, 0)) 
+> 	
+> # To test this sampe contrast using 'glh.test', use a contrast matrix
+> # with a zero coefficient for the intercept term.  See the Note section,
+> # above, for an explanation.
+> 
+> C <- rbind( c(0,-1,0,0) )
+> glh.test( reg, C )
+
+	 Test of General Linear Hypothesis 	
+Call:
+glh.test(reg = reg, cm = C)
+F = 31.8163, df1 =  1, df2 = 96, p-value = 1.706e-07 
+
+> 
+> 
+> 

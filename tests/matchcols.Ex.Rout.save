@@ -1,0 +1,74 @@
+
+R : Copyright 2004, The R Foundation for Statistical Computing
+Version 1.9.0 beta (2004-03-26), ISBN 3-900051-00-3
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for a HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(gregmisc)
+
+Attaching package 'gregmisc':
+
+
+	The following object(s) are masked from package:stats :
+
+	 lowess 
+
+> set.seed(1234)
+> 
+> 
+> # create a matrix with a lot of named columns
+> x <- matrix( ncol=30, nrow=5 )
+> colnames(x) <- c("AffyID","Overall Group Means: Control",
++                      "Overall Group Means: Moderate",
++                      "Overall Group Means: Marked",
++                      "Overall Group Means: Severe",
++                      "Overall Group StdDev: Control",
++                      "Overall Group StdDev: Moderate",
++                      "Overall Group StdDev: Marked",
++                      "Overall Group StdDev: Severe",
++                      "Overall Group CV: Control",
++                      "Overall Group CV: Moderate",
++                      "Overall Group CV: Marked",
++                      "Overall Group CV: Severe",
++                      "Overall Model P-value",
++                      "Overall Model: (Intercept): Estimate",
++                      "Overall Model: Moderate: Estimate",
++                      "Overall Model: Marked: Estimate",
++                      "Overall Model: Severe: Estimate",
++                      "Overall Model: (Intercept): Std. Error",
++                      "Overall Model: Moderate: Std. Error",
++                      "Overall Model: Marked: Std. Error",
++                      "Overall Model: Severe: Std. Error",
++                      "Overall Model: (Intercept): t value",
++                      "Overall Model: Moderate: t value",
++                      "Overall Model: Marked: t value",
++                      "Overall Model: Severe: t value",
++                      "Overall Model: (Intercept): Pr(>|t|)",
++                      "Overall Model: Moderate: Pr(>|t|)",
++                      "Overall Model: Marked: Pr(>|t|)",
++                      "Overall Model: Severe: Pr(>|t|)")
+> 
+> # Get the columns which give estimates or p-values
+> # only for marked and severe groups
+> matchcols(x, with=c("Pr", "Std. Error"),
++              without=c("Intercept","Moderate"),
++              method="or"
++           )
+[1] "Overall Model: Marked: Pr(>|t|)"   "Overall Model: Severe: Pr(>|t|)"  
+[3] "Overall Model: Marked: Std. Error" "Overall Model: Severe: Std. Error"
+> 
+> # Get just the column which give the p-value for the intercept
+> matchcols(x, with=c("Intercept", "Pr") )
+[1] "Overall Model: (Intercept): Pr(>|t|)"
+>                      
+> 

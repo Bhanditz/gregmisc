@@ -1,25 +1,25 @@
 
-R : Copyright 2003, The R Development Core Team
-Version 1.7.0  (2003-04-16)
+R : Copyright 2004, The R Foundation for Statistical Computing
+Version 1.9.0 beta (2004-03-26), ISBN 3-900051-00-3
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
-Type `license()' or `licence()' for distribution details.
+Type 'license()' or 'licence()' for distribution details.
 
 R is a collaborative project with many contributors.
-Type `contributors()' for more information.
+Type 'contributors()' for more information and
+'citation()' on how to cite R in publications.
 
-Type `demo()' for some demos, `help()' for on-line help, or
-`help.start()' for a HTML browser interface to help.
-Type `q()' to quit R.
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for a HTML browser interface to help.
+Type 'q()' to quit R.
 
 > library(gregmisc)
-Loading required package: MASS 
 
 Attaching package 'gregmisc':
 
 
-	The following object(s) are masked from package:base :
+	The following object(s) are masked from package:stats :
 
 	 lowess 
 
@@ -126,7 +126,7 @@ F-statistic: 103.8 on 3 and 96 DF,  p-value: < 2.2e-16
 (1 0 0 1 1.83673469387755 1.33673469387755)    1.65662964  0.1601294 10.3455675
 (1 0 0 1 1.91836734693878 1.41836734693878)    1.70856869  0.1602199 10.6639012
 (1 0 0 1 2 1.5)                                1.76050775  0.1607806 10.9497545
-                                               DF     Pr(>|t|)    Lower CI
+                                               DF     Pr(>|t|)    Lower.CI
 (1 0 0 1 -2 0)                                 94 7.966899e-01 -0.42985479
 (1 0 0 1 -1.91836734693878 0)                  94 7.200100e-01 -0.40036700
 (1 0 0 1 -1.83673469387755 0)                  94 6.446312e-01 -0.37104572
@@ -177,7 +177,7 @@ F-statistic: 103.8 on 3 and 96 DF,  p-value: < 2.2e-16
 (1 0 0 1 1.83673469387755 1.33673469387755)    94 0.000000e+00  1.33868894
 (1 0 0 1 1.91836734693878 1.41836734693878)    94 0.000000e+00  1.39044842
 (1 0 0 1 2 1.5)                                94 0.000000e+00  1.44127416
-                                                Upper CI
+                                                Upper.CI
 (1 0 0 1 -2 0)                                 0.5584586
 (1 0 0 1 -1.91836734693878 0)                  0.5774166
 (1 0 0 1 -1.83673469387755 0)                  0.5965410

@@ -1,0 +1,78 @@
+
+R : Copyright 2004, The R Foundation for Statistical Computing
+Version 1.9.0 beta (2004-03-26), ISBN 3-900051-00-3
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for a HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(gregmisc)
+
+Attaching package 'gregmisc':
+
+
+	The following object(s) are masked from package:stats :
+
+	 lowess 
+
+> set.seed(1234)
+> 
+> # Create an Example Data Frame Containing Car x Color data
+> carnames <- c("bmw","renault","mercedes","seat")
+> carcolors <- c("red","white","silver","green")
+> datavals <- round(rnorm(16, mean=100, sd=60),1)
+> data <- data.frame(Car=rep(carnames,4),
++                    Color=rep(carcolors, c(4,4,4,4) ),
++                    Value=datavals )
+> # show the data
+> data
+        Car  Color Value
+1       bmw    red  27.6
+2   renault    red 116.6
+3  mercedes    red 165.1
+4      seat    red -40.7
+5       bmw  white 125.7
+6   renault  white 130.4
+7  mercedes  white  65.5
+8      seat  white  67.2
+9       bmw silver  66.1
+10  renault silver  46.6
+11 mercedes silver  71.4
+12     seat silver  40.1
+13      bmw  green  53.4
+14  renault  green 103.9
+15 mercedes  green 157.6
+16     seat  green  93.4
+> 
+> # generate balloon plot with default scaling
+> balloonplot( data$Car, data$Color, data$Value)
+Warning message: 
+z value(s) below zero detected. These will have zero size. in: balloonplot.default(data$Car, data$Color, data$Value) 
+> 
+> 
+> # show margin label rotation & space expansion, using some long labels
+> levels(data$Car) <- c("BMW: High End, German","Renault: Medium End, French",
++  "Mercedes: High End, German", "Seat: Imaginary, Unknown Producer")
+> 
+> # generate balloon plot with default scaling
+> balloonplot( data$Car, data$Color, data$Value, colmar=3, colsrt=90)
+Warning message: 
+z value(s) below zero detected. These will have zero size. in: balloonplot.default(data$Car, data$Color, data$Value, colmar = 3,  
+> 
+> # Create an example using table
+> xnames <- sample( letters[1:3], 50, replace=2)
+> ynames <- sample( 1:5, 50, replace=2)
+> 
+> tab <- table(xnames, ynames)
+> 
+> balloonplot(tab)
+> 
+> 

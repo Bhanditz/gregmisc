@@ -1,0 +1,58 @@
+
+R : Copyright 2004, The R Foundation for Statistical Computing
+Version 1.9.0 beta (2004-03-26), ISBN 3-900051-00-3
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for a HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(gregmisc)
+
+Attaching package 'gregmisc':
+
+
+	The following object(s) are masked from package:stats :
+
+	 lowess 
+
+> set.seed(1234)
+> 
+> # compound & dose labels
+> Treatment <- c("Control", "Asprin 10mg/day", "Asprin 50mg/day",
++                "Asprin 100mg/day", "Acetomycin 100mg/day",
++                "Acetomycin 1000mg/day")
+> 
+> # ordinary sort puts the dosages in the wrong order
+> sort(Treatment)
+[1] "Acetomycin 1000mg/day" "Acetomycin 100mg/day"  "Asprin 100mg/day"     
+[4] "Asprin 10mg/day"       "Asprin 50mg/day"       "Control"              
+> 
+> # but mixedsort does the 'right' thing
+> mixedsort(Treatment)
+[1] "Acetomycin 100mg/day"  "Acetomycin 1000mg/day" "Asprin 10mg/day"      
+[4] "Asprin 50mg/day"       "Asprin 100mg/day"      "Control"              
+> 
+> # Here is a more complex example
+> x <- rev(c("AA 0.50 ml", "AA 1.5 ml", "AA 500 ml", "AA 1500 ml",
++            "EXP 1", "AA 1e3 ml", "A A A", "1 2 3 A", "NA", NA, "1e2",
++            "", "-", "1A", "1 A", "100", "100A", "Inf"))
+> 
+> mixedorder(x)
+ [1]  7 11  4  5  3  8  2  1  6 12 18 17 16 13 15 14 10  9
+> 
+> mixedsort(x)
+ [1] ""           "1 2 3 A"    "1 A"        "1A"         "100"       
+ [6] "1e2"        "100A"       "Inf"        "-"          "A A A"     
+[11] "AA 0.50 ml" "AA 1.5 ml"  "AA 500 ml"  "AA 1e3 ml"  "AA 1500 ml"
+[16] "EXP 1"      "NA"         NA          
+> # notice that plain numbers, including 'Inf' show up before strings.
+> 
+> 

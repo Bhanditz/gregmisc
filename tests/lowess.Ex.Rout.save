@@ -1,0 +1,42 @@
+
+R : Copyright 2004, The R Foundation for Statistical Computing
+Version 1.9.0 beta (2004-03-26), ISBN 3-900051-00-3
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for a HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(gregmisc)
+
+Attaching package 'gregmisc':
+
+
+	The following object(s) are masked from package:stats :
+
+	 lowess 
+
+> set.seed(1234)
+> 
+> data(cars)
+> 
+> # default method
+> plot(cars, main = "lowess(cars)")
+> lines(lowess(cars), col = 2)
+> lines(lowess(cars, f=.2), col = 3)
+> legend(5, 120, c(paste("f = ", c("2/3", ".2"))), lty = 1, col = 2:3)
+> 
+> # formula method
+> plot(dist ~ speed, data=cars, main = "lowess(cars)")
+> lines(lowess(dist ~ speed, data=cars), col = 2)
+> lines(lowess(dist ~ speed, data=cars, f=.2), col = 3)
+> legend(5, 120, c(paste("f = ", c("2/3", ".2"))), lty = 1, col = 2:3)
+> 
+> 

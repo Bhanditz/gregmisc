@@ -1,6 +1,12 @@
-# $Id: textplot.R,v 1.3 2004/01/21 04:31:25 warnes Exp $
+# $Id: textplot.R,v 1.5 2004/03/30 19:04:53 warnes Exp $
 #
 # $Log: textplot.R,v $
+# Revision 1.5  2004/03/30 19:04:53  warnes
+# - Fix bug in textplot() reported by Wright, Kevin <kevin.d.wright@pioneer.com>.
+#
+# Revision 1.4  2004/03/26 22:16:44  warnes
+# Misc changes.
+#
 # Revision 1.3  2004/01/21 04:31:25  warnes
 # - Mark sprint() as depreciated.
 # - Replace references to sprint with capture.output()
@@ -208,9 +214,9 @@ textplot.character <- function (object,
     slist   <- lapply(object, function(x) unlist(strsplit(x,'\n')))[[1]]
 
     if(length(slist)>1)
-      slist   <- sapply(slist, function(x) unlist(strsplit(x,'')))
+      slist   <- lapply(slist, function(x) unlist(strsplit(x,'')))
     else
-      slist   <- sapply(slist, function(x) strsplit(x,''))
+      slist   <- lapply(slist, function(x) strsplit(x,''))
 
     slen    <- sapply(slist, length)
     slines  <- length(slist)

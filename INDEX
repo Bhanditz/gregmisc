@@ -26,10 +26,9 @@ elem                    Display Information about Elements in a Given
                         Object
 env                     Display Information about All Loaded
                         Environments
-estimable               Compute and test estimable linear functions of
-                        the fitted coefficients (including contrasts)
-                        of regression objects
-factorial               Compute factorial function
+estimable               Contrasts and estimable linear functions of
+                        model coefficients for lm, glm, lme, and geese
+                        objects
 fast.prcomp             Efficient computation of principal components
                         and singular value decompositions.
 fit.contrast            Compute and test arbitrary contrasts for
