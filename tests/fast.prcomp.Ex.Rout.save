@@ -1,6 +1,6 @@
 
 R : Copyright 2004, The R Foundation for Statistical Computing
-Version 1.9.0 beta (2004-03-26), ISBN 3-900051-00-3
+Version 1.9.1 alpha (2004-05-25), ISBN 3-900051-00-3
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -34,22 +34,18 @@ Attaching package 'gregmisc':
 >   tx <- t(x)
 > 
 >   # SVD directly on matrix is SLOW:
->   system.time( val.x <- svd(x)$u )
-[1] 1.27 0.03 1.37 0.00 0.00
+>   val.x <- svd(x)$u
 > 
 >   # SVD on t(matrix) is FAST:
->   system.time( val.tx <- svd(tx)$v )
-[1] 1.30 0.00 1.55 0.00 0.00
+>   val.tx <- svd(tx)$v
 > 
 >   # and the results are equivalent:
 >   max( abs(val.x) - abs(val.tx) )
 [1] 1.649514e-13
 > 
 >   # Time gap dissapears using fast.svd:
->   system.time( val.x <- fast.svd(x)$u )
-[1] 1.23 0.01 1.27 0.00 0.00
->   system.time( val.tx <- fast.svd(tx)$v )
-[1] 1.29 0.00 1.32 0.00 0.00
+>   val.x <- fast.svd(x)$u
+>   val.tx <- fast.svd(tx)$v
 >   max( abs(val.x) - abs(val.tx) )
 [1] 1.649514e-13
 > 
@@ -57,12 +53,10 @@ Attaching package 'gregmisc':
 >   library(stats)
 > 
 >   # prcomp directly on matrix is SLOW:
->   system.time( pr.x <- prcomp(x) )
-[1] 1.60 0.00 1.66 0.00 0.00
+>   pr.x <- prcomp(x)
 > 
 >   # prcomp.fast is much faster
->   system.time( fast.pr.x <- fast.prcomp(x) )
-[1] 1.97 0.02 2.01 0.00 0.00
+>   fast.pr.x <- fast.prcomp(x)
 > 
 >   # and the results are equivalent
 >   max( pr.x$sdev - fast.pr.x$sdev )
@@ -75,4 +69,5 @@ Attaching package 'gregmisc':
 >   # (except for the last and least significant component):
 >   max( abs(pr.x$rotation[,50]) - abs(fast.pr.x$rotation[,50]) )
 [1] 0
+> 
 > 

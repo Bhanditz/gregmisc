@@ -1,6 +1,10 @@
-# $Id: plotCI.R,v 1.8 2003/12/02 16:54:40 warnes Exp $
+# $Id: plotCI.R,v 1.9 2004/05/24 23:43:46 warnes Exp $
 #
 # $Log: plotCI.R,v $
+# Revision 1.9  2004/05/24 23:43:46  warnes
+# Modified to use invalid() to check arguments instead of missing().
+# This fixes some build errors under R-1.9.0-Patched.
+#
 # Revision 1.8  2003/12/02 16:54:40  warnes
 #
 # - Add '...' parameter to call to text to allow user to control size/color/etc.
@@ -55,10 +59,10 @@ plotCI <- function (x, y = NULL,
     x <- x$x 
   }
 
-  if(missing(xlab))
+  if(invalid(xlab))
     xlab <- deparse(substitute(x))
   
-  if(missing(ylab))
+  if(invalid(ylab))
     {
       if(is.null(y))
         {
@@ -82,15 +86,15 @@ plotCI <- function (x, y = NULL,
   else
     z  <- x
   
-  if(missing(ui))
+  if(invalid(ui))
     ui <- z + uiw
-  if(missing(li)) 
+  if(invalid(li)) 
     li <- z - liw
 
-  if(!missing(minbar) && !is.null(minbar) )
+  if(!invalid(minbar))
     li <- ifelse( li < minbar, minbar, li)
 
-  if(!missing(maxbar) && !is.null(maxbar) )
+  if(!invalid(maxbar))
     ui <- ifelse( ui > maxbar, maxbar, ui)
   
    if(err=="y")
@@ -110,7 +114,7 @@ plotCI <- function (x, y = NULL,
     
   if(!add)
     {
-      if(missing(labels) || labels==FALSE )
+      if(invalid(labels) || labels==FALSE )
         plot(x, y, ylim = ylim, xlim=xlim, col=col,
              xlab=xlab, ylab=ylab, ...)
       else

@@ -1,3 +1,201 @@
+2004-05-26 10:56  warnes
+
+	* R/overplot.R: One more fix to get it right.
+
+2004-05-26 09:50  warnes
+
+	* R/overplot.R: Use triple-colon operator ':::' to access
+	  plot.formula from the graphics package.
+
+2004-05-26 09:40  warnes
+
+	* man/: combinations.Rd, read.xls.Rd: Escape underscores in email
+	  addresses so Latex is happy.
+
+2004-05-26 09:21  warnes
+
+	* tests/: CrossTable.Rout.save, env.Ex.Rout.save,
+	  fast.prcomp.Ex.Rout.save, ll.Ex.Rout.save, overplot.Ex.Rout.save,
+	  rename.vars.Ex.Rout.save: Updated to match current output.
+
+2004-05-26 09:20  warnes
+
+	* tests/: CrossTable.Ex.R, aggregate.table.Ex.R, balloonplot.Ex.R,
+	  bandplot.Ex.R, barplot2.Ex.R, boxplot.n.Ex.R, capture.Ex.R,
+	  ci.Ex.R, colorpanel.Ex.R, combinations.Ex.R, combine.Ex.R,
+	  contrast.lm.Ex.R, dirichlet.Ex.R, elem.Ex.R, env.Ex.R,
+	  estimable.Ex.R, fast.prcomp.Ex.R, fit.contrast.Ex.R,
+	  foldchange.Ex.R, glh.test.Ex.R, heatmap.2.Ex.R, hist2d.Ex.R,
+	  interleave.Ex.R, is.what.Ex.R, keep.Ex.R, ll.Ex.R, logit.Ex.R,
+	  lowess.Ex.R, make.contrasts.Ex.R, matchcols.Ex.R, mixedsort.Ex.R,
+	  nobs.Ex.R, oddeven.Ex.R, ooplot.Ex.R, overplot.Ex.R,
+	  permute.Ex.R, plotCI.Ex.R, plotmeans.Ex.R, qqnorm.aov.Ex.R,
+	  quantcut.Ex.R, rename.vars.Ex.R, reorder.Ex.R, rtPCR.Ex.R,
+	  running.Ex.R, sinkplot.Ex.R, smartlegend.Ex.R, space.Ex.R,
+	  textplot.Ex.R, trim.Ex.R, undocumented.Ex.R, wapply.Ex.R: These
+	  tests were added some time ago, but were not checked in.
+
+2004-05-26 09:19  warnes
+
+	* man/rich.color.Rd: Replace 'F' by 'FALSE' to pass R CMD check.
+
+2004-05-26 09:18  warnes
+
+	* R/combinations.R: Replace 'T' with 'TRUE' to pass R CMD check.
+
+2004-05-25 14:45  warnes
+
+	* src/: Makefile, xls2csv.in, xls2csv.pl, xls2csv.pl.in: More
+	  changes to xls2csv code.
+
+2004-05-25 14:32  warnes
+
+	* R/overplot.R: Work around bug in R 1.9.X due to plot.formula()
+	  not having the same arguments as plot().
+
+2004-05-25 13:35  warnes
+
+	* R/Args.R, man/Args.Rd: Add Args() function contributed by Arni
+	  Magnusson <arnima@u.washington.edu>.
+
+2004-05-25 13:33  warnes
+
+	* R/rich.color.R, man/rich.color.Rd: Add rich.colors() submitted by
+	  Arni Magnusson <arnima@u.washington.edu>.
+
+2004-05-25 13:14  warnes
+
+	* R/read.xls.R:
+	  - Change to call perl directly rather than depending on the
+	  installed shell script.  This should make the code more portable
+	  to MS-Windows systes.
+
+	  - Add additional commants..
+
+2004-05-25 13:11  warnes
+
+	* R/combinations.R: Remove extraneous comments.
+
+2004-05-25 13:08  warnes
+
+	* R/combinations.R: Fix an error in the code when using
+	  repeats.allow=T and r>2.  Bug report and fix both due to
+	  Elizabeth Purdom <epurdom@stanford.edu>.
+
+2004-05-25 11:18  warnes
+
+	* tests/: CrossTable.Rout.save, env.Ex.Rout.save,
+	  rename.vars.Rout.save: Update test output for R-1.9.0-Patched
+	  (pre 1.9.1).
+
+2004-05-25 10:53  warnes
+
+	* src/: Makefile, xls2csv.bat.in, xls2csv.in, xls2csv.pl.in:
+	  Makefile now modifies xls2csv.bat xls2csv.pl and xls2csv to
+	  contain an explicit path to the perl script/libraries.
+
+2004-05-25 07:43  warnes
+
+	* DESCRIPTION: Bump version number to 1.11.0 to reflect the actual
+	  'production' status of the package.
+
+2004-05-25 07:41  warnes
+
+	* src/Makefile: R CMD build calls the clean target to purge build
+	  files from the source tree when packaging.  To get use this
+	  behavior correctly, I've renamed the clean target to cleanup and
+	  distclean target to clean.
+
+2004-05-25 07:35  warnes
+
+	* R/read.xls.R, man/read.xls.Rd: Add read.xls(), a function to read
+	  Microsoft Excel files by translating them to csv files via the
+	  xls2csv.pl script.
+
+2004-05-24 22:58  warnes
+
+	* R/ooplot.R, man/ooplot.Rd: ??
+
+2004-05-24 22:57  warnes
+
+	* R/CrossTable.R, man/CrossTable.Rd: Updates from Mark Schwartz.
+
+2004-05-24 22:46  warnes
+
+	* src/Makefile: More fixes.  Seems to work now.
+
+2004-05-24 22:42  warnes
+
+	* src/xls2csv.in: Needed dirname instead of basename to get
+	  installation path.
+
+2004-05-24 19:59  warnes
+
+	* inst/xls/iris.xls: Added iris.xls example file.
+
+2004-05-24 19:46  warnes
+
+	* src/: IO-stringy-2.109.tar.gz, Makefile,
+	  OLE-Storage_Lite-0.11.tar.gz,
+	  Spreadsheet-ParseExcel-0.2602.tar.gz, iris.csv.save, iris.xls,
+	  xls2csv.in, xls2csv.pl: Add files to enable inclusion and
+	  installation of xls2csv.pl as part of the package.
+
+2004-05-24 19:43  warnes
+
+	* R/: plotCI.R, plotmeans.R: Modified to use invalid() to check
+	  arguments instead of missing().  This fixes some build errors
+	  under R-1.9.0-Patched.
+
+2004-05-24 13:36  warnes
+
+	* R/invalid.R: Check if argument is a vector before doing is.na to
+	  avoid generating a warning.
+
+2004-05-24 13:17  warnes
+
+	* R/invalid.R, man/invalid.Rd: Add invalid() function for testing
+	  if a parameter value is non-missing, non-NA, non-NULL.
+
+2004-04-27 10:33  warnes
+
+	* R/running.R, man/running.Rd: Replaced argument `as.list' with
+	  `simplify'.  Updated documentation, and updated examples
+	  appropriately.
+
+2004-04-26 12:37  warnes
+
+	* R/running.R, man/running.Rd: Added as.list argument to return one
+	  list element per evaluation.
+
+2004-04-22 11:44  warnes
+
+	* R/ooplot.R, man/ooplot.Rd: Integrate changes from Lodewijk
+	  Bonebakker <bonebakker@comcast.net>
+
+2004-04-13 22:40  warnes
+
+	* inst/tools/Makefile: Add Makefile for updating/installing R
+	  packages from CRAN & BioConductor.
+
+2004-04-13 09:42  warnes
+
+	* R/space.R, man/space.Rd: Add ability to space points along 'y'
+	  direction.
+
+2004-04-13 07:48  warnes
+
+	* DESCRIPTION: Update for 0.10.2
+
+2004-04-13 07:46  warnes
+
+	* NEWS: Updated for 0.10.2
+
+2004-04-13 07:41  warnes
+
+	* man/estimable.Rd: Fix latex warning: it doesn't like double
+	  subscripts.
+
 2004-04-02 14:06  warnes
 
 	* R/smartlegend.R: Fixed smartlegend() positioning when x and/or y

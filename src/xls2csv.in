@@ -1,0 +1,5 @@
+#!/bin/sh
+
+EXECPATH="../perl"
+
+perl ${EXECPATH}/xls2csv.pl $*

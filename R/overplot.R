@@ -2,15 +2,14 @@
 panel.overplot <- function(formula, data, subset, col, lty, ...)
   {
     m <- match.call()
-    m[[1]] <- as.name('plot.formula')
+
+    m[[1]] <- graphics:::plot.formula
     eval(m, parent.frame() )
 
     m[[1]] <- as.name('lowess.formula')
     tmp <- eval(m, parent.frame() )
           
     lines( tmp, col=col, lwd=2, lty=lty )
-        
-
   }
 
 overplot <- function (formula, data = parent.frame(),
@@ -26,7 +25,6 @@ overplot <- function (formula, data = parent.frame(),
                       f=2/3,
                       ... )
 {
-
   ###
   # check that the formula had the right form
   ###

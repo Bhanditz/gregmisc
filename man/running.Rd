@@ -1,6 +1,13 @@
-% $Id: running.Rd,v 1.6 2004/03/26 22:19:18 warnes Exp $
+% $Id: running.Rd,v 1.8 2004/04/27 14:33:28 warnes Exp $
 %
 % $Log: running.Rd,v $
+% Revision 1.8  2004/04/27 14:33:28  warnes
+% Replaced argument `as.list' with `simplify'.  Updated documentation,
+% and updated examples appropriately.
+%
+% Revision 1.7  2004/04/26 16:37:02  warnes
+% Added simplify argument to return one list element per evaluation.
+%
 % Revision 1.6  2004/03/26 22:19:18  warnes
 % - Update to match changes in running()
 % - Add examples to illustrate new arguments.
@@ -31,8 +38,8 @@
   taking a fixed number of previous points.}
 \usage{
 running(X, Y=NULL, fun=mean, width=min(length(X), 20),
-        allow.fewer=FALSE, pad=FALSE, align=c("right", "center", "left"),
-        ...)
+        allow.fewer=FALSE, pad=FALSE, align=c("right", "center","left"),
+        simplify=TRUE, ...)
 }
 \arguments{
   \item{X}{ data vector }
@@ -55,7 +62,12 @@ running(X, Y=NULL, fun=mean, width=min(length(X), 20),
     subsets only at the end of the data so that the complete subsets
     are `left aligned', and "center" allows short subsets at both ends
     of the data so that complete subsets are `centered'. 
-    }
+  }
+  \item{simplify}{Boolean.  If FALSE the returned object will be a list
+    containing one element per evaluation.  If TRUE, the returned
+    object will be coerced into a vector (if the computation returns a
+    scalar) or a matrix (if the computation returns multiple values).
+    Defaults to FALSE.}
   \item{\dots}{ parameters to be passed to \code{fun} }
 }
 \details{
@@ -64,29 +76,38 @@ running(X, Y=NULL, fun=mean, width=min(length(X), 20),
   \code{Y} is specified the function must be bivariate.
 }
 \value{
-  Vector containg the results of applying the function \code{fun} to the
+  List (if \code{simplify==TRUE}), vector, or matrix containg the
+  results of applying the function \code{fun} to the
   subsets of \code{X} (\code{running}) or \code{X} and \code{Y}.
+
+  Note that this function will create a vector or matrix even for
+  objects which are not simplified by \code{sapply}. 
 }
 \author{ Gregory R. Warnes \email{Gregory\_R\_Warnes@groton.pfizer.com} }
 \seealso{ \code{\link{wapply}} to apply a function over an x-y window
-  centered at each x point }
+  centered at each x point, \code{\link[base]{sapply}},
+  \code{\link[base]{lapply}} }
 
 \examples{
 
 # show effect of pad
-running(1:20,width=5)
-running(1:20,width=5,pad=TRUE)
+running(1:20, width=5)
+running(1:20, width=5, pad=TRUE)
 
 # show effect of align
-running(1:20,width=5, align="left", pad=TRUE)
-running(1:20,width=5, align="center", pad=TRUE)
-running(1:20,width=5, align="right", pad=TRUE)
+running(1:20, width=5, align="left", pad=TRUE)
+running(1:20, width=5, align="center", pad=TRUE)
+running(1:20, width=5, align="right", pad=TRUE)
+
+# show effect of simplify
+running(1:20, width=5, fun=function(x) x )  # matrix
+running(1:20, width=5, fun=function(x) x, simplify=FALSE) # list
 
 # Use 'pad' to ensure correct length of vector, also show the effect
 # of allow.fewer.
 par(mfrow=c(2,1))
-plot(1:20, running(1:20,width=5, allow.fewer=FALSE, pad=TRUE), type="b")
-plot(1:20, running(1:20,width=5, allow.fewer=TRUE,  pad=TRUE), type="b")
+plot(1:20, running(1:20, width=5, allow.fewer=FALSE, pad=TRUE), type="b")
+plot(1:20, running(1:20, width=5, allow.fewer=TRUE,  pad=TRUE), type="b")
 par(mfrow=c(1,1))
 
 # plot running mean and central 2 standard deviation range

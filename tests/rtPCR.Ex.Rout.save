@@ -1,6 +1,6 @@
 
 R : Copyright 2004, The R Foundation for Statistical Computing
-Version 1.9.0 beta (2004-03-26), ISBN 3-900051-00-3
+Version 1.9.1 alpha (2004-05-25), ISBN 3-900051-00-3
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -38,7 +38,6 @@ Attaching package 'gregmisc':
 +          xlab="Concentration (ug/ml)",
 +          ylab="Relative Gene Quantification"
 +          )
-Error in eval(expr, envir, enclos) : couldn't find function "plot.formula"
 > 
 > # different scales, but force lower limit to 0.01 
 > overplot( RQ ~ Conc..ug.ml. | Test.Substance,
@@ -51,5 +50,4 @@ Error in eval(expr, envir, enclos) : couldn't find function "plot.formula"
 +          ylab="Relative Gene Quantification",
 +          min.y=0.01
 +          )
-Error in eval(expr, envir, enclos) : couldn't find function "plot.formula"
 > 

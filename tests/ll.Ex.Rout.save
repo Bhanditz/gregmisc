@@ -1,6 +1,6 @@
 
 R : Copyright 2004, The R Foundation for Statistical Computing
-Version 1.9.0 beta (2004-03-26), ISBN 3-900051-00-3
+Version 1.9.1 alpha (2004-05-25), ISBN 3-900051-00-3
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -129,7 +129,7 @@ LETTERS                      character  0
 La.chol                       function  0
 La.chol2inv                   function  1
 La.eigen                      function 11
-La.svd                        function 26
+La.svd                        function 27
 MacRoman                       integer  1
 Machine                       function  0
 Math.Date                     function  0
@@ -229,11 +229,12 @@ args                          function  0
 array                         function  4
 as.Date                       function  0
 as.Date.POSIXct               function  1
+as.Date.POSIXlt               function  0
 as.Date.character             function  6
 as.Date.date                  function  2
 as.Date.dates                 function  4
 as.Date.default               function  2
-as.Date.factor                function  1
+as.Date.factor                function  0
 as.POSIXct                    function  0
 as.POSIXct.Date               function  1
 as.POSIXct.POSIXlt            function  2
@@ -452,7 +453,7 @@ duplicated.default            function  1
 duplicated.matrix             function  4
 dyn.load                      function  1
 dyn.unload                    function  0
-eigen                         function 33
+eigen                         function 34
 environment                   function  0
 environment<-                 function  0
 environmentIsLocked           function  0
@@ -519,7 +520,7 @@ getCConverterStatus           function  1
 getConnection                 function  1
 getExportedValue              function  4
 getHook                       function  1
-getNamespace                  function  1
+getNamespace                  function  4
 getNamespaceExports           function  1
 getNamespaceImports           function  1
 getNamespaceInfo              function  1
@@ -676,6 +677,7 @@ mean.POSIXct                  function  1
 mean.POSIXlt                  function  1
 mean.data.frame               function  0
 mean.default                  function  8
+mean.difftime                 function  5
 mem.limits                    function  1
 memory.profile                function  0
 merge                         function  0
@@ -959,7 +961,7 @@ summary.factor                function  5
 summary.matrix                function  0
 summary.table                 function  8
 suppressWarnings              function  1
-svd                           function 20
+svd                           function 19
 sweep                         function  3
 switch                        function  0
 symbol.C                      function  0

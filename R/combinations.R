@@ -1,21 +1,5 @@
-# $Id: combinations.R,v 1.3 2002/09/23 13:38:53 warnes Exp $
+# $Id: combinations.R,v 1.6 2004/05/26 13:18:45 warnes Exp $
 #
-# $Log: combinations.R,v $
-# Revision 1.3  2002/09/23 13:38:53  warnes
-#
-# - Added CrossTable() and barplot2() code and docs contributed by Marc Schwartz.
-# - Permit combinations() to be used when r>n provided repeat.allowed=TRUE
-# - Bumped up version number
-#
-# Revision 1.2  2002/04/09 00:51:29  warneg
-#
-# Checkin for version 0.5.3
-#
-# Revision 1.1  2001/06/29 13:23:55  warneg
-#
-# Initial revision.
-#
-
 
 ##
 ## From email by Brian D Ripley <ripley@stats.ox.ac.uk> to r-help
@@ -94,7 +78,9 @@ permutations <- function(n, r, v = 1:n, set = TRUE, repeats.allowed=FALSE)
         {
           inner  <-  Recall(n, r-1, v)
           cbind( rep( v, rep(nrow(inner),n)  ),
-                 matrix( inner, ncol=ncol(inner), nrow=nrow(inner) * n ) )
+                 matrix( t(inner), ncol=ncol(inner), nrow=nrow(inner) * n ,
+                        byrow=TRUE )
+                )
         }
       }
   else

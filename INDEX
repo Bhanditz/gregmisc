@@ -1,3 +1,4 @@
+Args                    Formatted Argument List of a Function
 CrossTable              Cross Tabulation with Tests for Factor
                         Independence
 aggregate.table         Create 2-Way Table of Summary Statistics
@@ -21,7 +22,6 @@ combine                 Combine R Objects With a Column Labeling the
 contrast.lm             Compute and test arbitrary contrasts for
                         regression objects (Depreciated, use
                         'fit.contrasts' instead.)
-rdirichlet              Functions for the Dirichlet Distribution
 elem                    Display Information about Elements in a Given
                         Object
 env                     Display Information about All Loaded
@@ -39,7 +39,10 @@ glh.test                Test a General Linear Hypothesis for a
                         Regression Model
 heatmap.2               Draw a Heat Map
 hist2d                  Compute and Plot a 2-Dimensional Histogram
+iapply                  Undocumented functions
 interleave              Interleave Rows of Data Frames or Matrices
+invalid                 Test if a value is missing, empty, or contains
+                        only NA or NULL values
 is.what                 Run Multiple is.* Tests on a Given Object
 keep                    Remove All Objects, Except Those Specified
 ll                      Display Information about Objects in a Given
@@ -62,8 +65,11 @@ qqnorm.aov              Makes a half or full normal plot for the
                         effects from an aov model
 quantcut                Create a Factor Variable Using the Quantiles
                         of a Continuous Variable
-rename.vars             Rename variables in a dataframe
+rdirichlet              Functions for the Dirichlet Distribution
+read.xls                Read Excel files
+rename.vars             Remove or rename variables in a dataframe
 reorder.factor          Reorder the Levels of a Factor
+rich.colors             Rich color palettes
 rtPCR                   Teratogenesis rtPCR data
 running                 Apply a Function Over Adjacent Subsets of a
                         Vector
@@ -76,6 +82,5 @@ space                   Space points in an x-y plot so they don't
 textplot                Display text information in a graphics plot.
 trim                    Remove leading and trailing spaces from
                         character strings
-undocumented            Undocumented functions
 wapply                  Compute the Value of a Function Over a Local
                         Region Of An X-Y Plot

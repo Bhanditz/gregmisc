@@ -1,0 +1,5 @@
+@echo off
+
+SET EXECPATH="../perl"
+
+perl %EXECPATH%/xls2csv.pl %1 %2 %3 %4 %5
