@@ -1,6 +1,16 @@
-# $Id: lowess.R,v 1.6 2003/01/02 16:07:35 warnes Exp $
+# $Id: lowess.R,v 1.8 2003/03/07 15:43:44 warnes Exp $
 #
 # $Log: lowess.R,v $
+# Revision 1.8  2003/03/07 15:43:44  warnes
+# - Add 'NULL' as the last element of if statement that defines
+#   lowess.default so that when the file is sourced, S-Plus doesn't
+#   display the function definition.
+#
+# Revision 1.7  2003/03/07 15:41:44  warnes
+#
+# - Specify where the defualt lowess function should be found.
+# - Use getFunction in S-Plus instead of 'get'
+#
 # Revision 1.6  2003/01/02 16:07:35  warnes
 #
 # - Added wrapper code so that R-specific fiddling won't be executed
@@ -14,21 +24,26 @@
 if(is.R())
   {
     # make original lowess into the default method
-    lowess.default  <- get("lowess",pos=NULL, mode="function")
+    lowess.default  <- get("lowess",pos="package:base", mode="function")
 
     lowess  <- function(x,...)
       UseMethod("lowess")
 
     # add "..." to the argument list to match the generic
     formals(lowess.default) <- c(formals(lowess.default),alist(...= ))
+
+    NULL
+
   } else
   {
 
     # make original lowess into the default method
-    lowess.default  <- get("lowess", mode="function")
+    lowess.default  <- getFunction("lowess",where="main")
 
     lowess  <- function(x,...)
       UseMethod("lowess")
+
+    NULL
   }
 
 
