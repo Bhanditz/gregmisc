@@ -1,0 +1,1737 @@
+2004-02-02 11:26  warnes
+
+	* R/colorpanel.R, man/colorpanel.Rd:
+	  - Add colorpanel function, which generates a smoothly varying
+	  band of   colors over a three color range (lo, mid, high).
+
+2004-02-02 11:21  warnes
+
+	* DESCRIPTION: Update version number for new release.
+
+2004-01-21 07:10  warnes
+
+	* TODO: Add TODO to contain 'to do' list.
+
+2004-01-21 07:07  warnes
+
+	* man/textplot.Rd: - Correct arguments to halign to match code.
+
+2004-01-21 07:06  warnes
+
+	* R/reorder.R, man/reorder.Rd: - Add ... argument to match generic
+	  provided in mva.
+
+2004-01-21 00:17  warnes
+
+	* R/lowess.R: Track R 1.9.0's move of 'lowess' from the base
+	  package to the (new) stats package.
+
+2004-01-20 23:48  warnes
+
+	* DESCRIPTION: Updated for 0.8.8 release.
+
+2004-01-20 23:44  warnes
+
+	* man/sinkplot.Rd: - Fix sinkplot() example by replacing 'T' with
+	  'TRUE'.
+
+2004-01-20 23:42  warnes
+
+	* man/ooplot.Rd: - Add some more details to the ooplot()
+	  documentation.  The	documentation is *not* complete.
+
+2004-01-20 23:31  warnes
+
+	* R/: capture.R, textplot.R: - Mark sprint() as depreciated.  -
+	  Replace references to sprint with capture.output() - Use
+	  match.arg for halign and valign arguments to textplot.default.  -
+	  Fix textplot.character so that a vector of characters is properly
+	  displayed. Previouslt, character vectors were plotted on top of
+	  each	 other.
+
+2004-01-19 18:43  warnes
+
+	* R/sinkplot.R, man/sinkplot.Rd:
+	  New function sinkplot(), as requested on R-devel by Kevin Wright
+	  <kwright@eskimo.com> in
+	  https://www.stat.math.ethz.ch/pipermail/r-devel/2004-January/028483.html.
+
+2004-01-19 17:45  warnes
+
+	* R/elem.R, R/env.R, R/ll.R, man/keep.Rd, man/ll.Rd: - Integrated
+	  (partial) patch submitted by Arni Magnusson to clarify help text.
+	  - Modifed code to use match.arg().
+
+2004-01-15 00:14  warnes
+
+	* R/ooplot.R, man/ooplot.Rd:
+	  Add initial code and docs for ooplot() function submitted by
+	  Lodewijk Bonebakker <bonebakker@comcast.net>.
+
+2003-12-15 16:07  warnes
+
+	* R/env.R:
+	  - Applied patch from Arni that fixed a bug that caused env() to
+	  crash   if any environment was completely empty
+
+2003-12-02 21:49  warnes
+
+	* DESCRIPTION:
+	  - Updated for version 0.8.7
+
+2003-12-02 21:47  warnes
+
+	* tests/: ci.Rout.save, fit.contrast-2003-11-17-UH.R,
+	  fit.contrast-2003-11-17-UH.Rout.save:
+	  - minor fixes
+
+2003-12-02 21:46  warnes
+
+	* man/: elem.Rd, foldchange.Rd, ll.Rd, lowess.Rd, textplot.Rd,
+	  wapply.Rd: - match function argument defaults with 'usage'
+
+2003-12-02 21:42  warnes
+
+	* R/heatmap.2.R, man/heatmap.2.Rd:
+	  - Fix buglets in heatmap function - Make a slight enhancement to
+	  the example code.
+
+2003-12-02 17:49  warnes
+
+	* R/heatmap.2.R:
+	  Integrated some suggestions from Sean Davis
+	  <sdavis2@mail.nih.gov>.
+
+2003-12-02 13:22  warnes
+
+	* man/heatmap.2.Rd: - Make final example use 16 colors instead of
+	  8.  This looks nicer.
+
+2003-12-02 12:45  warnes
+
+	* tests/fit.contrast-2003-11-17-UH.Rout.save:
+	  - Remove no-longer-present warning on loading the gregmisc
+	  package.
+
+2003-12-02 12:09  warnes
+
+	* tests/: ci.Rout.save, fit.contrast-2003-11-17-UH.Rout.save:
+	  - Updated ci.R test output to match results under R-1.8.  -
+	  Corrected fit.contrasts-2003-11.17-UH.R test output.
+
+2003-12-02 12:00  warnes
+
+	* man/ll.Rd:
+	  Add one argument, to match code.
+
+2003-12-02 11:58  warnes
+
+	* man/barplot2.Rd:
+	  - Remove '%' character from example code to avoid errors.
+
+2003-12-02 11:54  warnes
+
+	* R/plotCI.R:
+	  - Add '...' parameter to call to text to allow user to control
+	  size/color/etc.
+
+2003-12-01 11:00  warnes
+
+	* man/barplot2.Rd:
+	  - updated to match changes to barplot() in base.
+
+2003-12-01 10:59  warnes
+
+	* data/: rtPCR.Rda, rtPCR.rda:
+	  - Renamed rtPCR.Rda to rtPCR.rda so that R will properly load the
+	  file	 when data(rtPCR) is executed.
+
+2003-12-01 10:56  warnes
+
+	* R/: elem.R, env.R, is.what.R, keep.R, ll.R:
+	  - Apply changes submitted by Arni Magnusson
+
+2003-12-01 10:55  warnes
+
+	* R/barplot2.R:
+	  - Follow patches applied to barplot() in base.
+
+2003-11-24 16:32  warnes
+
+	* man/heatmap.2.Rd:
+	  Fix unbalanced braces.
+
+2003-11-24 10:11  warnes
+
+	* DESCRIPTION:
+	  Updated for release.
+
+2003-11-24 10:09  warnes
+
+	* R/overplot.R, man/overplot.Rd:
+	  Fix errors reported by R CMD check.
+
+2003-11-21 18:13  warnes
+
+	* man/overplot.Rd:
+	  Added missing closing brace.
+
+2003-11-21 18:08  warnes
+
+	* data/rtPCR.Rda, man/rtPCR.Rd:
+	  Initial addition of these files.  Used in examples of overplot().
+
+2003-11-21 18:00  warnes
+
+	* man/foldchange.Rd:
+	  Removed 'deqn' call that was confusing things.
+
+2003-11-21 17:59  warnes
+
+	* R/heatmap.2.R, man/heatmap.2.Rd:
+	  Applied my enhancements to the heatmap() code from R 1.8.0, and
+	  added documentation of these changes.
+
+2003-11-21 17:58  warnes
+
+	* R/overplot.R, man/overplot.Rd:
+	  - Discovered that axis(N) does the right thing without needing to
+	  be   given location for tick marks.  This allowed simplification
+	  of the code.
+
+	  - Minor other changes for distribution
+
+	  - Addition of overplot.Rd documentation.
+
+2003-11-21 15:54  warnes
+
+	* man/logit.Rd: Add email address to author field
+
+2003-11-21 15:35  warnes
+
+	* R/foldchange.R, man/foldchange.Rd:
+	  - new files
+
+2003-11-21 14:55  warnes
+
+	* tests/fit.contrast-2003-11-17-UH.Rout.save:
+	  Updated correct output.
+
+2003-11-21 14:54  warnes
+
+	* R/mixedsort.R, man/mixedsort.Rd:
+	  - Change 'T' to 'TRUE' in mixedsort.R - Add missing brace in
+	  mixedsort.Rd
+
+2003-11-21 14:50  warnes
+
+	* R/heatmap.2.R, man/heatmap.2.Rd:
+	  - Integrated my extensions into the R 1.8.0 version of heatmap.
+	  - Add Rd documentation.
+
+2003-11-20 10:56  warnes
+
+	* R/oddeven.R, man/oddeven.Rd:
+	  - Move 'odd' and 'even' functions to a separate file & provide
+	  documentation
+
+2003-11-19 09:54  warnes
+
+	* man/: env.Rd, is.what.Rd, keep.Rd, ll.Rd:
+	  Changes to pass R CMD check.
+
+2003-11-19 09:52  warnes
+
+	* man/bandplot.Rd:
+	  Remove extranious NULL that confused R CMD check.
+
+2003-11-18 17:47  warnes
+
+	* R/mixedsort.R, R/smartsort.R, man/mixedsort.Rd:
+	  - Renamed smartsort to mixedsort and added documentation.
+
+2003-11-18 13:59  warnes
+
+	* man/barplot2.Rd:
+	  - Tiny fix to remove R CMD check error.
+
+2003-11-18 13:58  warnes
+
+	* man/smartlegend.Rd:
+	  - Added missing closing brace.
+
+2003-11-18 13:45  warnes
+
+	* R/: elem.R, env.R, is.what.R, keep.R, ll.R, overplot.R:
+	  - Convert from MS-Dos to Unix line endings.  - Reformat to 80
+	  columns.
+
+2003-11-17 17:09  warnes
+
+	* man/elem.Rd: Replace 'T' with 'TRUE' to remove R CMD check error.
+
+2003-11-17 17:09  warnes
+
+	* man/aggregate.table.Rd: Fix syntax error.
+
+2003-11-17 16:40  warnes
+
+	* R/fit.contrast.R, tests/fit.contrast-2003-11-17-UH.R,
+	  tests/fit.contrast-2003-11-17-UH.Rout.save:
+	  - Fix incorrect handling of glm objects by fit.contrast, as
+	  reported   by Ulrich Halekoh, Phd <ulrich.halekoh@agrsci.dk>.
+
+	  - Add regression test code to for this bug.
+
+2003-11-10 17:11  warnes
+
+	* DESCRIPTION, R/capture.R, R/elem.R, R/env.R, R/heatmap.2.R,
+	  R/is.what.R, R/keep.R, R/ll.R, R/overplot.R, R/plotmeans.R,
+	  R/smartsort.R, R/space.R, R/wapply.R, R/zzz.R, man/capture.Rd,
+	  man/elem.Rd, man/env.Rd, man/is.what.Rd, man/keep.Rd, man/ll.Rd:
+	  - Add files contributed by Arni Magnusson
+	  <arnima@u.washington.edu>. As well as some of my own.
+
+2003-08-19 10:58  warnes
+
+	* R/heatmap.2.R:
+	  - Copy of local changes.
+
+2003-08-19 10:57  warnes
+
+	* R/heatmap.2.R:
+	  - Checkin before re-integrating local changes.
+
+2003-08-06 23:49  warnes
+
+	* R/ci.R: - Fixed incorrect denominator in standard error for mean
+	  in ci.default.
+
+2003-06-19 17:23  warnes
+
+	* R/heatmap.2.R:
+	  - Added enhanced heatmap function.
+
+2003-06-09 11:10  warnes
+
+	* man/smartlegend.Rd:
+	  - Add help text for smartlegend.
+
+2003-06-09 10:57  warnes
+
+	* R/smartlegend.R: - New function smartlegend().
+
+2003-06-07 13:58  warnes
+
+	* man/: aggregate.table.Rd, interleave.Rd:
+	  - Fixed error in examples.  Had sqrt(var(x)/(n-1)) for the
+	  standard   error of the mean instead of sqrt(var(x)/n).
+
+2003-05-28 22:43  warnes
+
+	* R/library.R, man/library.Rd:
+	  - Removed library() function.  It is not needed here and will be
+	  released properly as part of 1.8.0.
+
+2003-05-23 14:32  warnes
+
+	* R/matchcols.R, man/matchcols.Rd:
+	  - Fixed typos
+
+2003-05-23 14:14  warnes
+
+	* R/library.R, R/logit.R, R/matchcols.R, R/zzz.R, man/library.Rd,
+	  man/logit.Rd, man/matchcols.Rd, man/undocumented.Rd:
+	  - library() backported from 1.7-devel.  This version of the
+	  function   adds the "pos=" argument to specify where in the
+	  search path the   library should be placed.
+
+	  - updated .First.lib to use library(...pos=3) for MASS to avoid
+	  the	'genotype' data set in MASS from masking the genotype
+	  funciton in	genetics when it loads gregmisc
+
+	  - Added logit() inv.logit() matchcols() function and
+	  corresponding docs
+
+2003-05-20 12:03  warnes
+
+	* R/interleave.R:
+	  - Omit NULL variables.
+
+2003-05-20 09:16  warnes
+
+	* DESCRIPTION, R/trim.R, man/trim.Rd:
+	  - Added function trim() and assocated docs.
+
+2003-04-22 14:39  warnes
+
+	* tests/fast.prcomp.Rout.save:
+	  - One more try.
+
+2003-04-22 14:29  warnes
+
+	* DESCRIPTION:
+	  - Update version number.
+
+2003-04-22 14:29  warnes
+
+	* tests/: fast.prcomp.R, fast.prcomp.Rout.save,
+	  fit.contrast.Rout.save, plotmeans.Rout.save:
+	  - Modified fast.prcomp.R to test data rather than timings.  -
+	  Added fast.prcomp.R output to CVS.  - fit.contrast.R to generate
+	  a warning message and fail to display one   column.  -
+	  plotmeans.R used to generate a warning message.
+
+2003-04-22 13:39  warnes
+
+	* tests/: CrossTable.Rout.save, aggregate.table.Rout.save,
+	  bandplot.Rout.save, barplot2.Rout.save, boxplot.n.Rout.save,
+	  ci.Rout.save, combinations.Rout.save, combine.Rout.save,
+	  dirichlet.Rout.save, estimable.Rout.save, factorial.Rout.save,
+	  fit.contrast.Rout.save, glh.test.Rout.save, hist2d.Rout.save,
+	  interleave.Rout.save, lowess.Rout.save, make.contrasts.Rout.save,
+	  nobs.Rout.save, plotCI.Rout.save, plotmeans.Rout.save,
+	  quantcut.Rout.save, rename.vars.Rout.save, reorder.Rout.save,
+	  running.Rout.save, space.Rout.save, wapply.Rout.save:
+	  - R 1.7.0 changed the default random number generator.  This
+	  caused   all examples which used randomly generated data to
+	  differ.  This   change the old data with new data generated under
+	  1.7.0.
+
+2003-04-22 13:28  warnes
+
+	* R/plotmeans.R:
+	  - Fixeed warning messing caused when 'connect' is a vector.
+
+2003-04-22 13:24  warnes
+
+	* R/fit.contrast.R:
+	  - the variable 'df' was used within the lme code section
+	  overwriting	the argument 'df'.
+
+2003-04-22 12:00  warnes
+
+	* man/combinations.Rd: - Fixed tpyo in example that allowed
+	  combinations(500,2) to run when   it should have been ignred for
+	  testing..
+
+2003-04-22 11:42  warnes
+
+	* R/reorder.R, man/reorder.Rd:
+	  - The mva package (which is part of recommended) now provides a
+	  generic 'reorder' function.  Consequently, the 'reorder' function
+	    here has been renamed to 'reorder.factor'.
+
+	  - Removed check of whether the argument is a factor object.
+
+2003-04-22 11:34  warnes
+
+	* R/barplot2.R: Update from Marc Schwartz, modified by Gregory
+	  Warnes:
+
+	  -  Modified dim() checks for 'ci.l' and 'ci.u' against 'height'
+	   to remove R v1.7.0 if() based error msgs for vector conditions.
+
+2003-04-22 11:13  warnes
+
+	* R/zzz.R:
+	  - Updated .First.lib() to load mva before MASS, this should
+	  correct   problems when library(gregmisc) is in .Rprofile.
+
+2003-04-10 12:22  warnes
+
+	* man/combinations.Rd:
+	  - Added note about the need to increase options("expressions") to
+	  use	large values for 'n'.  Prompted by bug report from Huan
+	  Huang   <huan.huang@bnpparibas.com
+
+2003-04-04 08:59  warnes
+
+	* DESCRIPTION:
+	  - Version 0.8.3
+
+2003-04-04 08:58  warnes
+
+	* R/RSCompat.S:
+	  - Replace 'T' with 'TRUE'
+
+2003-04-04 08:49  warnes
+
+	* R/balloonplot.R, R/dirichlet.R, man/qqnorm.aov.Rd:
+	  - Change occurences of 'T' to 'TRUE'
+
+2003-04-04 08:46  warnes
+
+	* man/capture.Rd:
+	  - Allow optional arguments to sprint to be passed to print - Fix
+	  R CMD check errors
+
+2003-04-04 08:45  warnes
+
+	* R/capture.R:
+	  - Allow optional arguments to sprint to be passed to print
+
+2003-04-04 08:44  warnes
+
+	* man/textplot.Rd:
+	  - Updated to match changes in textplot function:   - Added
+	  textplot.character   - Renamed arguments "col.margin" and
+	  "row.margin" to "cmar", and	  "rmar" so that specifying
+	  "col='red'" is possible.  - Fixed R CMD check errors - Improve
+	  comments in example - Add textplot.matrix example
+
+2003-04-04 08:41  warnes
+
+	* R/textplot.R:
+
+	  - Added textplot.character to handle character strings.  - Moved
+	  test for vector and matrix arguments to textplot.default.  -
+	  Renamed arguments "col.margin" and "row.margin" to "cmar", and
+	  "rmar" so that specifying "col='red'" is possible.
+
+2003-04-03 08:20  warnes
+
+	* man/capture.Rd:
+	  - Had mistyped 'sprint' as 'sprintf'.
+
+2003-04-03 08:18  warnes
+
+	* man/capture.Rd: - Add help file for capture and sprintf.
+
+2003-04-02 17:29  warnes
+
+	* R/textplot.R, man/textplot.Rd:
+	  - Added textplot function and friends, as well as documentation.
+
+2003-04-02 17:28  warnes
+
+	* R/capture.R:
+	  - Added file 'capture.R' containing capture() and sprint().
+
+2003-03-12 12:58  warnes
+
+	* man/fit.contrast.Rd:
+	  - Fixed a typo in the example - Added to lme example
+
+2003-03-08 11:45  warnes
+
+	* tests/: fit.contrast.Rout~, fit.contrast.R~: - Removed trash
+	  files from repository.
+
+2003-03-08 11:30  warnes
+
+	* man/balloonplot.Rd:
+	  - Forgot to update arglist in \usage section.
+
+2003-03-08 11:26  warnes
+
+	* DESCRIPTION:
+	  - Bumped up version number.
+
+2003-03-08 11:22  warnes
+
+	* R/balloonplot.R, man/balloonplot.Rd:
+	  - Added parameters for rotation of and amount of space allocated
+	  for	the row and column labels.
+
+2003-03-07 10:48  warnes
+
+	* DESCRIPTION, R/RSCompat.S, R/factorial.R, R/fast.prcomp.R,
+	  R/hist2d.R, R/qqnorm.aov.R:
+	  - Minor changes to code to allow the package to be provided as an
+	  S-Plus chapter.
+
+2003-03-07 10:43  warnes
+
+	* R/lowess.R: - Add 'NULL' as the last element of if statement that
+	  defines   lowess.default so that when the file is sourced, S-Plus
+	  doesn't   display the function definition.
+
+2003-03-07 10:41  warnes
+
+	* R/lowess.R:
+	  - Specify where the defualt lowess function should be found.	-
+	  Use getFunction in S-Plus instead of 'get'
+
+2003-03-03 12:48  warnes
+
+	* man/reorder.Rd: - Updated to match reorder.Rd which was exetended
+	  to handle factor   label names in addition to numeric indices.
+
+2003-03-03 12:24  warnes
+
+	* R/reorder.R:
+	  - Added handling of factor level names in addition to numeric
+	  indexes.
+
+2003-01-30 17:04  warnes
+
+	* man/contrast.lm.Rd:
+	  - fixed typo
+
+2003-01-30 17:00  warnes
+
+	* DESCRIPTION:
+	  - New release.
+
+2003-01-30 16:58  warnes
+
+	* tests/contrast.lm.Rout.save:
+	  - Renamed to/replaced by fit.contrast.Rout.save.
+
+2003-01-30 16:57  warnes
+
+	* tests/contrast.lm.R: - Renamed to/replaced by fit.contrasts.R
+
+2003-01-30 16:56  warnes
+
+	* man/running.Rd: - Fixed typo in email address.
+
+2003-01-30 16:54  warnes
+
+	* tests/: CrossTable.R, CrossTable.Rout.save, fit.contrast.R,
+	  fit.contrast.Rout.save, fit.contrast.Rout~, fit.contrast.R~,
+	  make.contrasts.R, make.contrasts.Rout.save:
+	  - Updated tests to match changes in contrast.lm() ->
+	  fit,contrasts(),   and CrossTable().
+
+2003-01-30 16:53  warnes
+
+	* R/fit.contrast.R, R/contrast.lm.R, man/contrast.lm.Rd,
+	  man/fit.contrast.Rd:
+	  - Renamed 'contrast.lm' to 'fit.contrast'.  This new name is more
+	    descriptive and makes it easier to create and use methods for
+	  other   classes, eg lme.
+
+	  - Enabled fit.contrast for lme object now that Doug Bates has
+	  provided   the necessary support for contrasts in the nlme
+	  package.
+
+	  - New contrast.lm function which generates a 'depreciated'
+	  warning and	calls fit.contrast
+
+	  - Updated help text to match changes.
+
+2003-01-30 16:43  warnes
+
+	* R/barplot2.R, man/barplot2.Rd:
+	  - Added argument 'add' to allow for the addition of a barplot to
+	  an   existing graphic. Default is FALSE
+
+2003-01-30 16:41  warnes
+
+	* R/CrossTable.R, man/CrossTable.Rd:
+	  - Removed argument 'correct' and now print separate corrected
+	  values   for 2 x 2 tables.  - Added arguments 'prop.r', 'prop.c'
+	  and 'prop.t' to toggle printing   of row, col and table
+	  percentages. Default is TRUE.  - Added argument 'fisher' to
+	  toggle fisher exact test. Default is	 FALSE.  - Added McNemar
+	  test to statistics and argument 'mcnemar' to toggle	test.
+	  Default is FALSE.  - Added code to generate an invisible return
+	  list containing table   counts, proportions and the results of
+	  the appropriate statistical tests.
+
+2003-01-30 09:58  warnes
+
+	* R/make.contrasts.R:
+	  - Added explicit check to ensure that the number of specified
+	  contrasts is less than or equal to the ncol - 1.  Previously,
+	  this	 failed with an obtuse error message when the contrast
+	  matrix had row   names, and silently dropped contrasts over
+	  ncol-1.
+
+2003-01-20 13:35  warnes
+
+	* R/balloonplot.R, man/balloonplot.Rd:
+	  - Updated balloonplot help page.
+
+2003-01-20 12:13  warnes
+
+	* R/wapply.R, man/wapply.Rd:
+	  - Updated wapply.R to allow specification of evaluation points
+	  when	 method is 'width' or 'range' using the 'pts' argument.  -
+	  Updated wapply.Rd to add 'pts' argument - Fixed typos, spelling
+	  errors, gramatical errors and lack of clarity   in wapply.Rd help
+	  text.
+
+2003-01-03 16:34  warnes
+
+	* R/balloonplot.R, man/balloonplot.Rd: - Initial checkin of
+	  balloonplot functions and documentation.
+
+2003-01-03 14:23  warnes
+
+	* man/space.Rd: - Added reference to and comparison example of
+	  sunflowerplot.  - Added code to put example plots on same plot
+	  window using par(mfrow=...).
+
+2003-01-03 14:02  warnes
+
+	* man/contrast.lm.Rd:
+	  - Removed duplicate assigment from aov example.
+
+2003-01-02 11:11  warnes
+
+	* DESCRIPTION: Updated version number and added Kjetil to list of
+	  contributors.
+
+2003-01-02 11:09  warnes
+
+	* R/barplot2.R:
+	  - Changed assignment statements that used "=" to "<-" to avoid
+	  syntax   errors in older versions of the S language.
+
+2003-01-02 11:07  warnes
+
+	* R/lowess.R:
+	  - Added wrapper code so that R-specific fiddling won't be
+	  executed   under S-Plus.
+
+2003-01-02 11:04  warnes
+
+	* R/contrast.lm.R:
+	  - Now will run on objects of class aov (but not aovlist!)
+
+2003-01-02 10:42  warnes
+
+	* R/RSCompat.S: - Add nlevels function.
+
+2003-01-02 10:40  warnes
+
+	* R/qqnorm.aov.R, man/qqnorm.aov.Rd: - Renamed first parameter to
+	  match qqnorm generic.
+
+2003-01-02 10:14  warnes
+
+	* man/qqnorm.aov.Rd: Added additional help text from Kjeitl.
+
+2002-12-31 14:50  warnes
+
+	* R/qqnorm.aov.R, man/qqnorm.aov.Rd: Initial checkin of qqnorm.aov
+	  function and documentation submitted by Kjetil Halvorsen
+	  <kjetilh@jupiter.umsanet.edu.bo>.
+
+2002-11-04 09:36  warnes
+
+	* R/zzz.R:
+	  - Oops, re-instated 'require(MASS)' in .First.lib() so that MASS
+	  gets	 loaded.  (Just stating a dependency in DESCRIPTION doesn't
+	  actually   load the library!)
+
+2002-11-04 09:24  warnes
+
+	* DESCRIPTION, R/zzz.R: - Added dependency on R >= 1.6.0 due to
+	  code in barplot2() - Since MASS is now a dependency in
+	  DESCRIPTION, I removed the now   redundant check for MASS in
+	  .First.lib().
+
+2002-11-04 09:21  warnes
+
+	* R/barplot2.R, man/barplot2.Rd: Updates from Marc Schwartz:
+
+	  - Updated underlying code to be based upon the new barplot() in R
+	  v1.6.1 - This now uses the 'axis.lty' and 'border' arguments - In
+	  R v1.6.0, R Core introduced a new function called axTicks().
+	  This is an R equivalent of the C code for CreateAtVector in
+	  plot.c.    This now enables me to get the axis tick mark
+	  positions consistently    when the 'height' related axis is
+	  either linear or log.  Thus, I can	now have consistent tick
+	  marks and can plot grid lines in either    situation.  If
+	  'plot.grid = TRUE' and 'grid.inc' is specified, then	  I still
+	  use pretty() to determine the tick marks and lines.  - This code
+	  now depends on R 1.6.0 or later.
+
+2002-11-04 09:13  warnes
+
+	* R/CrossTable.R:
+	  - Moved fisher.test() to after table is printed, so that table is
+	  still printed in the event that fisher.test() results in
+	  errors.
+
+2002-10-30 13:07  warnes
+
+	* tests/: fast.prcomp.R, make.contrasts.R:
+	  - Added test code for fast.prcomp, fast.svd, and make.contrasts.
+
+2002-10-29 21:32  warnes
+
+	* DESCRIPTION:
+	  Updated version number for 2002-10-29 release.
+
+2002-10-29 21:31  warnes
+
+	* tests/contrast.lm.R:
+	  - changes in whitespace
+
+2002-10-29 21:23  warnes
+
+	* man/undocumented.Rd:
+	  - Commented out plot.lm documentation - Removed make.contrasts
+	  documentation, which is now properly	 documented in
+	  man/make.contrasts.Rd
+
+2002-10-29 21:21  warnes
+
+	* R/plot.lm.R:
+	  - Commented out plot.lm() code since recent changes in R have
+	  broken it.
+
+2002-10-29 18:06  warnes
+
+	* R/fast.prcomp.R, man/fast.prcomp.Rd:
+	  - Fixes to fast.svd to make it actually work.  - Updates to man
+	  page to fix mistmatches between code and docs and to	 fix
+	  warnings.
+
+2002-10-29 18:00  warnes
+
+	* R/contrast.lm.R, R/make.contrasts.R, man/contrast.lm.Rd,
+	  man/make.contrasts.Rd:
+	  - Moved make.contrasts to a separate file.  - Enhanced make
+	  contrasts to better label contrast matrix, to give   how.many a
+	  default value, and to coerce vectors into row matrixes.  - Added
+	  help page for make.contrasts.  - Added link from contrasts.lm
+	  seealso to make.contrasts.
+
+2002-10-29 17:54  warnes
+
+	* tests/: CrossTable.Rout.save, aggregate.table.Rout.save,
+	  bandplot.Rout.save, barplot2.Rout.save, boxplot.n.Rout.save,
+	  ci.Rout.save, combinations.Rout.save, combine.Rout.save,
+	  contrast.lm.Rout.save, dirichlet.Rout.save, estimable.Rout.save,
+	  factorial.Rout.save, glh.test.Rout.save, hist2d.Rout.save,
+	  interleave.Rout.save, lowess.Rout.save, make.contrasts.Rout.save,
+	  nobs.Rout.save, plotCI.Rout.save, plotmeans.Rout.save,
+	  quantcut.Rout.save, rename.vars.Rout.save, reorder.Rout.save,
+	  running.Rout.save, space.Rout.save, wapply.Rout.save:
+	  - Added tests for dirichlet and  make.contrasts.  - Updated
+	  everything to match reduced warning message now that plot.lm is
+	  not	being overloaded.
+
+2002-10-29 14:55  warnes
+
+	* R/contrast.lm.R, man/contrast.lm.Rd:
+	  - Fix bug that prevented contrast.lm() from working on 'aov'
+	  objects - Add 'aov' examples to documentation for contrast.lm -
+	  Added note about future support for contrast.lme.
+
+2002-10-29 14:29  warnes
+
+	* R/fast.prcomp.R, man/fast.prcomp.Rd: Initial checkin for
+	  fast.prcomp() and fast.svd().
+
+2002-10-11 14:38  warnes
+
+	* DESCRIPTION, tests/dirichlet.R:
+	  - Updated version number in DESCRIPTION.
+
+2002-10-11 14:22  warnes
+
+	* R/permute.R, man/permute.Rd:
+	  - Add permute() function (wraper for sample) and man page
+
+2002-10-11 14:21  warnes
+
+	* man/dirichlet.Rd:
+	  - Escaped underscores in my email address that was causing a
+	  parse   error in the {r,p}dirichlet man page.
+
+2002-10-11 14:02  warnes
+
+	* R/barplot2.R:
+	  - Fixed log scale errors in legend() call
+
+2002-10-01 14:16  warnes
+
+	* man/hist2d.Rd:
+	  - Added examples of using 'contour' and 'filled.contour' for
+	  display.
+
+2002-09-30 16:45  warnes
+
+	* DESCRIPTION:
+	  - Updated version number after adding rdirichlet() and
+	  ddirichlet()
+
+2002-09-30 16:43  warnes
+
+	* R/dirichlet.R, man/dirichlet.Rd, tests/dirichlet.R:
+	  - Added rdirichlet() and ddirichlet() with accompaning help page
+	  and tests.
+
+2002-09-26 08:11  warnes
+
+	* man/glh.test.Rd: - Added note and example code to illustrate how
+	  to properly compute	contrasts for the first factor in the
+	  model.
+
+2002-09-24 16:20  warnes
+
+	* DESCRIPTION:
+	  Update version number after fixing bugs and adding regression
+	  tests.
+
+2002-09-24 16:18  warnes
+
+	* tests/: CrossTable.R, CrossTable.Rout.save, aggregate.table.R,
+	  aggregate.table.Rout.save, bandplot.R, bandplot.Rout.save,
+	  barplot2.R, barplot2.Rout.save, boxplot.n.R, boxplot.n.Rout.save,
+	  ci.R, ci.Rout.save, combinations.R, combinations.Rout.save,
+	  combine.R, combine.Rout.save, contrast.lm.R,
+	  contrast.lm.Rout.save, estimable.R, estimable.Rout.save,
+	  factorial.R, factorial.Rout.save, glh.test.R, glh.test.Rout.save,
+	  hist2d.R, hist2d.Rout.save, interleave.R, interleave.Rout.save,
+	  lowess.R, lowess.Rout.save, nobs.R, nobs.Rout.save, plotCI.R,
+	  plotCI.Rout.save, plotmeans.R, plotmeans.Rout.save, quantcut.R,
+	  quantcut.Rout.save, rename.vars.R, rename.vars.Rout.save,
+	  reorder.R, reorder.Rout.save, running.R, running.Rout.save,
+	  space.R, space.Rout.save, wapply.R, wapply.Rout.save:
+	  - Added regression test.
+
+2002-09-24 15:12  warnes
+
+	* R/glh.test.R:
+	  - Fixed a typo.
+
+2002-09-24 11:55  warnes
+
+	* R/contrast.lm.R:
+	  - Add ability to show confidence intervals when showall=TRUE.
+
+2002-09-24 11:01  warnes
+
+	* DESCRIPTION:
+	  Updated to version 0.6.1, corresponding to some bug fixes.
+
+2002-09-24 10:57  warnes
+
+	* R/running.R:
+	  - Fixed error where running was always calling running2 with
+	  'fun=mean', ignoring the specified funtion.
+
+2002-09-24 10:53  warnes
+
+	* R/plotmeans.R:
+	  - Changed digits=options("digits") which produces a list of
+	  length 1   to digits=getOption("digits") which returns a vector
+	  of length one.    The former was causing an error when passed to
+	  round().
+
+2002-09-23 10:27  warnes
+
+	* man/: CrossTable.Rd, barplot2.Rd, glh.test.Rd:
+	  - Fixed syntax errors in barplot2.Rd and CrossTable.Rd - Fixed
+	  incorrect translation of 'F' (distribution) to 'FALSE' in
+	  glh.test.Rd
+
+2002-09-23 10:02  warnes
+
+	* inst/doc/: Rnews.dtx, Rnews.sty, gregmisc.pdf, gregmisc.tex:
+	  Added inst/doc directory and contents to CVS.
+
+2002-09-23 09:59  warnes
+
+	* R/aggregate.table.R, R/boxplot.n.R, R/ci.R, R/combine.R,
+	  R/factorial.R, R/hist2d.R, R/interleave.R, R/lowess.R, R/nobs.R,
+	  R/residplot.R, R/zzz.R, man/aggregate.table.Rd, man/bandplot.Rd,
+	  man/combinations.Rd, man/combine.Rd, man/contrast.lm.Rd,
+	  man/estimable.Rd, man/factorial.Rd, man/glh.test.Rd,
+	  man/hist2d.Rd, man/interleave.Rd, man/lowess.Rd, man/nobs.Rd,
+	  man/plotCI.Rd, man/quantcut.Rd, man/rename.vars.Rd,
+	  man/reorder.Rd, man/space.Rd, man/undocumented.Rd: - Modified all
+	  files to include CVS Id and Log tags.
+
+2002-09-23 09:38  warnes
+
+	* DESCRIPTION, R/CrossTable.R, R/barplot2.R, R/combinations.R,
+	  man/CrossTable.Rd, man/barplot2.Rd:
+	  - Added CrossTable() and barplot2() code and docs contributed by
+	  Marc Schwartz.  - Permit combinations() to be used when r>n
+	  provided repeat.allowed=TRUE - Bumped up version number
+
+2002-08-01 15:37  warnes
+
+	* DESCRIPTION, R/ci.R, R/contrast.lm.R, R/hist2d.R, R/running.R,
+	  R/wapply.R, man/ci.Rd, man/contrast.lm.Rd, man/estimable.Rd,
+	  man/glh.test.Rd:
+	  - Corrected documentation mismatch for ci, ci.default.
+
+	  - Replaced all occurences of '_' for assignment with '<-'.
+
+	  - Replaced all occurences of 'T' or 'F' for 'TRUE' and 'FALSE'
+	  with	 the spelled out version.
+
+	  - Updaded version number and date.
+
+2002-08-01 14:06  warnes
+
+	* R/reorder.R:
+	  Added reorder() function to reorder the levels of a factor.
+
+2002-04-15 17:30  warneg
+
+	* man/contrast.lm.Rd: - Separated out, then commented out mention
+	  of contrast.lme and lme   objects.  The contrast.lme function
+	  will become part of Bates and   Pinhiero's next NLME library.
+
+2002-04-15 17:28  warneg
+
+	* R/contrast.lm.R: - Separated out, then commented out contrast.lme
+	  code.  The   contrast.lme function will become part of Bates and
+	  Pinhiero's NLME   library.
+
+2002-04-08 20:51  warneg
+
+	* DESCRIPTION, R/bandplot.R, R/boxplot.n.R, R/ci.R,
+	  R/combinations.R, R/contrast.lm.R, R/estimable.R, R/glh.test.R,
+	  R/hist2d.R, R/plot.lm.R, R/plotCI.R, R/plotmeans.R,
+	  R/rename.vars.R, R/residplot.R, R/space.R, R/wapply.R,
+	  man/aggregate.table.Rd, man/bandplot.Rd, man/boxplot.n.Rd,
+	  man/combinations.Rd, man/glh.test.Rd, man/hist2d.Rd,
+	  man/interleave.Rd, man/plotmeans.Rd, man/reorder.Rd,
+	  man/running.Rd, man/space.Rd, man/undocumented.Rd, man/wapply.Rd:
+
+	  Checkin for version 0.5.3
+
+2002-04-08 20:46  warneg
+
+	* R/interleave.R: - Properly handle case when some or all arguments
+	  are vectors.
+
+2002-04-05 13:27  warneg
+
+	* man/contrast.lm.Rd:
+	  - Noted that contrats.lm can be applied to lme objects.  -
+	  Clarified return value when conf.int is specified.
+
+2002-04-05 13:23  warneg
+
+	* R/contrast.lm.R:
+	  - Updated contrast.lm to handle lme objects - Modified
+	  contrast.lm to compute confidence intervals even when   showall
+	  is true.  - Added check and warning if conf.int is outside (0,1).
+	  This will ensuere   that conf.int=T does not cause nonsense
+	  results.
+
+2002-03-27 15:51  warneg
+
+	* man/lowess.Rd:
+	  Added "..." argument to lowess.default.
+
+2002-03-27 14:48  warneg
+
+	* R/lowess.R: - Added code to append "..." to the argument list of
+	  lowess.default.
+
+	  - Fixed a wrong default for f in lowess.formula.  Was 3, but
+	  should   have been 2/3.
+
+2002-03-26 16:22  warneg
+
+	* R/ci.R, R/glh.test.R, R/lowess.R, man/ci.Rd, man/glh.test.Rd,
+	  man/lowess.Rd, man/reorder.Rd, man/undocumented.Rd:
+	  - Changed methods to include '...' to match the generic.  -
+	  Updated for version 0.5.1
+
+2002-03-26 16:21  warneg
+
+	* DESCRIPTION:
+	  Updated for version 0.5.1
+
+2002-03-26 16:04  warneg
+
+	* INDEX:
+	  Index is now auto-generated. The presence of a file named INDEX
+	  prevents that.
+
+2002-03-26 14:29  warneg
+
+	* R/nobs.R:
+	  Added ... to methods.
+
+2002-03-26 14:29  warneg
+
+	* man/nobs.Rd:
+	  Updated to add ... parameter to function calls.
+
+2002-03-26 14:24  warneg
+
+	* man/hist2d.Rd:
+	  Initial checkin.
+
+2002-03-26 10:30  warneg
+
+	* man/glh.test.Rd: Removed incorrect link to 'contrast' from
+	  seealso.
+
+2002-03-26 10:27  warneg
+
+	* man/reorder.Rd:
+	  Initial checkin.
+
+2002-03-26 09:49  warneg
+
+	* man/quantcut.Rd:
+	  Initial Checkin
+
+2002-03-26 09:29  warneg
+
+	* R/quantcut.R:
+	  Initial checkin.
+
+2002-03-26 09:28  warneg
+
+	* R/nobs.R: - Added CVS tags
+
+2002-03-19 23:17  warneg
+
+	* R/plotmeans.R: - Changes to add compatibility with S-Plus 2000
+
+2002-03-19 23:16  warneg
+
+	* R/plotCI.R: - Changes to add compatibility with S-Plus 2000.
+
+2002-03-19 22:48  warneg
+
+	* R/boxplot.n.R:
+	  - Updated to work in S-Plus 2000 as well as R.
+
+2002-03-19 22:44  warneg
+
+	* R/RSCompat.S: - Added definition of is.R function.
+
+	  - Added boxplot.formula
+
+2002-03-07 18:39  warneg
+
+	* man/running.Rd: - Added documentation and example for running2
+
+2002-03-07 18:38  warneg
+
+	* R/running.R:
+	  - Added "running2", which handles both univariate and bivariate
+	  cases - Modified "running" to call "running2"
+
+2002-03-05 11:44  warneg
+
+	* R/plotmeans.R: - Replace "T" with "TRUE".  Problems arrive when
+	  there is a variable named "T".
+
+2002-02-21 16:45  warneg
+
+	* R/aggregate.table.R:
+	  - Fixed bug where row and column labels didn't always correspond
+	  to the contents.  This only occured when a factor was used for
+	  by1 or by2 and the factors levels weren't in the default sort
+	  order.
+
+2002-02-20 17:10  warneg
+
+	* R/aggregate.table.R:
+	  New function.
+
+2002-02-20 17:09  warneg
+
+	* man/aggregate.table.Rd:
+	  Initial checkin.
+
+2002-02-20 16:41  warneg
+
+	* man/interleave.Rd, R/interleave.R: Initial checkin.
+
+2002-02-20 16:31  warneg
+
+	* man/nobs.Rd:
+	  Noted that specialized methods exist.
+
+2002-02-20 16:29  warneg
+
+	* man/nobs.Rd:
+	  Incorrectly had contents of nobs.R here instead of help text.
+	  Corrected.
+
+2002-02-20 15:09  warneg
+
+	* man/: ci.Rd, estimable.Rd, glh.test.Rd, lowess.Rd, plotCI.Rd,
+	  rename.vars.Rd, space.Rd, undocumented.Rd:
+	  Minor changes, typo and formatting fixes.
+
+2002-02-20 15:08  warneg
+
+	* INDEX:
+	  Updated.
+
+2002-02-20 15:06  warneg
+
+	* R/bandplot.R, man/bandplot.Rd:
+	  - Generalized to allow specification of the multiples of the
+	  standard deviation levels to be plotted (0=mean, 1=1 sd, ..).  -
+	  Now (invisibly) returnes computed smooths.
+
+2002-02-20 15:03  warneg
+
+	* R/nobs.R, man/nobs.Rd: - initial checkin.
+
+2002-02-16 13:16  warneg
+
+	* man/bandplot.Rd:
+	  Added bandplot documentation.
+
+2002-02-16 12:58  warneg
+
+	* R/wapply.R:
+	  - Fixed Bug: When method=="range", the absolute range of x was
+	  being   used to compute the relative width instead of the
+	  (correct) relative   range.
+
+2002-02-16 12:23  warneg
+
+	* R/wapply.R:
+	  - Corrected problem removing missing values: The missing values
+	  of $x   and $y were being removed indepdendently, leaving an
+	  uneven number   of points in the result.
+
+2002-02-04 21:20  warneg
+
+	* R/RSCompat.S:
+	  - Fix typo that caused code meant to run only under S-Plus to run
+	  under R, causing problems.
+
+2002-02-04 21:19  warneg
+
+	* R/zzz.R:
+	  - Remove dead code
+
+2002-02-04 18:20  warneg
+
+	* R/space.R:
+	  - Add na.rm parameter and make the default TRUE.
+
+2002-02-04 18:19  warneg
+
+	* R/hist2d.R:
+	  Initial checkin.
+
+2002-02-04 14:12  warneg
+
+	* R/plotCI.R:
+	  - When err="x", 'col' was being used to plot bars, rather than
+	  'barcol'.
+
+2002-02-04 14:09  warneg
+
+	* R/plotCI.R:
+	  - fixed typo, when err="x", lty was 'slty' causing an error.
+
+2002-01-25 18:00  warneg
+
+	* R/iapply.R:
+	  I can't remember what this function was written for, nor can I
+	  find any examples of using it. Consequently, I'm deleting it.
+
+2002-01-17 18:51  warneg
+
+	* man/estimable.Rd:
+	  - Fixed errror in last example by adding 'conf.int' parameter to
+	  'estimable' call.
+
+2002-01-17 18:42  warneg
+
+	* R/glh.test.R:
+	  - Fixed typo in code that resulted in an syntax error.
+
+2002-01-17 18:21  warneg
+
+	* man/elementof.Rd:
+	  Removed: duplicated built-in %in% operator.
+
+2002-01-17 18:21  warneg
+
+	* R/elementof.R:
+	  Removed: duplicates the built-in %in% operator.
+
+2002-01-10 12:35  warneg
+
+	* R/glh.test.R:
+	  - print.glh.test() was using cat() to printing the call.  This
+	  didn't work and generated an error.
+
+2001-12-19 17:45  warneg
+
+	* R/RSCompat.S: - Added code for %in%.
+
+2001-12-19 15:06  warneg
+
+	* man/glh.test.Rd:
+	  - Fixed display of formulae.	- Added description of return value
+
+2001-12-19 15:05  warneg
+
+	* R/glh.test.R:
+	  - Removed extra element of return object.
+
+2001-12-18 17:14  warneg
+
+	* man/estimable.Rd:
+	  - Updated documentation to reflect change of parameters from
+	  'alpha'   to 'conf.int', including the new optional status of the
+	  confidence   intervals.
+
+2001-12-18 17:12  warneg
+
+	* R/estimable.R:
+	  - Modified to make confidence intervals optional.  Changed
+	  'alpha'   parameter giving significance level to 'conf.int'
+	  giving confidence   level.
+
+2001-12-18 16:36  warneg
+
+	* man/glh.test.Rd:
+	  - Added summary.glh.test to alias, usage, and example sections.
+
+2001-12-18 16:34  warneg
+
+	* R/glh.test.R: - Modified to work correctly when obj is of class
+	  'aov' by specifying	summary.lm instead of summary.	This
+	  ensures that the summary object   has the fields we need.
+
+	  - Moved detailed reporting of results from 'print' to 'summary'
+	  function and added a simpler report to 'print'
+
+2001-12-18 16:27  warneg
+
+	* R/estimable.R:
+	  - Modified to work correctly when obj is of class 'aov' by
+	  specifying   summary.lm instead of summary.  This ensures that
+	  the summary object   has the fields we need.
+
+2001-12-17 19:43  warneg
+
+	* R/glh.test.R, man/glh.test.Rd:
+	  Initial checkin.
+
+2001-12-17 14:13  warneg
+
+	* DESCRIPTION, INDEX:
+	  Updated to include new functions and thier contributors.
+
+2001-12-17 13:59  warneg
+
+	* man/estimable.Rd:
+	  - Fixed spelling errors.
+
+2001-12-17 13:52  warneg
+
+	* man/estimable.Rd:
+	  - Fixed the link to contrasts.lm.  - Rephrased title/description
+	  to be more clear.
+
+2001-12-11 20:41  warneg
+
+	* man/space.Rd:
+	  - Quoted underscore character in my email address.  - Added
+	  correct keyword.
+
+2001-12-11 20:39  warneg
+
+	* man/rename.vars.Rd:
+	  Added omitted documentaton for 'info' parameter.  Changed example
+	  code not to use 'Orthodont' data set so that the nlme package is
+	  not required.
+
+2001-12-11 20:37  warneg
+
+	* man/plotmeans.Rd:
+	  Added documentation for xaxt parameter.
+
+2001-12-11 20:36  warneg
+
+	* man/undocumented.Rd:
+	  Initial checkin.
+
+2001-12-11 20:34  warneg
+
+	* R/lowess.R:
+	  Updated to explicitly list control arguments to lowess.formula.
+
+2001-12-11 20:34  warneg
+
+	* man/lowess.Rd:
+	  Initial checkin.  Code copied from R source package and extended.
+
+2001-12-10 14:38  warneg
+
+	* man/: contrast.factor.Rd, contrast.lm.Rd: renamed
+	  contrast.factor.Rd back to contrast.lm.Rd corresponding to rename
+	  of function.
+
+2001-12-10 14:35  warneg
+
+	* man/: estimable.Rd, contrast.coeff.Rd: Renamed
+	  'contrsts.coeff.Rd' to 'estimable.Rd' corresponding to function
+	  rename.
+
+2001-12-10 14:29  warneg
+
+	* R/contrast.lm.R: incorrectly put contrast.coeff.R (now
+	  estimable.R) here.  Now correctly put contrast.factor.R back here
+
+2001-12-10 14:27  warneg
+
+	* R/contrast.factor.R: renamed contrast.factor.R back to
+	  contrast.lm.R
+
+2001-12-10 14:26  warneg
+
+	* R/estimable.R: renamed from contrast.coeff.R to estimable.R
+	  (incorrectly via contrast.lm.R)
+
+2001-12-10 14:22  warneg
+
+	* R/contrast.coeff.R: Renamed back to 'contrast.lm.R'
+
+2001-12-10 14:20  warneg
+
+	* R/contrast.lm.R: Renamed back to contrast.lm
+
+2001-12-07 20:54  warneg
+
+	* R/rename.vars.R: Changed 'T' to 'TRUE' in parameter list.
+
+2001-12-07 18:53  warneg
+
+	* man/contrast.factor.Rd:
+	  Added documentation for 'conf.int' parameter.
+
+2001-12-07 18:34  warneg
+
+	* man/wapply.Rd:
+	  Fixed an problem where \code was incorrectly delimited by parens
+	  rather than curly brackets.
+
+2001-12-07 18:33  warneg
+
+	* man/rename.vars.Rd: - Fixed see also link.  Mis-typed
+	  'data.frame' as 'dataframe'.
+
+2001-12-07 17:56  warneg
+
+	* man/elementof.Rd:
+	  Added warning that this function is depreciated.
+
+2001-12-07 17:55  warneg
+
+	* R/rename.vars.R:
+	  Added attribution.
+
+2001-12-07 17:49  warneg
+
+	* man/rename.vars.Rd:
+	  Added proper attribution to Don MacQueen.
+
+2001-12-07 17:33  warneg
+
+	* R/: iapply.R, lowess.R, plot.lm.R, residplot.R:
+	  Initial checkin.
+
+2001-12-07 17:29  warneg
+
+	* man/space.Rd, R/zzz.R:
+	  Initial checkin.
+
+2001-12-07 17:24  warneg
+
+	* R/space.R:
+	  - Added cvs tags.
+
+2001-12-07 17:23  warneg
+
+	* R/space.R:
+	  - Leave first point at center, rather than shifting by s/2 to the
+	  left.  This looks better when there are more than 2 'spaced'
+	  points.
+
+2001-12-07 16:48  warneg
+
+	* man/rename.vars.Rd:
+	  Initial checkin.  Unfortunately, I've lost the email of the
+	  person who sent this to me.  I'll credit him/her when I find out
+	  who it was!
+
+2001-12-07 16:40  warneg
+
+	* R/rename.vars.R:
+	  Initial checkin
+
+2001-12-07 16:06  warneg
+
+	* R/elementof.R:
+	  - elementof duplicates '%in%'.  Code now uses '%in%' and issues a
+	  warning.
+
+2001-12-07 15:59  warneg
+
+	* man/factorial.Rd, R/factorial.R:
+	  Initial checkin.
+
+2001-12-07 15:39  warneg
+
+	* man/contrast.coeff.Rd:
+	  - Initial checkin
+
+2001-12-07 15:32  warneg
+
+	* R/contrast.coeff.R: - If cm is not matrix, coerce it into a
+	  single-row matrix.
+
+2001-12-07 15:07  warneg
+
+	* R/contrast.coeff.R:
+	  Substantial enhancements to initial version:
+
+	   - Added StdErr, t-value, p-value, and DF columns to output.
+	   - Modified to use t distribution rather than normal distribution
+	  for
+	     confidence intervals.
+
+2001-12-07 15:04  warneg
+
+	* R/contrast.coeff.R: Initial checkin.
+
+2001-12-07 14:57  warneg
+
+	* man/contrast.factor.Rd:
+	  Renamed 'contrast.lm.Rd' to 'contrast.factor.Rd'.
+
+2001-12-07 14:53  warneg
+
+	* R/contrast.factor.R: Renamed 'contrast.lm.R' to
+	  'contrast.factor.R' to highlight that this function only works on
+	  individual factors.
+
+2001-12-07 14:50  warneg
+
+	* man/ci.Rd: - Added text noting that lme is now supported.
+
+2001-12-07 14:19  warneg
+
+	* R/ci.R: - Fixed typo:  DF column was being filled in with
+	  p-value.
+
+2001-12-07 13:49  warneg
+
+	* R/ci.R: - Added ci.lme method to handle lme objects.
+
+2001-12-05 14:51  warneg
+
+	* R/: combine.R, concat.R:
+	  - Renamed 'concat' function to 'combine' to avoid name conflict
+	  with	 an existing S-Plus function.
+
+2001-12-05 14:49  warneg
+
+	* R/plotmeans.R: - Added ability to use the t-distribution to
+	  compute confidence   intervals.  This is controlled using the
+	  'use.t' parameter.
+
+2001-12-05 14:44  warneg
+
+	* man/: combine.Rd, concat.Rd:
+	  - Changed function name 'concat' to 'combine' and renamed
+	  concat.Rd to	 combine.Rd
+
+2001-12-05 14:41  warneg
+
+	* man/plotmeans.Rd: - Added documentation of use.t parameter.
+
+2001-12-05 14:36  warneg
+
+	* man/wapply.Rd:  - Clarified how the width of the window is
+	  computed when method="nobs".
+
+2001-12-05 14:29  warneg
+
+	* R/wapply.R:
+	  - Added a better default for "width" when method="nobs".  For
+	  this case,   width=max(5, length(x)/10).
+
+	  - Allow omission of x values which result in missing y values via
+	    'drop.na' parameter.
+
+2001-11-13 16:19  warneg
+
+	* R/contrast.lm.R: - Fixed error that occured when a factor has 2
+	  levels and only one	contrast is specified
+
+2001-10-25 22:48  warneg
+
+	* R/plotmeans.R:
+	  Added correct handling of 'xaxt="n"'.
+
+2001-10-16 19:14  warneg
+
+	* man/: ci.Rd, wapply.Rd:
+	  Fixed unbalanced brace.
+
+2001-10-16 19:06  warneg
+
+	* man/plotCI.Rd:
+	  Added minbar and maxbar parameters.
+
+2001-10-16 19:04  warneg
+
+	* man/plotmeans.Rd:
+	  Forgot to add minbar and maxbar to usage section.
+
+2001-10-16 19:03  warneg
+
+	* man/plotmeans.Rd:
+	  Added description of minbar and maxbar.
+
+2001-10-16 19:00  warneg
+
+	* R/plotCI.R:
+	  - Added minbar and maxbar parameters - Added cvs id and log tags
+	  to header
+
+2001-10-16 18:59  warneg
+
+	* R/plotmeans.R:
+	  Added cvs id and log tag to file header
+
+2001-10-16 18:57  warneg
+
+	* R/plotmeans.R:
+	  Added minbar and maxbar parameters.
+
+2001-10-16 18:35  warneg
+
+	* man/plotmeans.Rd:
+	  Added description of minsd parameter.
+
+2001-10-16 18:35  warneg
+
+	* R/plotmeans.R: Added minsd parameter.
+
+2001-09-18 10:15  warneg
+
+	* DESCRIPTION, R/RSCompat.S, R/plotCI.R, R/plotmeans.R:
+	  Release 0.3.2
+
+2001-09-18 10:14  warneg
+
+	* R/contrast.lm.R:
+	  Fixed bug in make.contrasts.	There was leftover code expecting a
+	  parameter 'x' which is no lonber provided.
+
+2001-09-01 15:19  warneg
+
+	* R/RSCompat.S:
+	  Initial checkin.
+
+2001-08-31 20:01  warneg
+
+	* DESCRIPTION, INDEX, R/running.R, man/contrast.lm.Rd,
+	  man/running.Rd, man/wapply.Rd: Release 0.3.0
+
+2001-08-31 19:45  warneg
+
+	* R/wapply.R: Used wrong character in header (% instead of #).
+	  Fixed.
+
+2001-08-31 19:43  warneg
+
+	* R/elementof.R:
+	  Used wrong comment character in header (% instead of #). Fixed.
+
+2001-08-31 19:41  warneg
+
+	* R/bandplot.R:
+	  Used wrong comment character (% instead of #) in header.  Fixed.
+
+2001-08-31 19:36  warneg
+
+	* R/contrast.lm.R:
+	  Added make.contrasts() to allow S-Plus so that the remaining
+	  unspecified df for contrats are filled by contrasts orthogonal to
+	  the specified ones.  This results in getting the exact same value
+	  from computing contrasts in a one-way anova as would be obtained
+	  by directly computing the means and performing the approprial
+	  linalg.
+
+2001-08-31 16:55  warneg
+
+	* man/contrast.lm.Rd:
+	  Updated to match changes in contrast.lm.R version 1.2.
+
+	  Also added more examples.
+
+2001-08-31 16:46  warneg
+
+	* R/contrast.lm.R: Previous version did not actually work.  This
+	  version now correctly computes contrasts.  It will also (in
+	  conjunction wiht RSCompat.S) work in S-Plus.
+
+2001-08-30 22:25  warneg
+
+	* R/contrast.lm.R: Initial checkin.
+
+2001-08-25 01:54  warneg
+
+	* R/elementof.R: Initial CVS Checkin.
+
+2001-08-25 01:53  warneg
+
+	* R/running.R: Initial CVS checkin.
+
+2001-08-25 01:52  warneg
+
+	* man/ci.Rd: - Added CVS header.  - Added my email address.
+
+2001-08-25 01:50  warneg
+
+	* man/combinations.Rd: Fixed a typo and a syntax error.
+
+2001-08-25 01:48  warneg
+
+	* R/wapply.R: Initial checkin.
+
+2001-08-25 01:46  warneg
+
+	* man/: boxplot.n.Rd, plotmeans.Rd: Added CVS header.
+
+2001-08-25 01:45  warneg
+
+	* man/wapply.Rd: Initial Checkin
+
+2001-08-24 23:59  warneg
+
+	* man/running.Rd: Initial Checkin
+
+2001-08-24 22:16  warneg
+
+	* man/elementof.Rd: Initial checkin.
+
+2001-06-29 09:23  warneg
+
+	* R/combinations.R, man/combinations.Rd:
+	  Initial revision.
+
+2001-06-05 14:39  warneg
+
+	* DESCRIPTION, R/.tnatr:fnmap, R/concat.R, man/concat.Rd:
+	  Updated with addition of concat.R and concat.Rd.
+
+2001-05-30 09:23  warneg
+
+	* DESCRIPTION, INDEX, R/.tnatr:fnmap, R/boxplot.n.R, R/ci.R,
+	  R/plotCI.R, R/plotmeans.R, man/boxplot.n.Rd, man/ci.Rd,
+	  man/plotCI.Rd, man/plotmeans.Rd:
+	  Initial CVS import
+
+2001-05-30 09:23  warneg
+
+	* DESCRIPTION, INDEX, R/.tnatr:fnmap, R/boxplot.n.R, R/ci.R,
+	  R/plotCI.R, R/plotmeans.R, man/boxplot.n.Rd, man/ci.Rd,
+	  man/plotCI.Rd, man/plotmeans.Rd: Initial revision
+
