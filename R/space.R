@@ -1,6 +1,11 @@
-# $Id: space.R,v 1.4 2002/04/09 00:51:31 warneg Exp $
+# $Id: space.R,v 1.5 2003/11/10 22:11:13 warnes Exp $
 #
 # $Log: space.R,v $
+# Revision 1.5  2003/11/10 22:11:13  warnes
+#
+# - Add files contributed by Arni Magnusson
+#   <arnima@u.washington.edu>. As well as some of my own.
+#
 # Revision 1.4  2002/04/09 00:51:31  warneg
 #
 # Checkin for version 0.5.3

@@ -13,6 +13,7 @@ boxplot.n               Produce a Boxplot Annotated with the Number of
 capture                 Capture printed output of an R expression in a
                         string
 ci                      Compute Confidence Intervals
+colorpanel              Generate a smoothly varying set of colors
 combinations            Enumerate the Combinations or Permutations of
                         the Elements of a Vector
 combine                 Combine R Objects With a Column Labeling the
@@ -21,6 +22,10 @@ contrast.lm             Compute and test arbitrary contrasts for
                         regression objects (Depreciated, use
                         'fit.contrasts' instead.)
 rdirichlet              Functions for the Dirichlet Distribution
+elem                    Display Information about Elements in a Given
+                        Object
+env                     Display Information about All Loaded
+                        Environments
 estimable               Compute and test estimable linear functions of
                         the fitted coefficients (including contrasts)
                         of regression objects
@@ -29,15 +34,27 @@ fast.prcomp             Efficient computation of principal components
                         and singular value decompositions.
 fit.contrast            Compute and test arbitrary contrasts for
                         regression objects
+foldchange              Compute fold-change or convert between
+                        log-ratio and fold-change.
 glh.test                Test a General Linear Hypothesis for a
                         Regression Model
+heatmap.2               Draw a Heat Map
 hist2d                  Compute and Plot a 2-Dimensional Histogram
 interleave              Interleave Rows of Data Frames or Matrices
+is.what                 Run Multiple is.* Tests on a Given Object
+keep                    Remove All Objects, Except Those Specified
+ll                      Display Information about Objects in a Given
+                        Environment
 logit                   Generalized logit and inverse logit function
 lowess                  Scatter Plot Smoothing
 make.contrasts          Construct a User-Specified Contrast Matrix
 matchcols               Select columns names matching certain critera
+mixedsort               Order or Sort strings with embedded numbers so
+                        that the numbers are in the correct order
 nobs                    Compute the Number of Non-missing Observations
+odd                     Detect odd/even integers
+overplot                Plot multiple variables on the same region,
+                        with appropriate axes
 permute                 Randomly Permute the Elements of a Vector
 plotCI                  Plot Error Bars
 plotmeans               Plot Group Means and Confidence Intervals
@@ -47,8 +64,12 @@ quantcut                Create a Factor Variable Using the Quantiles
                         of a Continuous Variable
 rename.vars             Rename variables in a dataframe
 reorder.factor          Reorder the Levels of a Factor
+rtPCR                   Teratogenesis rtPCR data
 running                 Apply a Function Over Adjacent Subsets of a
                         Vector
+smartlegend             Place a legend in a specified logical
+                        ("top","bottom", "left", "right", etc)
+                        location on a plot.
 space                   Space points in an x-y plot so they don't
                         overlap.
 textplot                Display text information in a graphics plot.

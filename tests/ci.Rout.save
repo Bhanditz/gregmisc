@@ -1,20 +1,19 @@
 
 R : Copyright 2003, The R Development Core Team
-Version 1.7.0  (2003-04-16)
+Version 1.8.0  (2003-10-08)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
-Type `license()' or `licence()' for distribution details.
+Type 'license()' or 'licence()' for distribution details.
 
 R is a collaborative project with many contributors.
-Type `contributors()' for more information.
+Type 'contributors()' for more information.
 
-Type `demo()' for some demos, `help()' for on-line help, or
-`help.start()' for a HTML browser interface to help.
-Type `q()' to quit R.
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for a HTML browser interface to help.
+Type 'q()' to quit R.
 
 > library(gregmisc)
-Loading required package: MASS 
 
 Attaching package 'gregmisc':
 
@@ -47,17 +46,17 @@ Population  4.308676e-01    -6.966493 7.828229e+00     2.757941 0.8765085381
 > dat <- rnorm(1000)
 > ci( dat )
    Estimate    CI lower    CI upper  Std. Error 
--0.01375379 -0.07675170  0.04924412  0.03210344 
+-0.01375379 -0.07672019  0.04921261  0.03208738 
 > ci( c(NA,dat), na.rm=TRUE )
    Estimate    CI lower    CI upper  Std. Error 
--0.01375379 -0.07675170  0.04924412  0.03210344 
+-0.01375379 -0.07672019  0.04921261  0.03208738 
 > ci(dat, confidence=0.90)
    Estimate    CI lower    CI upper  Std. Error 
--0.01375379 -0.06660826  0.03910068  0.03210344 
+-0.01375379 -0.06658183  0.03907425  0.03208738 
 > ci(dat, alpha=0.05)
    Estimate    CI lower    CI upper  Std. Error 
--0.01375379 -0.07675170  0.04924412  0.03210344 
+-0.01375379 -0.07672019  0.04921261  0.03208738 
 > ci(dat, alpha=0.01)
    Estimate    CI lower    CI upper  Std. Error 
--0.01375379 -0.09660505  0.06909747  0.03210344 
+-0.01375379 -0.09656361  0.06905603  0.03208738 
 > 

@@ -1,6 +1,18 @@
-% $Id: barplot2.Rd,v 1.4 2003/01/30 21:43:05 warnes Exp $
+% $Id: barplot2.Rd,v 1.7 2003/12/02 16:58:46 warnes Exp $
 %
 % $Log: barplot2.Rd,v $
+% Revision 1.7  2003/12/02 16:58:46  warnes
+%
+% - Remove '%' character from example code to avoid errors.
+%
+% Revision 1.6  2003/12/01 16:00:08  warnes
+%
+% - updated to match changes to barplot() in base.
+%
+% Revision 1.5  2003/11/18 18:59:08  warnes
+%
+% - Tiny fix to remove R CMD check error.
+%
 % Revision 1.4  2003/01/30 21:43:05  warnes
 %
 % - Added argument 'add' to allow for the addition of a barplot to an
@@ -116,7 +128,7 @@
   \item{plot.ci}{logical. If \code{TRUE}, confidence intervals are plotted
    over the bars. Note that if a stacked bar plot is generated, confidence
    intervals will not be plotted even if \code{plot.ci = TRUE}}
-  \item{ci.l and ci.u}{The confidence intervals (ci.l = lower bound, ci.u =
+  \item{ci.l,ci.u}{The confidence intervals (ci.l = lower bound, ci.u =
    upper bound) to be plotted if \code{plot.ci} = \code{TRUE}. Values must have
    the same dim structure as \code{height}.}
   \item{ci.color}{the color for the confidence interval line segments}
@@ -193,7 +205,7 @@ mp <- barplot2(hh, beside = TRUE,
                 "lightcyan", "lavender"),
         legend = colnames(VADeaths), ylim= c(0,100),
         main = "Death Rates in Virginia", font.main = 4,
-        sub = "Faked error bars", col.sub = mybarcol,
+        sub = "Faked 95 percent error bars", col.sub = mybarcol,
         cex.names = 1.5, plot.ci = TRUE, ci.l = ci.l, ci.u = ci.u,
         plot.grid = TRUE)
 mtext(side = 1, at = colMeans(mp), line = -2,

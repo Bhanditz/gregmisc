@@ -1,6 +1,10 @@
-# $Id: plotCI.R,v 1.7 2002/04/09 00:51:30 warneg Exp $
+# $Id: plotCI.R,v 1.8 2003/12/02 16:54:40 warnes Exp $
 #
 # $Log: plotCI.R,v $
+# Revision 1.8  2003/12/02 16:54:40  warnes
+#
+# - Add '...' parameter to call to text to allow user to control size/color/etc.
+#
 # Revision 1.7  2002/04/09 00:51:30  warneg
 #
 # Checkin for version 0.5.3
@@ -113,7 +117,7 @@ plotCI <- function (x, y = NULL,
         {
           plot(x, y, ylim = ylim, xlim=xlim, col=col, type="n",
                xlab=xlab, ylab=ylab,  ...)
-          text(x, y, label=labels, col=col )
+          text(x, y, label=labels, col=col, ... )
         }
     }
   if(is.R())

@@ -1,6 +1,11 @@
-# $Id: wapply.R,v 1.8 2003/01/20 17:13:04 warnes Exp $
+# $Id: wapply.R,v 1.9 2003/11/10 22:11:13 warnes Exp $
 #
 # $Log: wapply.R,v $
+# Revision 1.9  2003/11/10 22:11:13  warnes
+#
+# - Add files contributed by Arni Magnusson
+#   <arnima@u.washington.edu>. As well as some of my own.
+#
 # Revision 1.8  2003/01/20 17:13:04  warnes
 #
 # - Updated wapply.R to allow specification of evaluation points when

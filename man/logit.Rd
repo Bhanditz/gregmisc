@@ -1,4 +1,4 @@
-% $Id: logit.Rd,v 1.1 2003/05/23 18:14:12 warnes Exp $
+% $Id: logit.Rd,v 1.2 2003/11/21 20:54:06 warnes Exp $
 
 \name{logit}
 \alias{logit}
@@ -42,7 +42,7 @@ inv.logit(x, min = 0, max = 1)
 \value{
   Transformed value(s).
 }
-\author{Gregory R. Warnes}
+\author{ Gregory R. Warnes \email{Gregory\_R\_Warnes@groton.pfizer.com} }
 \seealso{ \code{\link[car]{logit}}, \code{\link[moc]{inv.glogit}} }
 \examples{
 
