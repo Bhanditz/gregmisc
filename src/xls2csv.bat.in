@@ -1,4 +1,0 @@
-@echo off
-SET PERLPATH="%~dp0%\..\perl"  # same as `dirname $0`/../perl under *nix
-perl %PERLPATH%\xls2csv.pl %*
-
