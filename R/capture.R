@@ -1,6 +1,14 @@
-# $Id: capture.R,v 1.3 2003/11/10 22:11:13 warnes Exp $
+# $Id: capture.R,v 1.4 2004/01/21 04:31:25 warnes Exp $
 #
 # $Log: capture.R,v $
+# Revision 1.4  2004/01/21 04:31:25  warnes
+# - Mark sprint() as depreciated.
+# - Replace references to sprint with capture.output()
+# - Use match.arg for halign and valign arguments to textplot.default.
+# - Fix textplot.character so that a vector of characters is properly
+#   displayed. Previouslt, character vectors were plotted on top of each
+#   other.
+#
 # Revision 1.3  2003/11/10 22:11:13  warnes
 #
 # - Add files contributed by Arni Magnusson
@@ -18,8 +26,8 @@
 
 capture <- function( expression, collapse="\n")
   {
-    warning("Depreciated.  Use capture.output() from base instead.")
-    
+    warning("Depreciated.  Use capture.output(...) from base instead.")
+
     resultText <- capture.output( expression )
 
     return( paste( c(resultText, ""), collapse=collapse, sep="" ) )
@@ -31,5 +39,6 @@ capture <- function( expression, collapse="\n")
 
 sprint <- function(x,...)
   {
+    warning("Depreciated.  Use capture.output(print(...)) from base instead.")
     capture(print(x,...))
   }

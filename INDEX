@@ -53,6 +53,7 @@ mixedsort               Order or Sort strings with embedded numbers so
                         that the numbers are in the correct order
 nobs                    Compute the Number of Non-missing Observations
 odd                     Detect odd/even integers
+ooplot.default          Create an open-office style plot
 overplot                Plot multiple variables on the same region,
                         with appropriate axes
 permute                 Randomly Permute the Elements of a Vector
@@ -67,6 +68,7 @@ reorder.factor          Reorder the Levels of a Factor
 rtPCR                   Teratogenesis rtPCR data
 running                 Apply a Function Over Adjacent Subsets of a
                         Vector
+sinkplot                Send textual R output to a graphics device
 smartlegend             Place a legend in a specified logical
                         ("top","bottom", "left", "right", etc)
                         location on a plot.
