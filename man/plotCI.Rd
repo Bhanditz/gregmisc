@@ -3,47 +3,66 @@
 \title{Plot Error Bars}
 \description{Plot error bars.}
 \usage{
-plotCI(x, y=NULL, uiw, liw=uiw, ..., col, ylim,
-       barcol=col, sfrac=0.01, gap=1.5, labels=F,
-       barwidth=1)
+plotCI(x, y = NULL, uiw, liw = uiw, ui, li, err = "y", col = par("col"), 
+    ylim = NULL, xlim = NULL, barcol = col, sfrac = 0.01, gap = 1, 
+    lwd = par("lwd"), lty = par("lty"), labels = FALSE, add = FALSE, 
+    xlab, ylab, ...)
 }
 \arguments{
   \item{x,y}{ coordonates for the center of error bars. \code{y}
-    defaults to 1:n }
+    defaults to \code{1:n}.}
   
-  \item{uiw}{ width of the upper error bar. Set to \code{FALSE} or
-    \code{0} to omit upper bars.}
+  \item{uiw}{ width of the upper or right error bar. Set to \code{NULL}
+    omit upper bars.}
   
-  \item{liw}{ width of the lower error bar.  Defaults to same value as
-    \code{uiw}.  Set to \code{FALSE} or \code{0} to omit lower bars. }
+  \item{liw}{ width of the lower or left error bar.  Defaults to same value as
+    \code{uiw}.  Set to \code{NULL} to omit lower bars. }
+
+  \item{ui}{ upper end of error bars.  Defaults to \code{y + uiw} or
+    \code{x + uiw} depeding on \code{err}.  Set to \code{NULL} omit
+    upper bars. }
+  \item{ui}{ lower end of error bars.  Defaults to \code{y - liw} or
+    \code{x - liw} depedning on \code{err}.  Set to \code{NULL} to omit
+    lower bars.}
+
+  \item{err}{ direction for error bars. Set to "y" for vertical bars.
+    Set to "x" for horizontal bars. Defaults to "y".}
   
-  \item{\dots}{ optional plotting parameters }
-	    
-  \item{col}{ color of center marker of error bars. Default is black.}
+  \item{col}{ color of plotting character used center marker of error
+    bars. Default is "black".}
   
   \item{ylim}{ range of y values to include in the plotting area. }
+  \item{xlim}{ range of x values to include in the plotting area. }
   
   \item{barcol}{color of the error bars.  Defaults to the same value as
     \code{col} }
   
   \item{sfrac}{ width of "crossbar" at the end of error bar as a fraction
-    of the x plotting region times \code{barwidth}. Defaults to 0.01. }
+    of the x plotting region. Defaults to 0.01. }
   
   \item{gap}{ space left between the center of the error bar and the
-    lines marking the error bar in units of the height of the letter
-    "O".   Defaults to 1.0 }
+    lines marking the error bar in units of the height (width) of the
+    letter "O".  Defaults to 1.0 }
+
+  \item{lwd}{ width of bar lines. }
+  
+  \item{lty}{ line type of bar lines. }
 
   \item{labels}{ either a logical value indicating whether the circles
     representing the x values should be replaced with text giving the
     actual values or a vector containing labels to use
     instead. Defaults to \code{FALSE}. }
 
-  \item{barwidth}{ line width of the error bars. Defaults to 1. }
-
   \item{add}{logical indicating whether error bars should be added to
     the current plot.  If \code{FALSE} (the defailt), a new plot will be
     created and symbols/labels for the x values will be plotted before
     drawing error bars.}
+
+  \item{\dots}{ optional plotting parameters }
+
+  \item{xlab}{ label for x axis. }
+  \item{ylab}{label for y axis. }
+
 }
 %\details{
 %  ~~ If necessary, more details than the __description__  above ~~

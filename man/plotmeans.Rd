@@ -92,7 +92,7 @@ plotmeans(formula, data=NULL, subset, na.action,
 
   # show how to specify which means should be connected
   plotmeans(state.area ~ state.region, connect=list(1:2, 3:4),
-            ccol="red", pch="X" )
+            ccol="red", pch=7 )
 }
 
 \author{Gregory R. Warnes \email{Gregory\_R\_Warnes@groton.pfizer.com}}

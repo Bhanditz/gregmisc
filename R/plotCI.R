@@ -1,11 +1,42 @@
 
-plotCI <- function (x, y = NULL, uiw, liw = uiw, ..., col="black", ylim,
-                    barcol=col, sfrac = 0.01, gap=1, labels=F, barwidth=1,
-                    add=F) { 
+plotCI <- function (x, y = NULL,
+                    uiw, liw = uiw,   # bar widths  -OR-
+                    ui, li, # bar ends
+                    err='y', # bar direction, 'y' or 'x'
+                    col=par("col"),
+                    ylim=NULL,
+                    xlim=NULL,
+                    barcol=col,
+                    sfrac = 0.01,
+                    gap=1,
+                    lwd=par("lwd"),
+                    lty=par("lty"),
+                    labels=FALSE,
+                    add=FALSE,
+                    xlab,
+                    ylab,
+                    ...
+                    )
+{
   if (is.list(x)) { 
     y <- x$y 
     x <- x$x 
-  } 
+  }
+
+  if(missing(xlab))
+    xlab <- deparse(substitute(x))
+  
+  if(missing(ylab))
+    {
+      if(is.null(y))
+        {
+          xlab  <- ""
+          ylab <- deparse(substitute(x))
+        }
+      else
+        ylab <- deparse(substitute(y))
+    }
+
   if (is.null(y)) { 
     if (is.null(x)) 
       stop("both x and y NULL") 
@@ -13,44 +44,73 @@ plotCI <- function (x, y = NULL, uiw, liw = uiw, ..., col="black", ylim,
     x <- seq(along = x) 
   }
 
-  if(gap!=F)
-    gap <- strheight("O") * gap
   
-  ui.top <- y + uiw
-  ui.bot <- ifelse( y + gap < ui.top, y + gap, ui.top)
-  li.bot <- y - liw
-  li.top <- ifelse( y - gap > li.bot, y - gap, li.bot)
-
-  if(missing(ylim))
+  if(err=="y")
+    z  <- y
+  else
+    z  <- x
+  
+  if(missing(ui))
+    ui <- z + uiw
+  if(missing(li)) 
+    li <- z - liw
+   
+  if(err=="y" & is.null(ylim))
     {
-      ylim  <- range(c(y, ui.top, ui.bot, li.top, li.bot),na.rm=T)
+      ylim <- range(c(y, ui, li), na.rm=TRUE)
+    }
+  else if(err=="x" & is.null(xlim))
+    {
+      xlim <- range(c(x, ui, li), na.rm=TRUE)
     }
 
+    
   if(!add)
     {
       if(missing(labels) || labels==F )
-        plot(x, y, ylim = ylim, col=col, ...)
+        plot(x, y, ylim = ylim, xlim=xlim, col=col,
+             xlab=xlab, ylab=ylab, ...)
       else
         {
-          plot(x, y, ylim = ylim, col=col, type="n", ...)
+          plot(x, y, ylim = ylim, xlim=xlim, col=col, type="n",
+               xlab=xlab, ylab=ylab,  ...)
           text(x, y, label=labels, col=col )
         }
     }
 
  
-  smidge <- diff(par("usr")[1:2]) * sfrac * barwidth
-  if(liw>0)
+  if(err=="y")
     {
-      segments(x, li.top, x, li.bot, col=barcol, lwd=barwidth)
-      segments(x - smidge, li.bot, x + smidge, li.bot, col=barcol)
+      if(gap!=FALSE)
+        gap <- strheight("O") * gap
+      smidge <- par("fin")[1] * sfrac
+
+      # draw upper bar
+      if(!is.null(li))
+          arrows(x , li, x, pmax(y-gap,li), col=barcol, lwd=lwd,
+                 lty=lty, angle=90, length=smidge, code=1)
+      # draw lower bar
+      if(!is.null(ui))
+          arrows(x , ui, x, pmin(y+gap,ui), col=barcol,
+                 lwd=lwd, lty=lty, angle=90, length=smidge, code=1)
     }
-
-
-  if(uiw>0)
+  else
     {
-      segments(x, ui.top, x, ui.bot, col=barcol, lwd=barwidth)
-      segments(x - smidge, ui.top, x + smidge, ui.top, col=barcol)
+      if(gap!=FALSE)
+        gap <- strwidth("O") * gap
+      smidge <- par("fin")[2] * sfrac
+
+      # draw left bar
+      if(li!=NULL)
+        arrows(li, y, pmax(x-gap,li), y, col=col, lwd=lwd, lty=slty,
+               angle=90, length=smidge, code=1)
+      if(ui!=NULL)
+        arrows(ui, y, pmin(x+gap,ui), y, col=col, lwd=lwd, lty=slty,
+               angle=90, length=smidge, code=1)
+      
     }
+      
+    
 
 invisible(list(x = x, y = y)) 
 } 

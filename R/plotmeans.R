@@ -61,7 +61,7 @@ plotmeans  <- function (formula, data = NULL, subset, na.action,
 
     plotCI(x=1:length(means), y=means, uiw=ci.width, xaxt="n",
            xlab=xlab, ylab=ylab, labels=mean.labels, col=col, xlim=xlim,
-           barwidth=barwidth, barcol=barcol, ... )
+           lwd=barwidth, barcol=barcol, ... )
     axis(1, at = 1:length(means), labels = legends)
     
     if(ci.label)
