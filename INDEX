@@ -1,5 +1,35 @@
+aggregate.table          Create 2-Way Table of Summary Statistics
+bandplot                 Plot x-y Points with Locally Smoothed Mean and
+                         Standard Deviation
 boxplot.n                Produce a Boxplot Annotated with the Number of
                          Observations
 ci                       Compute Confidence Intervals
+combinations             Enumerate the Combinations or Permutations of
+                         the Elements of a Vector
+combine                  Combine R Objects With a Column Labeling the
+                         Source
+contrast.lm              Compute (and test) arbitrary contrasts for
+                         regression objects
+estimable                Compute and test estimable linear functions of
+                         the fitted coefficients (including contrasts) of
+                         regression objects
+factorial                Compute factorial function
+glh.test                 Test a General Linear Hypothesis for a
+                         Regression Model
+hist2d                   Compute and Plot a 2-Dimensional Histogram
+interleave               Interleave Rows of Data Frames or Matrices
+lowess                   Scatter Plot Smoothing
+nobs                     Compute the Number of Non-missing Observations
 plotCI                   Plot Error Bars
 plotmeans                Plot Group Means and Confidence Intervals
+quantcut                 Create a Factor Variable Using the Quantiles of
+                         a Continuous Variable
+rename.vars              Rename variables in a dataframe
+reorder                  Reorder the Levels of a Factor
+running                  Apply a Function Over Adjacent Subsets of a
+                         Vector
+space                    Space points in an x-y plot so they don't
+                         overlap.
+undocumented             Undocumented functions
+wapply                   Compute the Value of a Functon Over a Local
+                         Region Of An X-Y Plot

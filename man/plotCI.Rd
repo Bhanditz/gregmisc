@@ -6,7 +6,7 @@
 plotCI(x, y = NULL, uiw, liw = uiw, ui, li, err = "y", col = par("col"), 
     ylim = NULL, xlim = NULL, barcol = col, sfrac = 0.01, gap = 1, 
     lwd = par("lwd"), lty = par("lty"), labels = FALSE, add = FALSE, 
-    xlab, ylab, ...)
+    xlab, ylab, minbar, maxbar, ...)
 }
 \arguments{
   \item{x,y}{ coordonates for the center of error bars. \code{y}
@@ -20,8 +20,9 @@ plotCI(x, y = NULL, uiw, liw = uiw, ui, li, err = "y", col = par("col"),
 
   \item{ui}{ upper end of error bars.  Defaults to \code{y + uiw} or
     \code{x + uiw} depeding on \code{err}.  Set to \code{NULL} omit
-    upper bars. }
-  \item{ui}{ lower end of error bars.  Defaults to \code{y - liw} or
+    upper bars. } 
+
+  \item{li}{ lower end of error bars.  Defaults to \code{y - liw} or
     \code{x - liw} depedning on \code{err}.  Set to \code{NULL} to omit
     lower bars.}
 
@@ -58,6 +59,14 @@ plotCI(x, y = NULL, uiw, liw = uiw, ui, li, err = "y", col = par("col"),
     created and symbols/labels for the x values will be plotted before
     drawing error bars.}
 
+  \item{minbar}{minumum allowed value for bar ends.  If specified,
+    values smaller than \code{minbar} will be replaced with
+    \code{minbar}. } 
+  
+  \item{maxbar}{maximum allowed value for bar ends.  If specified,
+    values larger than \code{maxbar} will be replaced with
+    \code{maxbar}. }
+  
   \item{\dots}{ optional plotting parameters }
 
   \item{xlab}{ label for x axis. }

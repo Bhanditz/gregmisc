@@ -1,5 +1,5 @@
-\name{concat}
-\alias{concat}
+\name{combine}
+\alias{combine}
 \title{ Combine R Objects With a Column Labeling the Source}
 \description{
      Take a sequence of vector, matrix or data frames and
@@ -7,7 +7,7 @@
      \code{source} indicating the source object.
 }
 \usage{
-concat(..., names=NULL)
+combine(..., names=NULL)
 }
 \arguments{
   \item{\dots}{vectors or matrices to combine.}
@@ -18,7 +18,7 @@ concat(..., names=NULL)
      number of columns.  The number of columns in the result will be one
      larger than the number of columns in the component matrixes. If all
      of the arguments are vectors, these are treated as single column
-     matrixes.  In this case, the column containing the concatinated
+     matrixes.  In this case, the column containing the combineinated
      vector data is labeled \code{data}.
      
      When the arguments consist of a mix of matrices and vectors the
@@ -50,14 +50,14 @@ concat(..., names=NULL)
 
 a  <-  matrix(rnorm(12),ncol=4,nrow=3)
 b  <-  1:4
-concat(a,b)
+combine(a,b)
 
-concat(x=a,b)
-concat(x=a,y=b)
-concat(a,b,names=c("one","two"))
+combine(x=a,b)
+combine(x=a,y=b)
+combine(a,b,names=c("one","two"))
 
 c <- 1:6
-concat(b,c)
+combine(b,c)
 }
 
 \keyword{array}

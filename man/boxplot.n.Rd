@@ -1,3 +1,12 @@
+% $Id: boxplot.n.Rd,v 1.2 2001/08/25 05:46:21 warneg Exp $
+%
+% $Log: boxplot.n.Rd,v $
+% Revision 1.2  2001/08/25 05:46:21  warneg
+% Added CVS header.
+%
+% Revision 1.1  2001/08/25 05:45:10  warneg
+% Initial Checkin
+%
 \name{boxplot.n}
 \alias{boxplot.n}
 \title{Produce a Boxplot Annotated with the Number of Observations}
@@ -6,7 +15,7 @@
   annotated with the number of observations in each group.
 }
 \usage{
-boxplot.n(..., top=F, shrink=1, textcolor=NULL)
+boxplot.n(..., top=FALSE, shrink=1, textcolor=NULL)
 }
 \arguments{
   \item{\dots}{ parameters passed to \code{boxplot}. }
@@ -26,7 +35,7 @@ data(state)
 boxplot.n( state.area ~ state.region)
 
 # n's at top
-boxplot.n( state.area ~ state.region, top=T)
+boxplot.n( state.area ~ state.region, top=TRUE)
 
 # small red text
 boxplot.n( state.area ~ state.region, shrink=0.8, textcolor="red") 

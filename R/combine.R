@@ -1,4 +1,4 @@
-concat  <-  function(..., names=NULL)
+combine  <-  function(..., names=NULL)
   {
     tmp  <-  list(...)
     if(is.null(names)) names  <- names(tmp)
