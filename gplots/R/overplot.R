@@ -1,4 +1,4 @@
-# $Id: overplot.R,v 1.8 2004/09/03 17:27:45 warneg Exp $
+# $Id: overplot.R,v 1.9 2005/04/04 14:23:02 warnes Exp $
 
 panel.overplot <- function(formula, data, subset, col, lty, ...)
   {
@@ -7,7 +7,7 @@ panel.overplot <- function(formula, data, subset, col, lty, ...)
     m[[1]] <- graphics:::plot.formula
     eval(m, parent.frame() )
 
-    m[[1]] <- as.name('lowess.formula')
+    m[[1]] <- gplots:::lowess.formula
     tmp <- eval(m, parent.frame() )
 
     lines( tmp, col=col, lwd=2, lty=lty )

@@ -1,8 +1,20 @@
+2005-04-04 10:58  tag release_2_0_6
+
+2005-04-04 10:58  warnes
+
+	* NEWS: Update for release 2.0.6.
+
+2005-04-04 10:23  warnes
+
+	* gplots/R/overplot.R: Explicitly reference package containing
+	  lowess.formula in panel.overplot().  This should fix the error
+	  reported by Troels Ring <tring@gvdnet.dk>.
+
+2005-04-02 00:53  tag release_2_0_5
+
 2005-04-02 00:53  warnes
 
 	* TODO: Update TODO file.
-
-2005-04-01 23:19  tag release_2_0_5
 
 2005-04-01 23:19  warnes
 
