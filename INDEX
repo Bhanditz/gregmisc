@@ -33,8 +33,10 @@ glh.test                Test a General Linear Hypothesis for a
                         Regression Model
 hist2d                  Compute and Plot a 2-Dimensional Histogram
 interleave              Interleave Rows of Data Frames or Matrices
+logit                   Generalized logit and inverse logit function
 lowess                  Scatter Plot Smoothing
 make.contrasts          Construct a User-Specified Contrast Matrix
+matchcols               Select columns names matching certain critera
 nobs                    Compute the Number of Non-missing Observations
 permute                 Randomly Permute the Elements of a Vector
 plotCI                  Plot Error Bars
@@ -50,6 +52,8 @@ running                 Apply a Function Over Adjacent Subsets of a
 space                   Space points in an x-y plot so they don't
                         overlap.
 textplot                Display text information in a graphics plot.
+trim                    Remove leading and trailing spaces from
+                        character strings
 undocumented            Undocumented functions
 wapply                  Compute the Value of a Function Over a Local
                         Region Of An X-Y Plot

@@ -1,6 +1,18 @@
-% $Id: undocumented.Rd,v 1.6 2002/10/30 02:23:10 warnes Exp $
+% $Id: undocumented.Rd,v 1.7 2003/05/23 18:14:12 warnes Exp $
 %
 % $Log: undocumented.Rd,v $
+% Revision 1.7  2003/05/23 18:14:12  warnes
+%
+% - library() backported from 1.7-devel.  This version of the function
+%   adds the "pos=" argument to specify where in the search path the
+%   library should be placed.
+%
+% - updated .First.lib to use library(...pos=3) for MASS to avoid the
+%   'genotype' data set in MASS from masking the genotype funciton in
+%   genetics when it loads gregmisc
+%
+% - Added logit() inv.logit() matchcols() function and corresponding docs
+%
 % Revision 1.6  2002/10/30 02:23:10  warnes
 %
 % - Commented out plot.lm documentation
@@ -33,7 +45,6 @@
 \alias{iapply}
 %\alias{plot.lm}
 \alias{residplot}
-
 \title{Undocumented functions}
 \description{
   These functions are undocumented.  Some are internal and not intended
@@ -65,5 +76,5 @@ residplot(model, formula, ...)
   \item{model}{Undocumented}
   \item{formula}{Undocumented}
   }
-\author{Gregory R. Warnes}
+\author{Gregory R. Warnes \email{gregory\_r\_warnes@groton.pfizer.com}}
 \keyword{misc}

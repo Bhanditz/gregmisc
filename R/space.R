@@ -66,6 +66,6 @@ space <-  function(x,y,s=1/50, na.rm=TRUE)
           }
       }
 
-    return( x=x[undo], y=y[undo] )
+    return( list(x=x[undo], y=y[undo]) )
 }    
       

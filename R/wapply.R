@@ -86,7 +86,7 @@
           result <- result[!missing]
         }
       
-      return(x=pts,y=result)
+      return(list(x=pts,y=result))
     }
   else # method=="nobs" || method=="fraction"
     {
