@@ -1,0 +1,194 @@
+
+R : Copyright 2002, The R Development Core Team
+Version 1.6.0  (2002-10-01)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+> library(gregmisc)
+Loading required package: MASS 
+
+Attaching package `gregmisc':
+
+
+	The following object(s) are masked from package:base :
+
+	 lowess 
+
+> 
+> set.seed(4684)
+> y <- rnorm(100)
+> x.true <- rnorm(100, mean=y, sd=0.25)
+> x <-  factor(cut(x.true,c(-4,-1.5,0,1.5,4)))
+> reg <- lm(y ~ x)
+> summary(reg)
+
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-1.016033 -0.298195  0.006758  0.324487  0.845866 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  -1.7894     0.1834  -9.755 4.99e-16 ***
+x(-1.5,0]     1.1179     0.1927   5.800 8.49e-08 ***
+x(0,1.5]      2.3756     0.1946  12.211  < 2e-16 ***
+x(1.5,4]      3.6983     0.2402  15.399  < 2e-16 ***
+---
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+
+Residual standard error: 0.4102 on 96 degrees of freedom
+Multiple R-Squared: 0.8261,	Adjusted R-squared: 0.8207 
+F-statistic:   152 on 3 and 96 DF,  p-value: < 2.2e-16 
+
+> 
+> # Mirror default treatment contrasts
+> test <- make.contrasts(rbind( c(-1,1,0,0), c(-1,0,1,0), c(-1,0,0,1) ))
+> lm( y ~ x, contrasts=list(x = test ))
+
+Call:
+lm(formula = y ~ x, contrasts = list(x = test))
+
+Coefficients:
+(Intercept)          xC1          xC2          xC3  
+   0.008565     1.117858     2.375628     3.698262  
+
+> 
+> # Specify some more complicated contrasts
+> #   - mean of 1st group vs mean of 4th group
+> #   - mean of 1st and 2nd groups vs mean of 3rd and 4th groups
+> #   - mean of 1st group vs mean of 2nd, 3rd and 4th groups
+> cmat <- rbind( "1 vs 4"    =c(-1, 0, 0, 1),
++                "1+2 vs 3+4"=c(-1/2,-1/2, 1/2, 1/2),
++                "1 vs 2+3+4"=c(-3/3, 1/3, 1/3, 1/3))
+> 
+> summary(lm( y ~ x, contrasts=list(x=make.contrasts(cmat) )))
+
+Call:
+lm(formula = y ~ x, contrasts = list(x = make.contrasts(cmat)))
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-1.016033 -0.298195  0.006758  0.324487  0.845866 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 0.008565   0.063928   0.134    0.894    
+x1 vs 4     3.698262   0.240162  15.399   <2e-16 ***
+x1+2 vs 3+4 2.478016   0.127856  19.381   <2e-16 ***
+x1 vs 2+3+4 2.397249   0.192802  12.434   <2e-16 ***
+---
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+
+Residual standard error: 0.4102 on 96 degrees of freedom
+Multiple R-Squared: 0.8261,	Adjusted R-squared: 0.8207 
+F-statistic:   152 on 3 and 96 DF,  p-value: < 2.2e-16 
+
+> # or
+> contrasts(x) <- make.contrasts(cmat)
+> summary(lm( y ~ x ) )
+
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-1.016033 -0.298195  0.006758  0.324487  0.845866 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 0.008565   0.063928   0.134    0.894    
+x1 vs 4     3.698262   0.240162  15.399   <2e-16 ***
+x1+2 vs 3+4 2.478016   0.127856  19.381   <2e-16 ***
+x1 vs 2+3+4 2.397249   0.192802  12.434   <2e-16 ***
+---
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+
+Residual standard error: 0.4102 on 96 degrees of freedom
+Multiple R-Squared: 0.8261,	Adjusted R-squared: 0.8207 
+F-statistic:   152 on 3 and 96 DF,  p-value: < 2.2e-16 
+
+> 
+> # or use contrasts.lm
+> reg <- lm(y ~ x)
+> contrast.lm( reg, "x", cmat )
+            Estimate Std. Error  t value     Pr(>|t|)
+x1 vs 4     3.698262  0.2401625 15.39900 1.110000e-27
+x1+2 vs 3+4 2.478016  0.1278558 19.38133 5.940991e-35
+x1 vs 2+3+4 2.397249  0.1928017 12.43375 1.023116e-21
+> 
+> # compare with values computed directly using group means
+> gm <- sapply(split(y,x),mean)
+> gm %*% t(cmat)
+      
+         1 vs 4 1+2 vs 3+4 1 vs 2+3+4
+  [1,] 3.698262   2.478016   2.397249
+> 
+> 
+> #
+> # Example for Analysis of Variance
+> #
+> 
+> set.seed(03215)
+> Genotype <- sample(c("WT","KO"), 1000, replace=TRUE)
+> Time <- factor(sample(1:3, 1000, replace=TRUE))
+> data <- data.frame(y, Genotype, Time)
+> y <- rnorm(1000)
+> 
+> data <- data.frame(y, Genotype, as.factor(Time))
+> 
+> # Compute Contrasts & obtain 95\% confidence intervals
+> 
+> model <- aov( y ~ Genotype + Time + Genotype:Time, data=data )
+> 
+> contrast.lm( model, "Genotype", rbind("KO vs WT"=c(-1,1) ), conf=0.95 )
+   Estimate  Std. Error     t value    Pr(>|t|)    lower CI    lower CI 
+ 0.13996830  0.10832724  1.29208766  0.19662710 -0.07260804  0.35254464 
+> 
+> contrast.lm( model, "Time",
++             rbind("1 vs 2"=c(-1,1,0),
++                   "2 vs 3"=c(0,-1,1)
++                   ),
++             conf=0.95 )
+             Estimate Std. Error   t value  Pr(>|t|)   lower CI  lower CI
+Time1 vs 2 0.08140705  0.1053387 0.7728126 0.4398170 -0.1253047 0.2881187
+Time2 vs 3 0.05962674  0.1068250 0.5581720 0.5768527 -0.1500018 0.2692552
+> 
+> 
+> cm.G <- rbind("KO vs WT"=c(-1,1) )
+> cm.T <- rbind("1 vs 2"=c(-1,1,0),
++               "2 vs 3"=c(0,-1,1) )
+> 
+> # Compute contrasts and show SSQ decompositions
+> 
+> model <- model <- aov( y ~ Genotype + Time + Genotype:Time, data=data,
++                       contrasts=list(Genotype=make.contrasts(cm.G),
++                                      Time=make.contrasts(cm.T) )
++                       )
+> 
+> summary(model, split=list( Genotype=list( "KO vs WT"=1 ),
++                            Time = list( "1 vs 2" = 1,
++                                         "2 vs 3" = 2 ) ) )
+                                  Df    Sum Sq   Mean Sq F value Pr(>F)
+Genotype                           1 0.0005446 0.0005446  0.0005 0.9814
+  Genotype: KO vs WT               1 0.0005446 0.0005446  0.0005 0.9814
+Time                               2      0.03      0.01  0.0141 0.9860
+  Time: 1 vs 2                     1      0.03      0.03  0.0259 0.8722
+  Time: 2 vs 3                     1 0.0023370 0.0023370  0.0023 0.9614
+Genotype:Time                      2      3.20      1.60  1.6032 0.2018
+  Genotype:Time: KO vs WT.1 vs 2   1      2.59      2.59  2.5900 0.1079
+  Genotype:Time: KO vs WT.2 vs 3   1      0.62      0.62  0.6163 0.4326
+Residuals                        994    992.39      1.00               
+> 
+> 
+> 

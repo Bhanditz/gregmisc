@@ -1,6 +1,12 @@
-% $Id: undocumented.Rd,v 1.5 2002/09/23 13:59:30 warnes Exp $
+% $Id: undocumented.Rd,v 1.6 2002/10/30 02:23:10 warnes Exp $
 %
 % $Log: undocumented.Rd,v $
+% Revision 1.6  2002/10/30 02:23:10  warnes
+%
+% - Commented out plot.lm documentation
+% - Removed make.contrasts documentation, which is now properly
+%   documented in man/make.contrasts.Rd
+%
 % Revision 1.5  2002/09/23 13:59:30  warnes
 % - Modified all files to include CVS Id and Log tags.
 %
@@ -25,8 +31,7 @@
 
 \name{undocumented}
 \alias{iapply}
-\alias{make.contrasts}
-\alias{plot.lm}
+%\alias{plot.lm}
 \alias{residplot}
 
 \title{Undocumented functions}
@@ -35,33 +40,30 @@
   for direct use.  Others simply haven't been documented yet.  
 }
 \usage{
-make.contrasts(contr, how.many)
-plot.lm (x, which = 1:5, caption = c("Residuals vs Fitted", 
-    "Normal Q-Q plot", "Scale-Location plot", "Cook's distance plot"), 
-    panel = panel.smooth, sub.caption = deparse(x$call), main = "", 
-    ask = interactive() && nb.fig < length(which) && .Device != 
-        "postscript", ..., id.n = 3, labels.id = names(residuals(x)), 
-    cex.id = 0.75, band = TRUE, rug = TRUE) 
+% plot.lm (x, which = 1:5, caption = c("Residuals vs Fitted", 
+%     "Normal Q-Q plot", "Scale-Location plot", "Cook's distance plot"), 
+%     panel = panel.smooth, sub.caption = deparse(x$call), main = "", 
+%     ask = interactive() && nb.fig < length(which) && .Device != 
+%         "postscript", ..., id.n = 3, labels.id = names(residuals(x)), 
+%     cex.id = 0.75, band = TRUE, rug = TRUE) 
 residplot(model, formula, ...) 
 }
 \arguments{
-  \item{contr}{Undocumented}
-  \item{how.many}{Undocumented}
-  \item{x}{Undocumented}
-  \item{which}{Undocumented}
-  \item{caption}{Undocumented}
-  \item{panel}{Undocumented}
-  \item{sub.caption}{Undocumented}
-  \item{main}{Undocumented}
-  \item{ask}{Undocumented}
-  \item{...}{Undocumented}
-  \item{id.n}{Undocumented}
-  \item{labels.id}{Undocumented}
-  \item{cex.id}{Undocumented}
-  \item{band}{Undocumented}
-  \item{rug}{Undocumented}
+%   \item{x}{Undocumented}
+%   \item{which}{Undocumented}
+%   \item{caption}{Undocumented}
+%   \item{panel}{Undocumented}
+%   \item{sub.caption}{Undocumented}
+%   \item{main}{Undocumented}
+%   \item{ask}{Undocumented}
+   \item{...}{Undocumented}
+%   \item{id.n}{Undocumented}
+%   \item{labels.id}{Undocumented}
+%   \item{cex.id}{Undocumented}
+%   \item{band}{Undocumented}
+%   \item{rug}{Undocumented}
   \item{model}{Undocumented}
-  \item{formula}{Undocumented}{Undocumented.}{Undocumented}
+  \item{formula}{Undocumented}
   }
 \author{Gregory R. Warnes}
 \keyword{misc}

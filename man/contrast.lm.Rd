@@ -1,6 +1,20 @@
-% $Id: contrast.lm.Rd,v 1.8 2002/09/23 13:59:30 warnes Exp $
+% $Id: contrast.lm.Rd,v 1.10 2002/10/29 23:00:43 warnes Exp $
 %
 % $Log: contrast.lm.Rd,v $
+% Revision 1.10  2002/10/29 23:00:43  warnes
+%
+% - Moved make.contrasts to a separate file.
+% - Enhanced make contrasts to better label contrast matrix, to give
+%   how.many a default value, and to coerce vectors into row matrixes.
+% - Added help page for make.contrasts.
+% - Added link from contrasts.lm seealso to make.contrasts.
+%
+% Revision 1.9  2002/10/29 19:55:15  warnes
+%
+% - Fix bug that prevented contrast.lm() from working on 'aov' objects
+% - Add 'aov' examples to documentation for contrast.lm
+% - Added note about future support for contrast.lme.
+%
 % Revision 1.8  2002/09/23 13:59:30  warnes
 % - Modified all files to include CVS Id and Log tags.
 %
@@ -50,16 +64,16 @@
 \name{contrast.lm}
 \alias{contrast.lm}
 %\alias{contrast.lme}
-\title{Compute (and test) arbitrary contrasts for regression objects}
+\title{Compute and test arbitrary contrasts for regression objects}
 \description{
- Compute (and test) arbitrary contrasts for regression objects.
+ Compute and test arbitrary contrasts for regression objects.
 }
 \usage{
 contrast.lm(reg, varname, coeff, showall=FALSE, conf.int=NULL)
 %contrast.lme(reg, varname, coeff, showall=FALSE, conf.int=NULL)
 }
 \arguments{
-  \item{reg}{Regression (lm,glm,aov) %,lme)
+  \item{reg}{regression (lm,glm,aov) %,lme)
     object for which the contrast(s) will be computed.}
   \item{varname}{variable name}
   \item{coeff}{vector or matrix specifying contrasts (one per row).}
@@ -84,10 +98,23 @@ contrast.lm(reg, varname, coeff, showall=FALSE, conf.int=NULL)
   confidence limits are also returned.
 }
 \references{Venables & Ripley, Section 6.2}
-\author{ Gregory R. Warnes \email{Gregory\_R\_Warnes\@groton.pfizer.com}}
+\note{
+  \code{contrast.lme} has been written but requires changes to the
+  \code{\link[nlme]{lme}} function in NLME.  The changes have been sent
+  to the author, Jose Pinhiero
+  \email{jose.pinheiro@pharma.novartis.com}, who has promised to include
+  them in the next version of NLME.   In the mean time, you may contact
+  me (Gregory Warnes) for a patch.
+  }
+  
+\author{ Gregory R. Warnes \email{Gregory\_R\_Warnes@groton.pfizer.com}}
 
 \seealso{ \code{\link{lm}}, \code{\link{contrasts}},
-  \code{\link{contr.treatment}},  \code{\link{contr.poly}}  }
+  \code{\link{contr.treatment}},  \code{\link{contr.poly}},
+  Computation and testing of General Linear Hypothesis:
+  \code{\link{glh.test}}, Computation and testing of estimable functions
+  of model coefficients: \code{\link{estimable}}, \code{\link{make.contrasts}}
+  }
 
 \examples{
 y <- rnorm(100)
@@ -125,6 +152,47 @@ contrast.lm(reg,x,cmat)
 x2 <- rnorm(100,mean=y,sd=0.5)
 reg2 <- lm(y ~ x + x2 )
 contrast.lm(reg2,x,c(-1,0,0,1))
+
+#
+# Example for Analysis of Variance
+#
+
+set.seed(03215)
+Genotype <- sample(c("WT","KO"), 1000, replace=TRUE)
+Time <- factor(sample(1:3, 1000, replace=TRUE))
+data <- data.frame(y, Genotype, Time)
+y <- rnorm(1000)
+
+data <- data.frame(y, Genotype, as.factor(Time))
+
+# Compute Contrasts & obtain 95\% confidence intervals
+
+model <- aov( y ~ Genotype + Time + Genotype:Time, data=data )
+
+contrast.lm( model, "Genotype", rbind("KO vs WT"=c(-1,1) ), conf=0.95 )
+
+contrast.lm( model, "Time",
+            rbind("1 vs 2"=c(-1,1,0),
+                  "2 vs 3"=c(0,-1,1)
+                  ),
+            conf=0.95 )
+
+
+cm.G <- rbind("KO vs WT"=c(-1,1) )
+cm.T <- rbind("1 vs 2"=c(-1,1,0),
+              "2 vs 3"=c(0,-1,1) )
+
+# Compute contrasts and show SSQ decompositions
+
+model <- model <- aov( y ~ Genotype + Time + Genotype:Time, data=data,
+                      contrasts=list(Genotype=make.contrasts(cm.G),
+                                     Time=make.contrasts(cm.T) )
+                      )
+
+summary(model, split=list( Genotype=list( "KO vs WT"=1 ),
+                           Time = list( "1 vs 2" = 1,
+                                        "2 vs 3" = 2 ) ) )
+
 
 % \dontrun{
 % # will work in the next version of nlme

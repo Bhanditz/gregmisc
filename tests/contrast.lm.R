@@ -1,4 +1,5 @@
 library(gregmisc)
+
 set.seed(1234567,"default")
 y <- rnorm(100)
 x <-  cut(rnorm(100, mean=y, sd=0.25),c(-4,-1.5,0,1.5,4))
@@ -45,5 +46,4 @@ contrast.lm(reg2,x,c(-1,0,0,1), showall=F, conf.int=0.95)
 # fm1 <- lme(distance ~ Sex, data = Orthodont,random=~1|Subject) 
 # intervals(fm1)
 # contrast.lme(fm1, "Sex", c(1,0) )
-
 

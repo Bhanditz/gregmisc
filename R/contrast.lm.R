@@ -1,6 +1,20 @@
-# $Id: contrast.lm.R,v 1.12 2002/09/24 15:55:16 warnes Exp $
+# $Id: contrast.lm.R,v 1.14 2002/10/29 23:00:42 warnes Exp $
 #
 # $Log: contrast.lm.R,v $
+# Revision 1.14  2002/10/29 23:00:42  warnes
+#
+# - Moved make.contrasts to a separate file.
+# - Enhanced make contrasts to better label contrast matrix, to give
+#   how.many a default value, and to coerce vectors into row matrixes.
+# - Added help page for make.contrasts.
+# - Added link from contrasts.lm seealso to make.contrasts.
+#
+# Revision 1.13  2002/10/29 19:55:13  warnes
+#
+# - Fix bug that prevented contrast.lm() from working on 'aov' objects
+# - Add 'aov' examples to documentation for contrast.lm
+# - Added note about future support for contrast.lme.
+#
 # Revision 1.12  2002/09/24 15:55:16  warnes
 #
 # - Add ability to show confidence intervals when showall=TRUE.
@@ -104,7 +118,7 @@ contrast.lm <- function(reg, varname, coeff, showall=FALSE, conf.int=NULL)
     r <- eval(m)
 
   # now return the correct elements ....
-  sreg <- summary(r)
+  sreg <- summary.lm(r)
   retval <- cbind(coef(sreg), "DF"=sreg$df[2])
 
   if( !showall )
@@ -220,27 +234,3 @@ contrast.lm <- function(reg, varname, coeff, showall=FALSE, conf.int=NULL)
 #  return(retval[,-5])
 #}
 
-
-"make.contrasts" <-  function (contr, how.many) 
-{
-  value <- as.matrix(ginv(contr))  # requires library(MASS)
-  if (nrow(value) != how.many) 
-    stop("wrong number of contrast matrix rows")
-  n1 <- if (missing(how.many)) 
-    how.many - 1
-  else how.many
-  nc <- ncol(value)
-#  rownames(value) <- levels(x)
-  if (nc < n1) {
-    cm <- qr(cbind(1, value))
-    if (cm$rank != nc + 1) 
-      stop("singular contrast matrix")
-    cm <- qr.qy(cm, diag(how.many))[, 2:how.many, drop=FALSE]
-    cm[, 1:nc] <- value
-#    dimnames(cm) <- list(levels(x), NULL)
-    if (!is.null(nmcol <- dimnames(value)[[2]])) 
-      dimnames(cm)[[2]] <- c(nmcol, rep("", n1 - nc))
-  }
-  else cm <- value[, 1:n1, drop = FALSE]
-  cm
-}

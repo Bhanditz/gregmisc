@@ -1,6 +1,6 @@
 
 R : Copyright 2002, The R Development Core Team
-Version 1.5.1 Patched (2002-06-18)
+Version 1.6.0  (2002-10-01)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -21,7 +21,7 @@ Attaching package `gregmisc':
 
 	The following object(s) are masked from package:base :
 
-	 lowess plot.lm 
+	 lowess 
 
 > set.seed(1324567,"default")
 > a  <-  matrix(rnorm(12),ncol=4,nrow=3)

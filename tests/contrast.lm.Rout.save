@@ -1,6 +1,6 @@
 
 R : Copyright 2002, The R Development Core Team
-Version 1.5.1 Patched (2002-06-18)
+Version 1.6.0  (2002-10-01)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -21,8 +21,9 @@ Attaching package `gregmisc':
 
 	The following object(s) are masked from package:base :
 
-	 lowess plot.lm 
+	 lowess 
 
+> 
 > set.seed(1234567,"default")
 > y <- rnorm(100)
 > x <-  cut(rnorm(100, mean=y, sd=0.25),c(-4,-1.5,0,1.5,4))
@@ -128,6 +129,5 @@ x2               0.62273136
 > # fm1 <- lme(distance ~ Sex, data = Orthodont,random=~1|Subject) 
 > # intervals(fm1)
 > # contrast.lme(fm1, "Sex", c(1,0) )
-> 
 > 
 > 

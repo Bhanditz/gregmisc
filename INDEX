@@ -11,18 +11,23 @@ combinations            Enumerate the Combinations or Permutations of
                         the Elements of a Vector
 combine                 Combine R Objects With a Column Labeling the
                         Source
-contrast.lm             Compute (and test) arbitrary contrasts for
+contrast.lm             Compute and test arbitrary contrasts for
                         regression objects
+rdirichlet              Functions for the Dirichlet Distribution
 estimable               Compute and test estimable linear functions of
                         the fitted coefficients (including contrasts)
                         of regression objects
 factorial               Compute factorial function
+fast.prcomp             Efficient computation of principal components
+                        and singular value decompositions.
 glh.test                Test a General Linear Hypothesis for a
                         Regression Model 
 hist2d                  Compute and Plot a 2-Dimensional Histogram 
 interleave              Interleave Rows of Data Frames or Matrices 
 lowess                  Scatter Plot Smoothing
+make.contrasts          Construct a User-Specified Contrast Matrix
 nobs                    Compute the Number of Non-missing Observations 
+permute                 Randomly Permute the Elements of a Vector
 plotCI                  Plot Error Bars
 plotmeans               Plot Group Means and Confidence Intervals
 quantcut                Create a Factor Variable Using the Quantiles of
