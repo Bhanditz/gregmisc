@@ -1,20 +1,22 @@
-#
-# $Id: nobs.Rd,v 1.4 2002/03/26 19:29:15 warneg Exp $
-#
-# $Log: nobs.Rd,v $
-# Revision 1.4  2002/03/26 19:29:15  warneg
-#
-# Updated to add ... parameter to function calls.
-#
-# Revision 1.3  2002/02/20 21:31:08  warneg
-#
-# Noted that specialized methods exist.
-#
-# Revision 1.2  2002/02/20 21:29:34  warneg
-#
-# Incorrectly had contents of nobs.R here instead of help text.  Corrected.
-#
-#
+% $Id: nobs.Rd,v 1.5 2002/09/23 13:59:30 warnes Exp $
+%
+% $Log: nobs.Rd,v $
+% Revision 1.5  2002/09/23 13:59:30  warnes
+% - Modified all files to include CVS Id and Log tags.
+%
+% Revision 1.4  2002/03/26 19:29:15  warneg
+%
+% Updated to add ... parameter to function calls.
+%
+% Revision 1.3  2002/02/20 21:31:08  warneg
+%
+% Noted that specialized methods exist.
+%
+% Revision 1.2  2002/02/20 21:29:34  warneg
+%
+% Incorrectly had contents of nobs.R here instead of help text.  Corrected.
+%
+%
 
 \name{nobs}
 \alias{nobs}

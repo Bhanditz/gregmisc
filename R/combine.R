@@ -1,3 +1,11 @@
+# $Id: combine.R,v 1.2 2002/09/23 13:59:30 warnes Exp $
+#
+# $Log: combine.R,v $
+# Revision 1.2  2002/09/23 13:59:30  warnes
+# - Modified all files to include CVS Id and Log tags.
+#
+#
+
 combine  <-  function(..., names=NULL)
   {
     tmp  <-  list(...)

@@ -1,6 +1,9 @@
-% $Id: combinations.Rd,v 1.3 2002/04/09 00:51:32 warneg Exp $
+% $Id: combinations.Rd,v 1.4 2002/09/23 13:59:30 warnes Exp $
 %
 % $Log: combinations.Rd,v $
+% Revision 1.4  2002/09/23 13:59:30  warnes
+% - Modified all files to include CVS Id and Log tags.
+%
 % Revision 1.3  2002/04/09 00:51:32  warneg
 %
 % Checkin for version 0.5.3
@@ -12,6 +15,7 @@
 %
 % Initial revision.
 %
+
 \name{combinations}
 \alias{combinations}
 \alias{permutations}

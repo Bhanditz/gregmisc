@@ -1,7 +1,9 @@
-#
-# $Id: nobs.R,v 1.3 2002/03/26 19:29:31 warneg Exp $
+# $Id: nobs.R,v 1.4 2002/09/23 13:59:30 warnes Exp $
 #
 # $Log: nobs.R,v $
+# Revision 1.4  2002/09/23 13:59:30  warnes
+# - Modified all files to include CVS Id and Log tags.
+#
 # Revision 1.3  2002/03/26 19:29:31  warneg
 #
 # Added ... to methods.

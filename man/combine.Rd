@@ -1,3 +1,11 @@
+% $Id: combine.Rd,v 1.2 2002/09/23 13:59:30 warnes Exp $
+%
+% $Log: combine.Rd,v $
+% Revision 1.2  2002/09/23 13:59:30  warnes
+% - Modified all files to include CVS Id and Log tags.
+%
+%
+
 \name{combine}
 \alias{combine}
 \title{ Combine R Objects With a Column Labeling the Source}

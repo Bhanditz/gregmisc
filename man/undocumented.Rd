@@ -1,24 +1,27 @@
-# $Id: undocumented.Rd,v 1.4 2002/04/09 00:51:33 warneg Exp $
-#
-# $Log: undocumented.Rd,v $
-# Revision 1.4  2002/04/09 00:51:33  warneg
-#
-# Checkin for version 0.5.3
-#
-# Revision 1.3  2002/03/26 21:22:35  warneg
-#
-# - Changed methods to include '...' to match the generic.
-# - Updated for version 0.5.1
-#
-# Revision 1.2  2002/02/20 20:09:03  warneg
-#
-# Minor changes, typo and formatting fixes.
-#
-# Revision 1.1  2001/12/12 01:36:29  warneg
-#
-# Initial checkin.
-#
-# 
+% $Id: undocumented.Rd,v 1.5 2002/09/23 13:59:30 warnes Exp $
+%
+% $Log: undocumented.Rd,v $
+% Revision 1.5  2002/09/23 13:59:30  warnes
+% - Modified all files to include CVS Id and Log tags.
+%
+% Revision 1.4  2002/04/09 00:51:33  warneg
+%
+% Checkin for version 0.5.3
+%
+% Revision 1.3  2002/03/26 21:22:35  warneg
+%
+% - Changed methods to include '...' to match the generic.
+% - Updated for version 0.5.1
+%
+% Revision 1.2  2002/02/20 20:09:03  warneg
+%
+% Minor changes, typo and formatting fixes.
+%
+% Revision 1.1  2001/12/12 01:36:29  warneg
+%
+% Initial checkin.
+%
+% 
 
 \name{undocumented}
 \alias{iapply}

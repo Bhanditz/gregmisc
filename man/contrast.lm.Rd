@@ -1,48 +1,51 @@
-# $Id: contrast.lm.Rd,v 1.7 2002/08/01 19:37:14 warnes Exp $
-#
-# $Log: contrast.lm.Rd,v $
-# Revision 1.7  2002/08/01 19:37:14  warnes
-#
-# - Corrected documentation mismatch for ci, ci.default.
-#
-# - Replaced all occurences of '_' for assignment with '<-'.
-#
-# - Replaced all occurences of 'T' or 'F' for 'TRUE' and 'FALSE' with
-#   the spelled out version.
-#
-# - Updaded version number and date.
-#
-# Revision 1.6  2002/04/15 21:30:39  warneg
-# - Separated out, then commented out mention of contrast.lme and lme
-#   objects.  The contrast.lme function will become part of Bates and
-#   Pinhiero's next NLME library.
-#
-# Revision 1.5  2002/04/05 18:27:25  warneg
-#
-# - Noted that contrats.lm can be applied to lme objects.
-# - Clarified return value when conf.int is specified.
-#
-# Revision 1.4  2001/12/10 19:39:58  warneg
-# renamed contrast.factor.Rd back to contrast.lm.Rd corresponding to rename of function.
-#
-# Revision 1.2  2001/12/07 23:53:34  warneg
-#
-# Added documentation for 'conf.int' parameter.
-#
-# Revision 1.1  2001/12/07 19:57:59  warneg
-#
-# Renamed 'contrast.lm.Rd' to 'contrast.lm.Rd'.
-#
-# Revision 1.2  2001/09/01 00:01:55  warneg
-# Release 0.3.0
-#
-# Revision 1.1  2001/08/31 20:55:32  warneg
-#
-# Updated to match changes in contrast.lm.R version 1.2.
-#
-# Also added more examples.
-#
-#
+% $Id: contrast.lm.Rd,v 1.8 2002/09/23 13:59:30 warnes Exp $
+%
+% $Log: contrast.lm.Rd,v $
+% Revision 1.8  2002/09/23 13:59:30  warnes
+% - Modified all files to include CVS Id and Log tags.
+%
+% Revision 1.7  2002/08/01 19:37:14  warnes
+%
+% - Corrected documentation mismatch for ci, ci.default.
+%
+% - Replaced all occurences of '_' for assignment with '<-'.
+%
+% - Replaced all occurences of 'T' or 'F' for 'TRUE' and 'FALSE' with
+%   the spelled out version.
+%
+% - Updaded version number and date.
+%
+% Revision 1.6  2002/04/15 21:30:39  warneg
+% - Separated out, then commented out mention of contrast.lme and lme
+%   objects.  The contrast.lme function will become part of Bates and
+%   Pinhiero's next NLME library.
+%
+% Revision 1.5  2002/04/05 18:27:25  warneg
+%
+% - Noted that contrats.lm can be applied to lme objects.
+% - Clarified return value when conf.int is specified.
+%
+% Revision 1.4  2001/12/10 19:39:58  warneg
+% renamed contrast.factor.Rd back to contrast.lm.Rd corresponding to rename of function.
+%
+% Revision 1.2  2001/12/07 23:53:34  warneg
+%
+% Added documentation for 'conf.int' parameter.
+%
+% Revision 1.1  2001/12/07 19:57:59  warneg
+%
+% Renamed 'contrast.lm.Rd' to 'contrast.lm.Rd'.
+%
+% Revision 1.2  2001/09/01 00:01:55  warneg
+% Release 0.3.0
+%
+% Revision 1.1  2001/08/31 20:55:32  warneg
+%
+% Updated to match changes in contrast.lm.R version 1.2.
+%
+% Also added more examples.
+%
+%
 
 \name{contrast.lm}
 \alias{contrast.lm}

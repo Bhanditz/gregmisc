@@ -1,6 +1,9 @@
+CrossTable              Cross Tabulation with Tests for Factor
+                        Independence
 aggregate.table         Create 2-Way Table of Summary Statistics
 bandplot                Plot x-y Points with Locally Smoothed Mean and
                         Standard Deviation
+barplot2                Enhanced Bar Plots
 boxplot.n               Produce a Boxplot Annotated with the Number of
                         Observations
 ci                      Compute Confidence Intervals

@@ -1,11 +1,14 @@
-# $Id: quantcut.Rd,v 1.1 2002/03/26 14:49:10 warneg Exp $
-#
-# $Log: quantcut.Rd,v $
-# Revision 1.1  2002/03/26 14:49:10  warneg
-#
-# Initial Checkin
-#
-#
+% $Id: quantcut.Rd,v 1.2 2002/09/23 13:59:30 warnes Exp $
+%
+% $Log: quantcut.Rd,v $
+% Revision 1.2  2002/09/23 13:59:30  warnes
+% - Modified all files to include CVS Id and Log tags.
+%
+% Revision 1.1  2002/03/26 14:49:10  warneg
+%
+% Initial Checkin
+%
+%
 
 \name{quantcut}
 \alias{quantcut}

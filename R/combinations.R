@@ -1,6 +1,12 @@
-# $Id: combinations.R,v 1.2 2002/04/09 00:51:29 warneg Exp $
+# $Id: combinations.R,v 1.3 2002/09/23 13:38:53 warnes Exp $
 #
 # $Log: combinations.R,v $
+# Revision 1.3  2002/09/23 13:38:53  warnes
+#
+# - Added CrossTable() and barplot2() code and docs contributed by Marc Schwartz.
+# - Permit combinations() to be used when r>n provided repeat.allowed=TRUE
+# - Bumped up version number
+#
 # Revision 1.2  2002/04/09 00:51:29  warneg
 #
 # Checkin for version 0.5.3
@@ -27,7 +33,7 @@ combinations <- function(n, r, v = 1:n, set = TRUE, repeats.allowed=FALSE)
   if(!is.atomic(v) || length(v) < n) 
     stop("v is either non-atomic or too short")
   if( (r > n) & repeats.allowed==FALSE)
-    stop("r > n")
+    stop("r > n and repeats.allowed=FALSE")
   if(set) {
     v <- unique(sort(v))
     if (length(v) < n) stop("too few different elements")
@@ -72,8 +78,8 @@ permutations <- function(n, r, v = 1:n, set = TRUE, repeats.allowed=FALSE)
      || r < 1 || (r %% 1) != 0) stop("bad value of r") 
   if(!is.atomic(v) || length(v) < n) 
     stop("v is either non-atomic or too short")
-  if( (r > n) & repeats.allowed==FALSE)
-    stop("r > n")
+  if( (r > n) ) #& repeats.allowed==FALSE)
+    stop("r > n") # and repeats.allowed=FALSE")
   if(set) {
     v <- unique(sort(v))
     if (length(v) < n) stop("too few different elements")

@@ -1,3 +1,11 @@
+% $Id: bandplot.Rd,v 1.4 2002/09/23 13:59:30 warnes Exp $
+%
+% $Log: bandplot.Rd,v $
+% Revision 1.4  2002/09/23 13:59:30  warnes
+% - Modified all files to include CVS Id and Log tags.
+%
+%
+
 \name{bandplot}
 \alias{bandplot}
 \title{Plot x-y Points with Locally Smoothed Mean and Standard Deviation}
