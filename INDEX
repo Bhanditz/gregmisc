@@ -9,6 +9,8 @@ bandplot                Plot x-y Points with Locally Smoothed Mean and
 barplot2                Enhanced Bar Plots
 boxplot.n               Produce a Boxplot Annotated with the Number of
                         Observations
+capture                 Capture printed output of an R expression in a
+                        string
 ci                      Compute Confidence Intervals
 combinations            Enumerate the Combinations or Permutations of
                         the Elements of a Vector
@@ -46,6 +48,7 @@ running                 Apply a Function Over Adjacent Subsets of a
                         Vector
 space                   Space points in an x-y plot so they don't
                         overlap.
+textplot                Display text information in a graphics plot.
 undocumented            Undocumented functions
 wapply                  Compute the Value of a Function Over a Local
                         Region Of An X-Y Plot
