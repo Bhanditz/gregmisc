@@ -1,4 +1,4 @@
-# $Id: heatmap.2.R,v 1.10 2004/09/03 17:27:44 warneg Exp $
+# $Id: heatmap.2.R,v 1.12 2004/11/30 01:06:04 warnes Exp $
 
 heatmap.2 <- function (x,
 
@@ -24,6 +24,7 @@ heatmap.2 <- function (x,
                      colsep,
                      rowsep,
                      sepcolor="white",
+                     sepwidth=c(0.05,0.05),
 
                      # cell labeling
                      cellnote,
@@ -51,6 +52,8 @@ heatmap.2 <- function (x,
                      key = TRUE,
                      density.info=c("histogram","density","none"),
                      denscol=tracecol,
+                     symkey = TRUE,
+                     densadj = 0.25,
 
                      # plot labels
                      main = NULL,
@@ -98,6 +101,9 @@ heatmap.2 <- function (x,
     if(!is.numeric(margins) || length(margins) != 2)
       stop("`margins' must be a numeric vector of length 2")
 
+    if(missing(cellnote))
+      cellnote <- matrix("", ncol=ncol(x), nrow=nrow(x))
+    
     ## by default order by row/col mean
     if(is.null(Rowv)) Rowv <- rowMeans(x, na.rm = na.rm)
     if(is.null(Colv)) Colv <- colMeans(x, na.rm = na.rm)
@@ -147,9 +153,10 @@ heatmap.2 <- function (x,
         colInd <- order(Colv)
       }
 
-    ## reorder x
+    ## reorder x & cellnote
     x <- x[rowInd, colInd]
     x.unscaled <- x
+    cellnote <- cellnote[rowInd, colInd]
 
     if(is.null(labRow))
       labRow <- if(is.null(rownames(x))) (1:nr)[rowInd] else rownames(x)
@@ -231,12 +238,19 @@ heatmap.2 <- function (x,
     }
     ## draw the main carpet
     par(mar = c(margins[1], 0, 0, margins[2]))
-    if(!symm || scale != "none") x <- t(x)
-    if(revC) { # x columns reversed
+    if(!symm || scale != "none")
+      {
+        x <- t(x)
+        cellnote <- t(cellnote)
+      }
+    if(revC)
+      { # x columns reversed
         iy <- nr:1
         ddr <- rev(ddr)
         x <- x[,iy]
-    } else iy <- 1:nr
+        cellnote <- cellnote[,iy]
+      }
+    else iy <- 1:nr
 
     image(1:nc, 1:nr, x, xlim = 0.5+ c(0, nc), ylim = 0.5+ c(0, nr),
           axes = FALSE, xlab = "", ylab = "", col=col, breaks=breaks,
@@ -258,6 +272,20 @@ heatmap.2 <- function (x,
     if (!missing(add.expr))
 	eval(substitute(add.expr))
 
+    ## add 'background' colored spaces to visually separate sections
+    if(!missing(colsep))
+      for(csep in colsep)
+        rect(xleft =csep+0.5,               ybottom=rep(0,length(csep)),
+             xright=csep+0.5+sepwidth[1],     ytop=rep(ncol(x)+1,csep),
+             lty=1, lwd=1, col=sepcolor, border=sepcolor)
+
+    if(!missing(rowsep))
+      for(rsep in rowsep)
+        rect(xleft =0,          ybottom= (ncol(x)+1-rsep)-0.5,
+             xright=ncol(x)+1,  ytop   = (ncol(x)+1-rsep)-0.5 - sepwidth[2],
+             lty=1, lwd=1, col=sepcolor, border=sepcolor)
+
+  
     # show traces
     min.scale <- min(breaks)
     max.scale <- max(breaks)
@@ -279,6 +307,7 @@ heatmap.2 <- function (x,
           }
       }
 
+ 
     if(trace %in% c("both","row") )
       {
         for( i in rowInd )
@@ -297,24 +326,12 @@ heatmap.2 <- function (x,
 
 
 
-
-    ## add 'background' colored spaces to visually separate sections
-    if(!missing(colsep))
-      for(csep in colsep)
-        rect(xleft=csep+0.5,   ybottom=rep(0,length(csep)),
-             xright=csep+0.55, ytop=rep(ncol(x)+1,csep),
-             lty=1, lwd=1, col=sepcolor, border=sepcolor)
-
-    if(!missing(rowsep))
-      for(rsep in rowsep)
-        rect(xleft=0,          ybottom=nrow(x)+1-rsep-0.5,
-             xright=ncol(x)+1, ytop=nrow(x)+1-rsep-0.55,
-             lty=1, lwd=1, col=sepcolor, border=sepcolor)
-
     if(!missing(cellnote))
-      text(x=c(col(cellnote)),
-           y=nrow(cellnote)+1-c(row(cellnote)), labels=c(cellnote),
-           col=notecol, cex=notecex)
+      text(x=c(row(cellnote)),
+           y=c(col(cellnote)),
+           labels=c(cellnote),
+           col=notecol,
+           cex=notecex)
 
     ## the two dendrograms :
     par(mar = c(margins[1], 0, 0, 0))
@@ -341,8 +358,16 @@ heatmap.2 <- function (x,
       {
         par(mar = c(5, 4, 2, 1), cex=0.75)
 
-        min.raw <- min(x, na.rm=TRUE) # Again, modified to use scaled or unscaled (SD 12/2/03)
-        max.raw <- max(x, na.rm=TRUE)
+        if(symkey)
+          {
+            max.raw <- max(abs(x))
+            min.raw <- -max.raw
+          }
+        else
+          {
+            min.raw <- min(x, na.rm=TRUE) # Again, modified to use scaled or unscaled (SD 12/2/03)
+            max.raw <- max(x, na.rm=TRUE)
+          }
 
         z <- seq(min.raw,max.raw,length=length(col))
         image(z=matrix(z, ncol=1),
@@ -363,11 +388,11 @@ heatmap.2 <- function (x,
         if(density.info=="density")
           {
             # Experimental : also plot density of data
-            dens <- density(x, adjust=0.25, na.rm=TRUE)
-            omit <- dens$x < min(breaks) | dens$x > min(breaks)
+            dens <- density(x, adjust=densadj, na.rm=TRUE)
+            omit <- dens$x < min(breaks) | dens$x > max(breaks)
             dens$x <- dens$x[-omit]
             dens$y <- dens$y[-omit]
-            dens$x <- scale01(dens$x)
+            dens$x <- scale01(dens$x,min.raw,max.raw)
             lines(dens$x, dens$y / max(dens$y) * 0.95, col=denscol, lwd=1)
             axis(2, at=pretty(dens$y)/max(dens$y) * 0.95, pretty(dens$y) )
             title("Color Key\nand Density Plot")

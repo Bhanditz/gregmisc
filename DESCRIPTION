@@ -4,7 +4,7 @@ Title: Greg's Miscellaneous Functions
 BundleDescription: The gregmisc bundle is a repository for a variety of
              useful functions.  See the individual packages for more
              details.
-Version: 2.0.0
+Version: 2.0.2
 Date: 2004-09-02
 Author: Gregory R. Warnes.  Includes R source code and documentation
         contributed by
@@ -33,4 +33,4 @@ Author: Gregory R. Warnes.  Includes R source code and documentation
 	under the terms of the GNU General Public Licence (GPL).
 Maintainer: Gregory R. Warnes <Gregory_R_Warnes@groton.pfizer.com>
 License: GPL (version 2 or later)
-Packaged: Mon Sep 27 17:10:16 2004; warneg
+Packaged: Fri Jan 21 13:30:08 2005; jainn02

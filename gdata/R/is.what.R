@@ -22,8 +22,18 @@ is.what <- function(object, verbose=FALSE)
                  "is.what")
   tests <- is.functions[!(is.functions %in% not.using)]
   names(tests) <- NULL
-  results <- sapply(tests, do.test, object=object)
-  names(results) <- tests
+  
+  ## Remove is.all.equal(), as it needs two arguments
+  temp <- which(tests=="is.all.equal")
+  if (is.numeric(temp) & length(temp)==0)
+  { 
+	results <- sapply(tests, do.test, object=object)
+	names(results) <- tests
+  } else {
+	tests <- tests[-temp]
+	results <- sapply(tests, do.test, object=object)
+	names(results) <- tests
+  }
 
 
   if(verbose == FALSE)
