@@ -1,6 +1,6 @@
 
-R : Copyright 2002, The R Development Core Team
-Version 1.6.0  (2002-10-01)
+R : Copyright 2003, The R Development Core Team
+Version 1.7.0  (2003-04-16)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -16,7 +16,7 @@ Type `q()' to quit R.
 > library(gregmisc)
 Loading required package: MASS 
 
-Attaching package `gregmisc':
+Attaching package 'gregmisc':
 
 
 	The following object(s) are masked from package:base :
@@ -69,25 +69,25 @@ Attaching package `gregmisc':
 > 
 > print(tab, quote=FALSE)
           A     B     C    
-a Mean    -0.06 -0.03 0.01 
-a Std Err 0.12  0.12  0.12 
-a N       72    69    61   
+a Mean    -0.17 -0.19 0.11 
+a Std Err 0.13  0.11  0.12 
+a N       65    75    70   
                            
-b Mean    -0.23 0.05  -0.01
-b Std Err 0.11  0.11  0.13 
-b N       71    63    60   
+b Mean    0.22  0.21  0.15 
+b Std Err 0.13  0.13  0.11 
+b N       62    64    66   
                            
-c Mean    0.04  0.03  0.16 
-c Std Err 0.14  0.12  0.12 
-c N       63    70    60   
+c Mean    0.03  0.06  0.01 
+c Std Err 0.13  0.14  0.13 
+c N       65    66    74   
                            
-d Mean    0.12  -0.1  0.05 
-d Std Err 0.14  0.12  0.14 
-d N       64    64    66   
+d Mean    -0.05 -0.13 -0.13
+d Std Err 0.13  0.12  0.13 
+d N       57    73    63   
                            
-e Mean    -0.1  0.06  0.16 
-e Std Err 0.12  0.13  0.12 
-e N       83    66    68   
+e Mean    -0.16 -0.04 0.04 
+e Std Err 0.13  0.12  0.13 
+e N       75    68    57   
                            
 > 
 > tab <- interleave( "Mean"=round(means,2),
@@ -96,24 +96,24 @@ e N       83    66    68
 > 
 > print(tab, quote=FALSE)
   A     B     C    
-a -0.06 -0.03 0.01 
-a 0.12  0.12  0.12 
-a 72    69    61   
+a -0.17 -0.19 0.11 
+a 0.13  0.11  0.12 
+a 65    75    70   
                    
-b -0.23 0.05  -0.01
-b 0.11  0.11  0.13 
-b 71    63    60   
+b 0.22  0.21  0.15 
+b 0.13  0.13  0.11 
+b 62    64    66   
                    
-c 0.04  0.03  0.16 
-c 0.14  0.12  0.12 
-c 63    70    60   
+c 0.03  0.06  0.01 
+c 0.13  0.14  0.13 
+c 65    66    74   
                    
-d 0.12  -0.1  0.05 
-d 0.14  0.12  0.14 
-d 64    64    66   
+d -0.05 -0.13 -0.13
+d 0.13  0.12  0.13 
+d 57    73    63   
                    
-e -0.1  0.06  0.16 
-e 0.12  0.13  0.12 
-e 83    66    68   
+e -0.16 -0.04 0.04 
+e 0.13  0.12  0.13 
+e 75    68    57   
                    
 > 

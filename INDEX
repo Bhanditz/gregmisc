@@ -2,8 +2,9 @@ CrossTable              Cross Tabulation with Tests for Factor
                         Independence
 aggregate.table         Create 2-Way Table of Summary Statistics
 balloonplot             Plot a graphical matrix where each cell
-                        contains a dot whose size reflects the relative
-                        magnitude of the corresponding component.
+                        contains a dot whose size reflects the
+                        relative magnitude of the corresponding
+                        component.
 bandplot                Plot x-y Points with Locally Smoothed Mean and
                         Standard Deviation
 barplot2                Enhanced Bar Plots
@@ -29,21 +30,21 @@ fast.prcomp             Efficient computation of principal components
 fit.contrast            Compute and test arbitrary contrasts for
                         regression objects
 glh.test                Test a General Linear Hypothesis for a
-                        Regression Model 
-hist2d                  Compute and Plot a 2-Dimensional Histogram 
-interleave              Interleave Rows of Data Frames or Matrices 
+                        Regression Model
+hist2d                  Compute and Plot a 2-Dimensional Histogram
+interleave              Interleave Rows of Data Frames or Matrices
 lowess                  Scatter Plot Smoothing
 make.contrasts          Construct a User-Specified Contrast Matrix
-nobs                    Compute the Number of Non-missing Observations 
+nobs                    Compute the Number of Non-missing Observations
 permute                 Randomly Permute the Elements of a Vector
 plotCI                  Plot Error Bars
 plotmeans               Plot Group Means and Confidence Intervals
 qqnorm.aov              Makes a half or full normal plot for the
-                        effects from an aov model 
-quantcut                Create a Factor Variable Using the Quantiles of
-                        a Continuous Variable
-rename.vars             Rename variables in a dataframe 
-reorder                 Reorder the Levels of a Factor
+                        effects from an aov model
+quantcut                Create a Factor Variable Using the Quantiles
+                        of a Continuous Variable
+rename.vars             Rename variables in a dataframe
+reorder.factor          Reorder the Levels of a Factor
 running                 Apply a Function Over Adjacent Subsets of a
                         Vector
 space                   Space points in an x-y plot so they don't

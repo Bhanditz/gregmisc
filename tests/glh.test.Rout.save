@@ -1,6 +1,6 @@
 
-R : Copyright 2002, The R Development Core Team
-Version 1.6.0  (2002-10-01)
+R : Copyright 2003, The R Development Core Team
+Version 1.7.0  (2003-04-16)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -16,7 +16,7 @@ Type `q()' to quit R.
 > library(gregmisc)
 Loading required package: MASS 
 
-Attaching package `gregmisc':
+Attaching package 'gregmisc':
 
 
 	The following object(s) are masked from package:base :
@@ -38,7 +38,7 @@ Attaching package `gregmisc':
 	 Test of General Linear Hypothesis 	
 Call:
 glh.test(reg = reg, cm = C)
-F = 31.8797, df1 =  2, df2 = 96, p-value = 2.413e-11 
+F = 37.7654, df1 =  2, df2 = 96, p-value = 7.954e-13 
 
 > summary(ret)
 
@@ -56,8 +56,8 @@ d vector:
 [1] 0 0
 
 C %*% Beta-hat: 
-[1] -1.078942  1.217450
+[1] -1.301175  1.095612
 
-F = 31.8797, df1 =  2, df2 = 96, p-value = 2.413e-11 
+F = 37.7654, df1 =  2, df2 = 96, p-value = 7.954e-13 
 
 > 

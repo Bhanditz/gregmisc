@@ -1,6 +1,6 @@
 
-R : Copyright 2002, The R Development Core Team
-Version 1.6.0  (2002-10-01)
+R : Copyright 2003, The R Development Core Team
+Version 1.7.0  (2003-04-16)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -16,7 +16,7 @@ Type `q()' to quit R.
 > library(gregmisc)
 Loading required package: MASS 
 
-Attaching package `gregmisc':
+Attaching package 'gregmisc':
 
 
 	The following object(s) are masked from package:base :
@@ -46,24 +46,24 @@ Attaching package `gregmisc':
 > 
 > print(tab, quote=FALSE)
           A     B     C    
-a Mean    0.08  -0.09 -0.22
-a Std Err 0.11  0.11  0.13 
-a N       76    72    64   
+a Mean    -0.13 0.11  0.06 
+a Std Err 0.13  0.12  0.13 
+a N       57    75    54   
                            
-b Mean    0.18  0     -0.15
-b Std Err 0.14  0.12  0.13 
-b N       54    60    63   
+b Mean    0.02  0.07  -0.18
+b Std Err 0.15  0.13  0.11 
+b N       62    49    71   
                            
-c Mean    -0.01 -0.07 0.08 
-c Std Err 0.11  0.11  0.14 
-c N       74    76    54   
+c Mean    0     -0.09 0.04 
+c Std Err 0.11  0.1   0.12 
+c N       80    82    69   
                            
-d Mean    0.24  -0.05 -0.01
-d Std Err 0.13  0.12  0.11 
-d N       71    74    75   
+d Mean    0.06  -0.1  -0.02
+d Std Err 0.14  0.12  0.12 
+d N       64    73    73   
                            
-e Mean    -0.06 0.18  -0.2 
-e Std Err 0.14  0.13  0.11 
-e N       54    64    69   
+e Mean    -0.11 0.01  0.02 
+e Std Err 0.13  0.14  0.11 
+e N       68    56    67   
                            
 > 

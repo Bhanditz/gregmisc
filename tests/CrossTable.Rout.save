@@ -1,6 +1,6 @@
 
-R : Copyright 2002, The R Development Core Team
-Version 1.6.1 Patched (2002-12-08)
+R : Copyright 2003, The R Development Core Team
+Version 1.7.0  (2003-04-16)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -16,7 +16,7 @@ Type `q()' to quit R.
 > library(gregmisc)
 Loading required package: MASS 
 
-Attaching package `gregmisc':
+Attaching package 'gregmisc':
 
 
 	The following object(s) are masked from package:base :

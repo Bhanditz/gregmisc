@@ -1,6 +1,11 @@
-# $Id: fit.contrast.R,v 1.1 2003/01/30 21:53:06 warnes Exp $
+# $Id: fit.contrast.R,v 1.2 2003/04/22 17:24:29 warnes Exp $
 #
 # $Log: fit.contrast.R,v $
+# Revision 1.2  2003/04/22 17:24:29  warnes
+#
+# - the variable 'df' was used within the lme code section overwriting
+#   the argument 'df'.
+#
 # Revision 1.1  2003/01/30 21:53:06  warnes
 #
 # - Renamed 'contrast.lm' to 'fit.contrast'.  This new name is more
@@ -145,13 +150,13 @@ fit.contrast.lm <- function(model, varname, coeff, showall=FALSE,
       est <- r$coefficients$fixed
       se  <- sqrt(diag(r$varFix))
       tval <- est/se
-      df   <- r$fixDF$X
+      df.lme   <- r$fixDF$X
       retval <- cbind(
                       "Estimate"= est,
                       "Std. Error"= se,
                       "t-value"= tval,
-                      "Pr(>|t|)"=  2 * (1 - pt(abs(tval), df)),
-                      "DF"=df
+                      "Pr(>|t|)"=  2 * (1 - pt(abs(tval), df.lme)),
+                      "DF"=df.lme
                       )
 
     }

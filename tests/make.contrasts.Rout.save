@@ -1,6 +1,6 @@
 
-R : Copyright 2002, The R Development Core Team
-Version 1.6.1 Patched (2002-12-08)
+R : Copyright 2003, The R Development Core Team
+Version 1.7.0  (2003-04-16)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -16,7 +16,7 @@ Type `q()' to quit R.
 > library(gregmisc)
 Loading required package: MASS 
 
-Attaching package `gregmisc':
+Attaching package 'gregmisc':
 
 
 	The following object(s) are masked from package:base :
@@ -35,21 +35,21 @@ Call:
 lm(formula = y ~ x)
 
 Residuals:
-      Min        1Q    Median        3Q       Max 
--1.016033 -0.298195  0.006758  0.324487  0.845866 
+     Min       1Q   Median       3Q      Max 
+-1.24953 -0.32750  0.01022  0.39324  0.79245 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  -1.7894     0.1834  -9.755 4.99e-16 ***
-x(-1.5,0]     1.1179     0.1927   5.800 8.49e-08 ***
-x(0,1.5]      2.3756     0.1946  12.211  < 2e-16 ***
-x(1.5,4]      3.6983     0.2402  15.399  < 2e-16 ***
+(Intercept)  -1.7287     0.1907  -9.066 1.51e-14 ***
+x(-1.5,0]     1.1677     0.2027   5.760 1.01e-07 ***
+x(0,1.5]      2.2522     0.2035  11.065  < 2e-16 ***
+x(1.5,4]      3.5063     0.2828  12.397  < 2e-16 ***
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 
-Residual standard error: 0.4102 on 96 degrees of freedom
-Multiple R-Squared: 0.8261,	Adjusted R-squared: 0.8207 
-F-statistic:   152 on 3 and 96 DF,  p-value: < 2.2e-16 
+Residual standard error: 0.4671 on 96 degrees of freedom
+Multiple R-Squared: 0.7405,	Adjusted R-squared: 0.7324 
+F-statistic: 91.31 on 3 and 96 DF,  p-value: < 2.2e-16 
 
 > 
 > # Mirror default treatment contrasts
@@ -61,7 +61,7 @@ lm(formula = y ~ x, contrasts = list(x = test))
 
 Coefficients:
 (Intercept)          xC1          xC2          xC3  
-   0.008565     1.117858     2.375628     3.698262  
+   0.002878     1.167728     2.252186     3.506275  
 
 > 
 > # Specify some more complicated contrasts
@@ -78,21 +78,21 @@ Call:
 lm(formula = y ~ x, contrasts = list(x = make.contrasts(cmat)))
 
 Residuals:
-      Min        1Q    Median        3Q       Max 
--1.016033 -0.298195  0.006758  0.324487  0.845866 
+     Min       1Q   Median       3Q      Max 
+-1.24953 -0.32750  0.01022  0.39324  0.79245 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 0.008565   0.063928   0.134    0.894    
-x1 vs 4     3.698262   0.240162  15.399   <2e-16 ***
-x1+2 vs 3+4 2.478016   0.127856  19.381   <2e-16 ***
-x1 vs 2+3+4 2.397249   0.192802  12.434   <2e-16 ***
+(Intercept) 0.002878   0.074919   0.038     0.97    
+x1 vs 4     3.506275   0.282824  12.397   <2e-16 ***
+x1+2 vs 3+4 2.295366   0.149838  15.319   <2e-16 ***
+x1 vs 2+3+4 2.308729   0.205663  11.226   <2e-16 ***
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 
-Residual standard error: 0.4102 on 96 degrees of freedom
-Multiple R-Squared: 0.8261,	Adjusted R-squared: 0.8207 
-F-statistic:   152 on 3 and 96 DF,  p-value: < 2.2e-16 
+Residual standard error: 0.4671 on 96 degrees of freedom
+Multiple R-Squared: 0.7405,	Adjusted R-squared: 0.7324 
+F-statistic: 91.31 on 3 and 96 DF,  p-value: < 2.2e-16 
 
 > # or
 > contrasts(x) <- make.contrasts(cmat)
@@ -102,37 +102,37 @@ Call:
 lm(formula = y ~ x)
 
 Residuals:
-      Min        1Q    Median        3Q       Max 
--1.016033 -0.298195  0.006758  0.324487  0.845866 
+     Min       1Q   Median       3Q      Max 
+-1.24953 -0.32750  0.01022  0.39324  0.79245 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 0.008565   0.063928   0.134    0.894    
-x1 vs 4     3.698262   0.240162  15.399   <2e-16 ***
-x1+2 vs 3+4 2.478016   0.127856  19.381   <2e-16 ***
-x1 vs 2+3+4 2.397249   0.192802  12.434   <2e-16 ***
+(Intercept) 0.002878   0.074919   0.038     0.97    
+x1 vs 4     3.506275   0.282824  12.397   <2e-16 ***
+x1+2 vs 3+4 2.295366   0.149838  15.319   <2e-16 ***
+x1 vs 2+3+4 2.308729   0.205663  11.226   <2e-16 ***
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 
-Residual standard error: 0.4102 on 96 degrees of freedom
-Multiple R-Squared: 0.8261,	Adjusted R-squared: 0.8207 
-F-statistic:   152 on 3 and 96 DF,  p-value: < 2.2e-16 
+Residual standard error: 0.4671 on 96 degrees of freedom
+Multiple R-Squared: 0.7405,	Adjusted R-squared: 0.7324 
+F-statistic: 91.31 on 3 and 96 DF,  p-value: < 2.2e-16 
 
 > 
 > # or use contrasts.lm
 > reg <- lm(y ~ x)
 > fit.contrast( reg, "x", cmat )
             Estimate Std. Error  t value     Pr(>|t|)
-x1 vs 4     3.698262  0.2401625 15.39900 1.110000e-27
-x1+2 vs 3+4 2.478016  0.1278558 19.38133 5.940991e-35
-x1 vs 2+3+4 2.397249  0.1928017 12.43375 1.023116e-21
+x1 vs 4     3.506275  0.2828243 12.39736 1.218181e-21
+x1+2 vs 3+4 2.295366  0.1498378 15.31901 1.585924e-27
+x1 vs 2+3+4 2.308729  0.2056633 11.22577 3.562316e-19
 > 
 > # compare with values computed directly using group means
 > gm <- sapply(split(y,x),mean)
 > gm %*% t(cmat)
       
          1 vs 4 1+2 vs 3+4 1 vs 2+3+4
-  [1,] 3.698262   2.478016   2.397249
+  [1,] 3.506275   2.295366   2.308729
 > 
 > 
 > #
@@ -152,17 +152,17 @@ x1 vs 2+3+4 2.397249  0.1928017 12.43375 1.023116e-21
 > model <- aov( y ~ Genotype + Time + Genotype:Time, data=data )
 > 
 > fit.contrast( model, "Genotype", rbind("KO vs WT"=c(-1,1) ), conf=0.95 )
-                  Estimate Std. Error  t value  Pr(>|t|)    lower CI  upper CI
-GenotypeKO vs WT 0.1399683  0.1083272 1.292088 0.1966271 -0.07260804 0.3525446
+                   Estimate Std. Error   t value Pr(>|t|)   lower CI  upper CI
+GenotypeKO vs WT 0.01683876  0.1095764 0.1536714   0.8779 -0.1981888 0.2318664
 > 
 > fit.contrast( model, "Time",
 +             rbind("1 vs 2"=c(-1,1,0),
 +                   "2 vs 3"=c(0,-1,1)
 +                   ),
 +             conf=0.95 )
-             Estimate Std. Error   t value  Pr(>|t|)   lower CI  upper CI
-Time1 vs 2 0.08140705  0.1053387 0.7728126 0.4398170 -0.1253047 0.2881187
-Time2 vs 3 0.05962674  0.1068250 0.5581720 0.5768527 -0.1500018 0.2692552
+               Estimate Std. Error     t value  Pr(>|t|)   lower CI   upper CI
+Time1 vs 2 -0.003321336  0.1150931 -0.02885782 0.9769838 -0.2291746 0.22253196
+Time2 vs 3 -0.131231895  0.1152710 -1.13846378 0.2552012 -0.3574344 0.09497061
 > 
 > 
 > cm.G <- rbind("KO vs WT"=c(-1,1) )
@@ -179,16 +179,16 @@ Time2 vs 3 0.05962674  0.1068250 0.5581720 0.5768527 -0.1500018 0.2692552
 > summary(model, split=list( Genotype=list( "KO vs WT"=1 ),
 +                            Time = list( "1 vs 2" = 1,
 +                                         "2 vs 3" = 2 ) ) )
-                                  Df    Sum Sq   Mean Sq F value Pr(>F)
-Genotype                           1 0.0005446 0.0005446  0.0005 0.9814
-  Genotype: KO vs WT               1 0.0005446 0.0005446  0.0005 0.9814
-Time                               2      0.03      0.01  0.0141 0.9860
-  Time: 1 vs 2                     1      0.03      0.03  0.0259 0.8722
-  Time: 2 vs 3                     1 0.0023370 0.0023370  0.0023 0.9614
-Genotype:Time                      2      3.20      1.60  1.6032 0.2018
-  Genotype:Time: KO vs WT.1 vs 2   1      2.59      2.59  2.5900 0.1079
-  Genotype:Time: KO vs WT.2 vs 3   1      0.62      0.62  0.6163 0.4326
-Residuals                        994    992.39      1.00               
+                                  Df  Sum Sq Mean Sq F value Pr(>F)
+Genotype                           1    1.17    1.17  1.1207 0.2900
+  Genotype: KO vs WT               1    1.17    1.17  1.1207 0.2900
+Time                               2    0.74    0.37  0.3526 0.7029
+  Time: 1 vs 2                     1    0.18    0.18  0.1710 0.6793
+  Time: 2 vs 3                     1    0.56    0.56  0.5342 0.4650
+Genotype:Time                      2    1.15    0.58  0.5524 0.5758
+  Genotype:Time: KO vs WT.1 vs 2   1    0.33    0.33  0.3131 0.5759
+  Genotype:Time: KO vs WT.2 vs 3   1    0.83    0.83  0.7916 0.3738
+Residuals                        994 1036.64    1.04               
 > 
 > 
 > 

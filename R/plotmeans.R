@@ -1,6 +1,10 @@
-# $Id: plotmeans.R,v 1.11 2002/09/24 14:53:56 warnes Exp $
+# $Id: plotmeans.R,v 1.12 2003/04/22 17:28:56 warnes Exp $
 #
 # $Log: plotmeans.R,v $
+# Revision 1.12  2003/04/22 17:28:56  warnes
+#
+# - Fixeed warning messing caused when 'connect' is a vector.
+#
 # Revision 1.11  2002/09/24 14:53:56  warnes
 #
 # - Changed digits=options("digits") which produces a list of length 1
@@ -159,7 +163,7 @@ plotmeans  <- function (formula, data = NULL, subset, na.action,
                labels=paste("n=",ns,"\n",sep=""))
         }
     
-    if(connect!=FALSE)
+    if(any(connect!=FALSE))
       {
         if(is.list(connect))
           {

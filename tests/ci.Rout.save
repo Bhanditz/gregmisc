@@ -1,6 +1,6 @@
 
-R : Copyright 2002, The R Development Core Team
-Version 1.6.0  (2002-10-01)
+R : Copyright 2003, The R Development Core Team
+Version 1.7.0  (2003-04-16)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -16,7 +16,7 @@ Type `q()' to quit R.
 > library(gregmisc)
 Loading required package: MASS 
 
-Attaching package `gregmisc':
+Attaching package 'gregmisc':
 
 
 	The following object(s) are masked from package:base :
@@ -46,18 +46,18 @@ Population  4.308676e-01    -6.966493 7.828229e+00     2.757941 0.8765085381
 > set.seed(12345679,"default")
 > dat <- rnorm(1000)
 > ci( dat )
-    Estimate     CI lower     CI upper   Std. Error 
- 0.054541459 -0.008756059  0.117838978  0.032256118 
+   Estimate    CI lower    CI upper  Std. Error 
+-0.01375379 -0.07675170  0.04924412  0.03210344 
 > ci( c(NA,dat), na.rm=TRUE )
-    Estimate     CI lower     CI upper   Std. Error 
- 0.054541459 -0.008756059  0.117838978  0.032256118 
+   Estimate    CI lower    CI upper  Std. Error 
+-0.01375379 -0.07675170  0.04924412  0.03210344 
 > ci(dat, confidence=0.90)
    Estimate    CI lower    CI upper  Std. Error 
-0.054541459 0.001435620 0.107647298 0.032256118 
+-0.01375379 -0.06660826  0.03910068  0.03210344 
 > ci(dat, alpha=0.05)
-    Estimate     CI lower     CI upper   Std. Error 
- 0.054541459 -0.008756059  0.117838978  0.032256118 
+   Estimate    CI lower    CI upper  Std. Error 
+-0.01375379 -0.07675170  0.04924412  0.03210344 
 > ci(dat, alpha=0.01)
    Estimate    CI lower    CI upper  Std. Error 
- 0.05454146 -0.02870383  0.13778675  0.03225612 
+-0.01375379 -0.09660505  0.06909747  0.03210344 
 > 

@@ -1,6 +1,6 @@
 
-R : Copyright 2002, The R Development Core Team
-Version 1.6.0  (2002-10-01)
+R : Copyright 2003, The R Development Core Team
+Version 1.7.0  (2003-04-16)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -16,7 +16,7 @@ Type `q()' to quit R.
 > library(gregmisc)
 Loading required package: MASS 
 
-Attaching package `gregmisc':
+Attaching package 'gregmisc':
 
 
 	The following object(s) are masked from package:base :
@@ -51,19 +51,19 @@ Call:
 lm(formula = y ~ x)
 
 Residuals:
-       Min         1Q     Median         3Q        Max 
--13.489382  -2.365885   0.003018   2.373472  13.060476 
+     Min       1Q   Median       3Q      Max 
+-15.2045  -2.0570   0.1239   2.2041  17.1635 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  0.06564    0.28240   0.232    0.816    
-x            2.32290    0.30464   7.625 1.25e-13 ***
+(Intercept)  -0.1377     0.2878  -0.479    0.632    
+x             2.2598     0.2885   7.834 2.88e-14 ***
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 
-Residual standard error: 3.759 on 498 degrees of freedom
-Multiple R-Squared: 0.1045,	Adjusted R-squared: 0.1027 
-F-statistic: 58.14 on 1 and 498 DF,  p-value: 1.245e-13 
+Residual standard error: 3.938 on 498 degrees of freedom
+Multiple R-Squared: 0.1097,	Adjusted R-squared: 0.1079 
+F-statistic: 61.37 on 1 and 498 DF,  p-value: 2.883e-14 
 
 > 
 > # using bandplot on the original data helps to show the mean and

@@ -1,6 +1,6 @@
 
-R : Copyright 2002, The R Development Core Team
-Version 1.6.0  (2002-10-01)
+R : Copyright 2003, The R Development Core Team
+Version 1.7.0  (2003-04-16)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -16,7 +16,7 @@ Type `q()' to quit R.
 > library(gregmisc)
 Loading required package: MASS 
 
-Attaching package `gregmisc':
+Attaching package 'gregmisc':
 
 
 	The following object(s) are masked from package:base :
@@ -30,19 +30,19 @@ Attaching package `gregmisc':
 +                        100, replace=TRUE ) )
 > summary(trt)
 1200 MG  300 MG  600 MG PLACEBO 
-     18      33      25      24 
+     21      33      21      25 
 > 
 > # Change the order to something useful
 > trt2 <- reorder(trt, c(4,2,3,1))
 > summary(trt2)
 PLACEBO  300 MG  600 MG 1200 MG 
-     24      33      25      18 
+     25      33      21      21 
 > 
 > # drop out the '300 MG' level
 > trt3 <- reorder(trt, c(4,3,1) )
 > summary(trt3)
 PLACEBO  600 MG 1200 MG    NA's 
-     24      25      18      33 
+     25      21      21      33 
 > 
 > 
 > 
