@@ -1,6 +1,11 @@
-% $Id: barplot2.Rd,v 1.2 2002/09/23 14:27:17 warnes Exp $
+% $Id: barplot2.Rd,v 1.4 2003/01/30 21:43:05 warnes Exp $
 %
 % $Log: barplot2.Rd,v $
+% Revision 1.4  2003/01/30 21:43:05  warnes
+%
+% - Added argument 'add' to allow for the addition of a barplot to an
+%   existing graphic. Default is FALSE
+%
 % Revision 1.2  2002/09/23 14:27:17  warnes
 %
 % - Fixed syntax errors in barplot2.Rd and CrossTable.Rd
@@ -27,11 +32,12 @@
         xlim = NULL, ylim = NULL, xpd = TRUE, log = "",
         axes = TRUE, axisnames = TRUE,
         cex.axis = par("cex.axis"), cex.names = par("cex.axis"),
-        inside = TRUE, plot = TRUE, plot.ci = FALSE, ci.l = NULL,
+        inside = TRUE, plot = TRUE, axis.lty = 0,
+        plot.ci = FALSE, ci.l = NULL,
         ci.u = NULL, ci.color = "black", ci.lty = "solid", ci.lwd = 1,
-        plot.grid = FALSE, grid.inc = 5,
+        plot.grid = FALSE, grid.inc = NULL,
         grid.lty = "dotted", grid.lwd = 1, grid.col = "black",
-        \dots)
+        add = FALSE, \dots)
 }
 \arguments{
   \item{height}{either a vector or matrix of values describing the
@@ -98,9 +104,15 @@
     other axis is drawn (with \code{lty=0}) and labeled.}
   \item{cex.axis}{expansion factor for numeric axis labels.}
   \item{cex.names}{expansion factor for names.}
-  \item{inside}{logical.  If \code{TRUE}, the lines which  divide
-    adjacent bars will be drawn.}
+  \item{inside}{logical.  If \code{TRUE}, the lines which divide
+    adjacent (non-stacked!) bars will be drawn.  Only applies when
+    \code{space = 0} (which it partly is when \code{beside = TRUE}).}
+%MM: we still have "NotYetUsed" -- the above describe's S-plus 6.1 (not
+% precisely documented!) behavior!
   \item{plot}{logical.  If \code{FALSE}, nothing is plotted.}
+  \item{axis.lty}{the graphics parameter \code{lty} applied to the axis
+    and tick marks of the categorical (default horzontal) axis.  Note
+    that by default the axis is suppressed.}
   \item{plot.ci}{logical. If \code{TRUE}, confidence intervals are plotted
    over the bars. Note that if a stacked bar plot is generated, confidence
    intervals will not be plotted even if \code{plot.ci = TRUE}}
@@ -115,12 +127,13 @@
   \item{grid.lty}{the line type for the grid}
   \item{grid.lwd}{the line width for the grid}
   \item{grid.col}{the line color for the grid}
+  \item{add}{logical, if \code{TRUE} add barplot to current plot.}
   \item{\dots}{further graphical parameters (\code{\link{par}}) are
     passed to \code{\link{plot.window}()}, \code{\link{title}()} and
     \code{\link{axis}}.}
 }
 \description{
-  An enhancement of the standard R v1.5.1 barplot() function. Creates a bar plot
+  An enhancement of the standard R v1.6.1 barplot() function. Creates a bar plot
   with vertical or horizontal bars. Can plot confidence intervals for each
   bar, a lined grid behind the bars, change plot area color and
   logarithmic axes may be used. }
@@ -136,10 +149,13 @@
   If \code{beside} is true, use \code{colMeans(mp)} for the
   midpoints of each \emph{group} of bars, see example.
 }
-\author{Original v1.5.1 barplot() by R-Core. Enhancements by Marc
-  Schwartz \email{mschwartz@medanalytics.com} posted to r-devel on
-  Sept. 20, 2002.}
-
+\author{Original v1.6.1 barplot() by R-Core. Enhancements by Marc
+  Schwartz \email{mschwartz@medanalytics.com}
+}
+\note{
+  Prior to \R 1.6.0, \code{barplot} behaved as if \code{axis.lty = 1},
+  unintentionally.
+}
 \seealso{
   \code{\link{plot}(\dots, type="h")}, \code{\link{dotchart}},
   \code{\link{hist}}.
@@ -194,5 +210,9 @@ box()
 barplot2(VADeaths, angle = 15+10*1:5, density = 20, col = "black",
         legend = rownames(VADeaths))
 title(main = list("Death Rates in Virginia", font = 4))
+
+# border :
+barplot2(VADeaths, border = "dark blue") % lwd = 2 << not passed
+%notyet barplot(VADeaths, inside = FALSE, main = "barplot(*, inside=FALSE)")
 }
 \keyword{hplot}

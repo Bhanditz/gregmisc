@@ -1,6 +1,9 @@
 CrossTable              Cross Tabulation with Tests for Factor
                         Independence
 aggregate.table         Create 2-Way Table of Summary Statistics
+balloonplot             Plot a graphical matrix where each cell
+                        contains a dot whose size reflects the relative
+                        magnitude of the corresponding component.
 bandplot                Plot x-y Points with Locally Smoothed Mean and
                         Standard Deviation
 barplot2                Enhanced Bar Plots
@@ -12,7 +15,8 @@ combinations            Enumerate the Combinations or Permutations of
 combine                 Combine R Objects With a Column Labeling the
                         Source
 contrast.lm             Compute and test arbitrary contrasts for
-                        regression objects
+                        regression objects (Depreciated, use
+                        'fit.contrasts' instead.)
 rdirichlet              Functions for the Dirichlet Distribution
 estimable               Compute and test estimable linear functions of
                         the fitted coefficients (including contrasts)
@@ -20,6 +24,8 @@ estimable               Compute and test estimable linear functions of
 factorial               Compute factorial function
 fast.prcomp             Efficient computation of principal components
                         and singular value decompositions.
+fit.contrast            Compute and test arbitrary contrasts for
+                        regression objects
 glh.test                Test a General Linear Hypothesis for a
                         Regression Model 
 hist2d                  Compute and Plot a 2-Dimensional Histogram 
@@ -30,6 +36,8 @@ nobs                    Compute the Number of Non-missing Observations
 permute                 Randomly Permute the Elements of a Vector
 plotCI                  Plot Error Bars
 plotmeans               Plot Group Means and Confidence Intervals
+qqnorm.aov              Makes a half or full normal plot for the
+                        effects from an aov model 
 quantcut                Create a Factor Variable Using the Quantiles of
                         a Continuous Variable
 rename.vars             Rename variables in a dataframe 
@@ -39,5 +47,5 @@ running                 Apply a Function Over Adjacent Subsets of a
 space                   Space points in an x-y plot so they don't
                         overlap.
 undocumented            Undocumented functions
-wapply                  Compute the Value of a Functon Over a Local
+wapply                  Compute the Value of a Function Over a Local
                         Region Of An X-Y Plot

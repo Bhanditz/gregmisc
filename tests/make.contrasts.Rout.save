@@ -1,6 +1,6 @@
 
 R : Copyright 2002, The R Development Core Team
-Version 1.6.0  (2002-10-01)
+Version 1.6.1 Patched (2002-12-08)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -121,7 +121,7 @@ F-statistic:   152 on 3 and 96 DF,  p-value: < 2.2e-16
 > 
 > # or use contrasts.lm
 > reg <- lm(y ~ x)
-> contrast.lm( reg, "x", cmat )
+> fit.contrast( reg, "x", cmat )
             Estimate Std. Error  t value     Pr(>|t|)
 x1 vs 4     3.698262  0.2401625 15.39900 1.110000e-27
 x1+2 vs 3+4 2.478016  0.1278558 19.38133 5.940991e-35
@@ -151,16 +151,16 @@ x1 vs 2+3+4 2.397249  0.1928017 12.43375 1.023116e-21
 > 
 > model <- aov( y ~ Genotype + Time + Genotype:Time, data=data )
 > 
-> contrast.lm( model, "Genotype", rbind("KO vs WT"=c(-1,1) ), conf=0.95 )
-   Estimate  Std. Error     t value    Pr(>|t|)    lower CI    lower CI 
- 0.13996830  0.10832724  1.29208766  0.19662710 -0.07260804  0.35254464 
+> fit.contrast( model, "Genotype", rbind("KO vs WT"=c(-1,1) ), conf=0.95 )
+                  Estimate Std. Error  t value  Pr(>|t|)    lower CI  upper CI
+GenotypeKO vs WT 0.1399683  0.1083272 1.292088 0.1966271 -0.07260804 0.3525446
 > 
-> contrast.lm( model, "Time",
+> fit.contrast( model, "Time",
 +             rbind("1 vs 2"=c(-1,1,0),
 +                   "2 vs 3"=c(0,-1,1)
 +                   ),
 +             conf=0.95 )
-             Estimate Std. Error   t value  Pr(>|t|)   lower CI  lower CI
+             Estimate Std. Error   t value  Pr(>|t|)   lower CI  upper CI
 Time1 vs 2 0.08140705  0.1053387 0.7728126 0.4398170 -0.1253047 0.2881187
 Time2 vs 3 0.05962674  0.1068250 0.5581720 0.5768527 -0.1500018 0.2692552
 > 

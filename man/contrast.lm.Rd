@@ -1,6 +1,28 @@
-% $Id: contrast.lm.Rd,v 1.10 2002/10/29 23:00:43 warnes Exp $
+% $Id: contrast.lm.Rd,v 1.13 2003/01/30 22:04:41 warnes Exp $
 %
 % $Log: contrast.lm.Rd,v $
+% Revision 1.13  2003/01/30 22:04:41  warnes
+%
+% - fixed typo
+%
+% Revision 1.12  2003/01/30 21:53:09  warnes
+%
+% - Renamed 'contrast.lm' to 'fit.contrast'.  This new name is more
+%   descriptive and makes it easier to create and use methods for other
+%   classes, eg lme.
+%
+% - Enabled fit.contrast for lme object now that Doug Bates has provided
+%   the necessary support for contrasts in the nlme package.
+%
+% - New contrast.lm function which generates a 'depreciated' warning and
+%   calls fit.contrast
+%
+% - Updated help text to match changes.
+%
+% Revision 1.11  2003/01/03 19:02:50  warnes
+%
+% - Removed duplicate assigment from aov example.
+%
 % Revision 1.10  2002/10/29 23:00:43  warnes
 %
 % - Moved make.contrasts to a separate file.
@@ -63,146 +85,28 @@
 
 \name{contrast.lm}
 \alias{contrast.lm}
-%\alias{contrast.lme}
-\title{Compute and test arbitrary contrasts for regression objects}
+\title{Compute and test arbitrary contrasts for regression objects
+  (Depreciated, use 'fit.contrasts' instead.)}
 \description{
- Compute and test arbitrary contrasts for regression objects.
+ This function is depreciate and has been repleaced by
+ \code{\link{fit.contrast}}.  
 }
 \usage{
-contrast.lm(reg, varname, coeff, showall=FALSE, conf.int=NULL)
-%contrast.lme(reg, varname, coeff, showall=FALSE, conf.int=NULL)
+contrast.lm(...)
 }
 \arguments{
-  \item{reg}{regression (lm,glm,aov) %,lme)
-    object for which the contrast(s) will be computed.}
-  \item{varname}{variable name}
-  \item{coeff}{vector or matrix specifying contrasts (one per row).}
-  \item{showall}{return all regression coefficients. If \code{TRUE}, all
-    model cofficients will be returned.  If \code{FALSE} (the defaults),
-    only the coefficients corresponding to the specified contrast will
-    be returned.}
-  \item{conf.int}{numeric value on (0,1) or NULL.  If a numeric value is
-    specified, confidence intervals with nominal coverage probability
-    \code{conf.int} will be computed.  If \code{NULL}, confidence
-    intervals will not be computed.}
+  \item{\dots}{See \code{\link{fit.contrast}}.}
   }
-  
 \details{
-  Computes the specified contrast(s) by re-fitting the model with the
-  appropriate arguments.  A contrast of the form \code{c(1,0,0,-1)}
-  would compare the mean of the first group with the mean of the fourth group.
-}
-\value{
-  Returns a matrix containing estimated coefficients, standard errors, t
-  values, two-sided p-values. If conf.int is specified lower and upper
-  confidence limits are also returned.
-}
-\references{Venables & Ripley, Section 6.2}
-\note{
-  \code{contrast.lme} has been written but requires changes to the
-  \code{\link[nlme]{lme}} function in NLME.  The changes have been sent
-  to the author, Jose Pinhiero
-  \email{jose.pinheiro@pharma.novartis.com}, who has promised to include
-  them in the next version of NLME.   In the mean time, you may contact
-  me (Gregory Warnes) for a patch.
-  }
+    This function merely generates a warning message and then calls
+    \code{\link{fit.contrast}}.
+    }
+  
+\value{ See \code{\link{fit.contrast}}.  }
   
 \author{ Gregory R. Warnes \email{Gregory\_R\_Warnes@groton.pfizer.com}}
 
-\seealso{ \code{\link{lm}}, \code{\link{contrasts}},
-  \code{\link{contr.treatment}},  \code{\link{contr.poly}},
-  Computation and testing of General Linear Hypothesis:
-  \code{\link{glh.test}}, Computation and testing of estimable functions
-  of model coefficients: \code{\link{estimable}}, \code{\link{make.contrasts}}
-  }
-
-\examples{
-y <- rnorm(100)
-x <-  cut(rnorm(100, mean=y, sd=0.25),c(-4,-1.5,0,1.5,4))
-reg <- lm(y ~ x)
-summary(reg)
-
-# look at the group means
-gm <- sapply(split(y,x),mean)
-gm
-
-
-# mean of 1st group vs mean of 4th group
-contrast.lm(reg, x, c(    1,    0,    0,   -1) )
-# estimate should be equal to:
-gm[1] - gm[4]
-
-# mean of 1st and 2nd groups vs mean of 3rd and 4th groups
-contrast.lm(reg, x, c( -1/2, -1/2,  1/2,  1/2) )
-# estimate should be equal to:
-sum(-1/2*gm[1], -1/2*gm[2], 1/2*gm[3], 1/2*gm[4])
-
-# mean of 1st group vs mean of 2nd, 3rd and 4th groups
-contrast.lm(reg, x, c( -3/3,  1/3,  1/3,  1/3) ) 
-# estimate should be equal to:
-sum(-3/3*gm[1], 1/3*gm[2], 1/3*gm[3], 1/3*gm[4])
-
-# all at once
-cmat <- rbind( "1 vs 4"    =c(-1, 0, 0, 1),
-               "1+2 vs 3+4"=c(-1/2,-1/2, 1/2, 1/2),
-               "1 vs 2+3+4"=c(-3/3, 1/3, 1/3, 1/3))
-contrast.lm(reg,x,cmat)
-
-#
-x2 <- rnorm(100,mean=y,sd=0.5)
-reg2 <- lm(y ~ x + x2 )
-contrast.lm(reg2,x,c(-1,0,0,1))
-
-#
-# Example for Analysis of Variance
-#
-
-set.seed(03215)
-Genotype <- sample(c("WT","KO"), 1000, replace=TRUE)
-Time <- factor(sample(1:3, 1000, replace=TRUE))
-data <- data.frame(y, Genotype, Time)
-y <- rnorm(1000)
-
-data <- data.frame(y, Genotype, as.factor(Time))
-
-# Compute Contrasts & obtain 95\% confidence intervals
-
-model <- aov( y ~ Genotype + Time + Genotype:Time, data=data )
-
-contrast.lm( model, "Genotype", rbind("KO vs WT"=c(-1,1) ), conf=0.95 )
-
-contrast.lm( model, "Time",
-            rbind("1 vs 2"=c(-1,1,0),
-                  "2 vs 3"=c(0,-1,1)
-                  ),
-            conf=0.95 )
-
-
-cm.G <- rbind("KO vs WT"=c(-1,1) )
-cm.T <- rbind("1 vs 2"=c(-1,1,0),
-              "2 vs 3"=c(0,-1,1) )
-
-# Compute contrasts and show SSQ decompositions
-
-model <- model <- aov( y ~ Genotype + Time + Genotype:Time, data=data,
-                      contrasts=list(Genotype=make.contrasts(cm.G),
-                                     Time=make.contrasts(cm.T) )
-                      )
-
-summary(model, split=list( Genotype=list( "KO vs WT"=1 ),
-                           Time = list( "1 vs 2" = 1,
-                                        "2 vs 3" = 2 ) ) )
-
-
-% \dontrun{
-% # will work in the next version of nlme
-% library(nlme)
-% data(Orthodont)
-% fm1 <- lme(distance ~ Sex, data = Orthodont,random=~1|Subject) 
-% intervals(fm1)
-% contrast.lme(fm1, "Sex", c(1,0) )
-% }
-}
+\seealso{ \code{\link{fit.contrast}} }
 \keyword{ models }
 \keyword{ regression }
 

@@ -26,7 +26,7 @@ summary(lm( y ~ x ) )
 
 # or use contrasts.lm
 reg <- lm(y ~ x)
-contrast.lm( reg, "x", cmat )
+fit.contrast( reg, "x", cmat )
 
 # compare with values computed directly using group means
 gm <- sapply(split(y,x),mean)
@@ -49,9 +49,9 @@ data <- data.frame(y, Genotype, as.factor(Time))
 
 model <- aov( y ~ Genotype + Time + Genotype:Time, data=data )
 
-contrast.lm( model, "Genotype", rbind("KO vs WT"=c(-1,1) ), conf=0.95 )
+fit.contrast( model, "Genotype", rbind("KO vs WT"=c(-1,1) ), conf=0.95 )
 
-contrast.lm( model, "Time",
+fit.contrast( model, "Time",
             rbind("1 vs 2"=c(-1,1,0),
                   "2 vs 3"=c(0,-1,1)
                   ),

@@ -1,6 +1,6 @@
 
 R : Copyright 2002, The R Development Core Team
-Version 1.6.0  (2002-10-01)
+Version 1.6.1 Patched (2002-12-08)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -29,6 +29,7 @@ Attaching package `gregmisc':
 > CrossTable(infert$education, infert$induced, expected = TRUE)
 
  
+   Cell Contents
 |-----------------|
 |               N |
 |      Expected N |
@@ -67,25 +68,21 @@ infert$education |         0 |         1 |         2 | Row Total |
 -----------------|-----------|-----------|-----------|-----------|
 
  
-Tests for Independence of All Table Factors
+Statistics for All Table Factors
 
 
 Pearson's Chi-squared test 
-
+------------------------------------------------------------
 Chi^2 =  16.53059     d.f. =  4     p =  0.002383898 
 
- 
-Fisher's Exact Test for Count Data
-
-Alternative hypothesis: two.sided
-p =  0.007819568 
 
  
 Warning message: 
-Chi-squared approximation may be incorrect in: chisq.test(t, correct = correct) 
-> CrossTable(infert$education, infert$induced, expected = FALSE, correct=TRUE)
+Chi-squared approximation may be incorrect in: chisq.test(t, correct = FALSE) 
+> CrossTable(infert$education, infert$induced, expected = FALSE, fisher=TRUE)
 
  
+   Cell Contents
 |-----------------|
 |               N |
 |   N / Row Total |
@@ -120,25 +117,144 @@ infert$education |         0 |         1 |         2 | Row Total |
 -----------------|-----------|-----------|-----------|-----------|
 
  
-Tests for Independence of All Table Factors
+Statistics for All Table Factors
 
 
 Pearson's Chi-squared test 
-
+------------------------------------------------------------
 Chi^2 =  16.53059     d.f. =  4     p =  0.002383898 
+
 
  
 Fisher's Exact Test for Count Data
-
+------------------------------------------------------------
 Alternative hypothesis: two.sided
 p =  0.007819568 
 
  
 Warning message: 
-Chi-squared approximation may be incorrect in: chisq.test(t, correct = correct) 
+Chi-squared approximation may be incorrect in: chisq.test(t, correct = FALSE) 
+> CrossTable(infert$education, infert$induced, expected = FALSE, mcnemar=TRUE)
+
+ 
+   Cell Contents
+|-----------------|
+|               N |
+|   N / Row Total |
+|   N / Col Total |
+| N / Table Total |
+|-----------------|
+
+ 
+Total Observations in Table:  248 
+
+ 
+                 | infert$induced 
+infert$education |         0 |         1 |         2 | Row Total | 
+-----------------|-----------|-----------|-----------|-----------|
+          0-5yrs |         4 |         2 |         6 |        12 | 
+                 |     0.333 |     0.167 |     0.500 |     0.048 | 
+                 |     0.028 |     0.029 |     0.162 |           | 
+                 |     0.016 |     0.008 |     0.024 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+         6-11yrs |        78 |        27 |        15 |       120 | 
+                 |     0.650 |     0.225 |     0.125 |     0.484 | 
+                 |     0.545 |     0.397 |     0.405 |           | 
+                 |     0.315 |     0.109 |     0.060 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+         12+ yrs |        61 |        39 |        16 |       116 | 
+                 |     0.526 |     0.336 |     0.138 |     0.468 | 
+                 |     0.427 |     0.574 |     0.432 |           | 
+                 |     0.246 |     0.157 |     0.065 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+    Column Total |       143 |        68 |        37 |       248 | 
+                 |     0.577 |     0.274 |     0.149 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+
+ 
+Statistics for All Table Factors
+
+
+Pearson's Chi-squared test 
+------------------------------------------------------------
+Chi^2 =  16.53059     d.f. =  4     p =  0.002383898 
+
+
+ 
+McNemar's Chi-squared test 
+------------------------------------------------------------
+Chi^2 =  128.0159     d.f. =  3     p =  1.447511e-27 
+
+
+ 
+Warning message: 
+Chi-squared approximation may be incorrect in: chisq.test(t, correct = FALSE) 
+> CrossTable(infert$education, infert$induced, expected = FALSE, fisher=TRUE,
++            mcnemar=TRUE)
+
+ 
+   Cell Contents
+|-----------------|
+|               N |
+|   N / Row Total |
+|   N / Col Total |
+| N / Table Total |
+|-----------------|
+
+ 
+Total Observations in Table:  248 
+
+ 
+                 | infert$induced 
+infert$education |         0 |         1 |         2 | Row Total | 
+-----------------|-----------|-----------|-----------|-----------|
+          0-5yrs |         4 |         2 |         6 |        12 | 
+                 |     0.333 |     0.167 |     0.500 |     0.048 | 
+                 |     0.028 |     0.029 |     0.162 |           | 
+                 |     0.016 |     0.008 |     0.024 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+         6-11yrs |        78 |        27 |        15 |       120 | 
+                 |     0.650 |     0.225 |     0.125 |     0.484 | 
+                 |     0.545 |     0.397 |     0.405 |           | 
+                 |     0.315 |     0.109 |     0.060 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+         12+ yrs |        61 |        39 |        16 |       116 | 
+                 |     0.526 |     0.336 |     0.138 |     0.468 | 
+                 |     0.427 |     0.574 |     0.432 |           | 
+                 |     0.246 |     0.157 |     0.065 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+    Column Total |       143 |        68 |        37 |       248 | 
+                 |     0.577 |     0.274 |     0.149 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+
+ 
+Statistics for All Table Factors
+
+
+Pearson's Chi-squared test 
+------------------------------------------------------------
+Chi^2 =  16.53059     d.f. =  4     p =  0.002383898 
+
+
+ 
+McNemar's Chi-squared test 
+------------------------------------------------------------
+Chi^2 =  128.0159     d.f. =  3     p =  1.447511e-27 
+
+
+ 
+Fisher's Exact Test for Count Data
+------------------------------------------------------------
+Alternative hypothesis: two.sided
+p =  0.007819568 
+
+ 
+Warning message: 
+Chi-squared approximation may be incorrect in: chisq.test(t, correct = FALSE) 
 > CrossTable(infert$education, infert$induced, expected = FALSE, digits=2)
 
  
+   Cell Contents
 |-----------------|
 |               N |
 |   N / Row Total |
@@ -173,20 +289,15 @@ infert$education |         0 |         1 |         2 | Row Total |
 -----------------|-----------|-----------|-----------|-----------|
 
  
-Tests for Independence of All Table Factors
+Statistics for All Table Factors
 
 
 Pearson's Chi-squared test 
-
+------------------------------------------------------------
 Chi^2 =  16.53059     d.f. =  4     p =  0.002383898 
 
- 
-Fisher's Exact Test for Count Data
-
-Alternative hypothesis: two.sided
-p =  0.007819568 
 
  
 Warning message: 
-Chi-squared approximation may be incorrect in: chisq.test(t, correct = correct) 
+Chi-squared approximation may be incorrect in: chisq.test(t, correct = FALSE) 
 > 
