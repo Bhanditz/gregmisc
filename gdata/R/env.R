@@ -1,15 +1,13 @@
-# $Id: env.R,v 1.6 2004/09/03 17:27:44 warneg Exp $
+# $Id: env.R,v 1.7 2005/02/25 23:22:36 warnes Exp $
 
 env <- function(unit=c("KB","MB","bytes"), digits=0)
 {
   get.object.size <- function(object.name, pos)
   {
     object <- get(object.name, pos=pos)
-    use.zero <- c("classRepresentation", "ClassUnionRepresentation", "grob")
-    if(class(object)[1] %in% use.zero)
+    size <- try(object.size(object))
+    if(class(size) == "try-error")
       size <- 0
-    else
-      size <- object.size(object)
     return(size)
   }
 

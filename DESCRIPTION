@@ -4,8 +4,8 @@ Title: Greg's Miscellaneous Functions
 BundleDescription: The gregmisc bundle is a repository for a variety of
              useful functions.  See the individual packages for more
              details.
-Version: 2.0.2
-Date: 2004-09-02
+Version: 2.0.3
+Date: 2005-02-25
 Author: Gregory R. Warnes.  Includes R source code and documentation
         contributed by
 	   - Ben Bolker,
@@ -31,6 +31,6 @@ Author: Gregory R. Warnes.  Includes R source code and documentation
 	   - Spreadsheet::ParseExcel (copyright 2000-2002 by Kawai
  	     Takanori )
 	under the terms of the GNU General Public Licence (GPL).
-Maintainer: Gregory R. Warnes <Gregory_R_Warnes@groton.pfizer.com>
+Maintainer: Gregory R. Warnes <Gregory.R.Warnes@Pfizer.com>
 License: GPL (version 2 or later)
-Packaged: Fri Jan 21 13:30:08 2005; jainn02
+Packaged: Fri Feb 25 20:15:45 2005; jainn02

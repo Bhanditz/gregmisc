@@ -172,8 +172,7 @@ textplot.character <- function (object,
 
     par(mar=mar,xpd=FALSE )
     if(fixed.width)
-        par(family="")
-        ##par(family="mono") ## Changed as mono is not supported by postscript
+        par(family="mono")
 
     plot.window(xlim = c(0, 1), ylim = c(0, 1), log = "", asp = NA)
 

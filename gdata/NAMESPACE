@@ -19,6 +19,7 @@ export(
        unmatrix
 )
 
+importFrom(stats, reorder, na.omit)
 importFrom(gtools, odd, invalid, mixedsort)
 
 S3method(nobs,data.frame)
@@ -26,6 +27,3 @@ S3method(nobs,default)
 S3method(nobs,lm)
 S3method(reorder,factor)
 
-S3method(ll,default)
-S3method(ll,data.frame)
-S3method(ll,list)

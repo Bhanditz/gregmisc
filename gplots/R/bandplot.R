@@ -1,4 +1,4 @@
-# $Id: bandplot.R,v 1.4 2004/09/03 17:27:44 warneg Exp $
+# $Id: bandplot.R,v 1.5 2005/02/22 21:01:47 warnes Exp $
 
 bandplot  <-  function(x,y,
                        ...,
@@ -15,7 +15,7 @@ bandplot  <-  function(x,y,
 
     if(!add)
       {
-        m <- match.call(expand.dots = FALSE)
+        m <- match.call(expand.dots = TRUE)
         m$width  <- m$add  <- m$sd  <- m$sd.col  <- NULL
         m$method <- m$n <- NULL
         m[[1]] <- as.name("plot")

@@ -1,4 +1,4 @@
-# $Id: heatmap.2.R,v 1.12 2004/11/30 01:06:04 warnes Exp $
+# $Id: heatmap.2.R,v 1.14 2005/02/26 01:15:12 nj7w Exp $
 
 heatmap.2 <- function (x,
 
@@ -360,13 +360,13 @@ heatmap.2 <- function (x,
 
         if(symkey)
           {
-            max.raw <- max(abs(x))
+            max.raw <- max(abs(x),na.rm=TRUE)
             min.raw <- -max.raw
           }
         else
           {
-            min.raw <- min(x, na.rm=TRUE) # Again, modified to use scaled or unscaled (SD 12/2/03)
-            max.raw <- max(x, na.rm=TRUE)
+            min.raw <- min(x, na.rm=TRUE) # Again, modified to use scaled 
+            max.raw <- max(x, na.rm=TRUE) # or unscaled (SD 12/2/03)
           }
 
         z <- seq(min.raw,max.raw,length=length(col))
