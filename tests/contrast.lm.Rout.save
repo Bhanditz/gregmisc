@@ -1,0 +1,133 @@
+
+R : Copyright 2002, The R Development Core Team
+Version 1.5.1 Patched (2002-06-18)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+> library(gregmisc)
+Loading required package: MASS 
+
+Attaching package `gregmisc':
+
+
+	The following object(s) are masked from package:base :
+
+	 lowess plot.lm 
+
+> set.seed(1234567,"default")
+> y <- rnorm(100)
+> x <-  cut(rnorm(100, mean=y, sd=0.25),c(-4,-1.5,0,1.5,4))
+> reg <- lm(y ~ x)
+> summary(reg)
+
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.05284 -0.47822 -0.06119  0.43047  1.34368 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  -1.7688     0.1867  -9.476 1.99e-15 ***
+x(-1.5,0]     1.0789     0.2033   5.307 7.15e-07 ***
+x(0,1.5]      2.3666     0.2041  11.597  < 2e-16 ***
+x(1.5,4]      3.5841     0.2640  13.577  < 2e-16 ***
+---
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+
+Residual standard error: 0.528 on 96 degrees of freedom
+Multiple R-Squared: 0.7633,	Adjusted R-squared: 0.7559 
+F-statistic: 103.2 on 3 and 96 DF,  p-value: < 2.2e-16 
+
+> 
+> # look at the group means
+> gm <- sapply(split(y,x),mean)
+> gm
+ (-4,-1.5]   (-1.5,0]    (0,1.5]    (1.5,4] 
+-1.7687935 -0.6898513  0.5978277  1.8152775 
+> 
+> 
+> # mean of 1st group vs mean of 4th group
+> contrast.lm(reg, x, c(    1,    0,    0,   -1) )
+     Estimate    Std. Error       t value      Pr(>|t|) 
+-3.584071e+00  2.639892e-01 -1.357658e+01  4.568684e-24 
+> # estimate should be equal to:
+> gm[1] - gm[4]
+(-4,-1.5] 
+-3.584071 
+> 
+> # mean of 1st and 2nd groups vs mean of 3rd and 4th groups
+> contrast.lm(reg, x, c( -1/2, -1/2,  1/2,  1/2) )
+    Estimate   Std. Error      t value     Pr(>|t|) 
+2.435875e+00 1.440244e-01 1.691293e+01 1.508156e-30 
+> # estimate should be equal to:
+> sum(-1/2*gm[1], -1/2*gm[2], 1/2*gm[3], 1/2*gm[4])
+[1] 2.435875
+> 
+> # mean of 1st group vs mean of 2nd, 3rd and 4th groups
+> contrast.lm(reg, x, c( -3/3,  1/3,  1/3,  1/3) ) 
+    Estimate   Std. Error      t value     Pr(>|t|) 
+2.343211e+00 2.004809e-01 1.168795e+01 3.742831e-20 
+> # estimate should be equal to:
+> sum(-3/3*gm[1], 1/3*gm[2], 1/3*gm[3], 1/3*gm[4])
+[1] 2.343211
+> 
+> # all at once
+> cmat <- rbind( "1 vs 4"    =c(-1, 0, 0, 1),
++                "1+2 vs 3+4"=c(-1/2,-1/2, 1/2, 1/2),
++                "1 vs 2+3+4"=c(-3/3, 1/3, 1/3, 1/3))
+> contrast.lm(reg,x,cmat)
+            Estimate Std. Error  t value     Pr(>|t|)
+x1 vs 4     3.584071  0.2639892 13.57658 4.568684e-24
+x1+2 vs 3+4 2.435875  0.1440244 16.91293 1.508156e-30
+x1 vs 2+3+4 2.343211  0.2004809 11.68795 3.742831e-20
+> 
+> #
+> x2 <- rnorm(100,mean=y,sd=0.5)
+> reg2 <- lm(y ~ x + x2 )
+> contrast.lm(reg2,x,c(-1,0,0,1))
+    Estimate   Std. Error      t value     Pr(>|t|) 
+1.818509e+00 2.307950e-01 7.879325e+00 5.401842e-12 
+> contrast.lm(reg2,x,c(-1,0,0,1), showall=T)
+                    Estimate Std. Error    t value     Pr(>|t|)
+(Intercept)      -0.03861683 0.04695019 -0.8225064 4.128485e-01
+x c=( -1 0 0 1 )  1.81850861 0.23079498  7.8793249 5.401842e-12
+x C2              0.38387260 0.07420805  5.1729237 1.278857e-06
+x C3              0.19113821 0.08937984  2.1384935 3.504178e-02
+x2                0.53080980 0.04630224 11.4640210 1.288115e-19
+> contrast.lm(reg2,x,c(-1,0,0,1), showall=T, conf.int=0.95)
+                    Estimate Std. Error    t value     Pr(>|t|)    lower CI
+(Intercept)      -0.03861683 0.04695019 -0.8225064 4.128485e-01 -0.13182475
+x c=( -1 0 0 1 )  1.81850861 0.23079498  7.8793249 5.401842e-12  1.36032264
+x C2              0.38387260 0.07420805  5.1729237 1.278857e-06  0.23655099
+x C3              0.19113821 0.08937984  2.1384935 3.504178e-02  0.01369679
+x2                0.53080980 0.04630224 11.4640210 1.288115e-19  0.43888824
+                   lower CI
+(Intercept)      0.05459109
+x c=( -1 0 0 1 ) 2.27669457
+x C2             0.53119422
+x C3             0.36857962
+x2               0.62273136
+> contrast.lm(reg2,x,c(-1,0,0,1), showall=F, conf.int=0.95)
+    Estimate   Std. Error      t value     Pr(>|t|)     lower CI     lower CI 
+1.818509e+00 2.307950e-01 7.879325e+00 5.401842e-12 1.360323e+00 2.276695e+00 
+> 
+> # # will work in the next version of nlme
+> # library(nlme)
+> # data(Orthodont)
+> # fm1 <- lme(distance ~ Sex, data = Orthodont,random=~1|Subject) 
+> # intervals(fm1)
+> # contrast.lme(fm1, "Sex", c(1,0) )
+> 
+> 
+> 

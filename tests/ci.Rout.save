@@ -1,0 +1,63 @@
+
+R : Copyright 2002, The R Development Core Team
+Version 1.5.1 Patched (2002-06-18)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+> library(gregmisc)
+Loading required package: MASS 
+
+Attaching package `gregmisc':
+
+
+	The following object(s) are masked from package:base :
+
+	 lowess plot.lm 
+
+> data(state)
+> state77 <- as.data.frame(state.x77)
+> reg  <-  lm(Area ~ Population, data=state77)
+> ci(reg)
+                Estimate     CI lower     CI upper   Std. Error      p-value
+(Intercept) 6.890624e+04 34919.405723 102893.06460 16903.532236 0.0001710224
+Population  4.308676e-01    -5.114345      5.97608     2.757941 0.8765085381
+> ci(reg, confidence=0.90)
+                Estimate     CI lower     CI upper   Std. Error      p-value
+(Intercept) 6.890624e+04 40555.221897 97257.248428 16903.532236 0.0001710224
+Population  4.308676e-01    -4.194818     5.056553     2.757941 0.8765085381
+> ci(reg, alpha=0.05)
+                Estimate     CI lower     CI upper   Std. Error      p-value
+(Intercept) 6.890624e+04 34919.405723 102893.06460 16903.532236 0.0001710224
+Population  4.308676e-01    -5.114345      5.97608     2.757941 0.8765085381
+> ci(reg, alpha=0.01)
+                Estimate     CI lower     CI upper   Std. Error      p-value
+(Intercept) 6.890624e+04 23567.512931 1.142450e+05 16903.532236 0.0001710224
+Population  4.308676e-01    -6.966493 7.828229e+00     2.757941 0.8765085381
+> 
+> set.seed(12345679,"default")
+> dat <- rnorm(1000)
+> ci( dat )
+    Estimate     CI lower     CI upper   Std. Error 
+ 0.054541459 -0.008756059  0.117838978  0.032256118 
+> ci( c(NA,dat), na.rm=TRUE )
+    Estimate     CI lower     CI upper   Std. Error 
+ 0.054541459 -0.008756059  0.117838978  0.032256118 
+> ci(dat, confidence=0.90)
+   Estimate    CI lower    CI upper  Std. Error 
+0.054541459 0.001435620 0.107647298 0.032256118 
+> ci(dat, alpha=0.05)
+    Estimate     CI lower     CI upper   Std. Error 
+ 0.054541459 -0.008756059  0.117838978  0.032256118 
+> ci(dat, alpha=0.01)
+   Estimate    CI lower    CI upper  Std. Error 
+ 0.05454146 -0.02870383  0.13778675  0.03225612 
+> 

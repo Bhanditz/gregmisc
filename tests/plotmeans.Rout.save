@@ -1,0 +1,42 @@
+
+R : Copyright 2002, The R Development Core Team
+Version 1.5.1 Patched (2002-06-18)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+> library(gregmisc)
+Loading required package: MASS 
+
+Attaching package `gregmisc':
+
+
+	The following object(s) are masked from package:base :
+
+	 lowess plot.lm 
+
+> # show comparison with boxplot
+> data(state)
+> plotmeans(state.area ~ state.region)   
+> 
+> # show some color and mean labels
+> plotmeans(state.area ~ state.region,
++           mean.labels=TRUE, digits=-3,
++           col="red", connect=FALSE)
+> 
+> # show how to specify which means should be connected
+> plotmeans(state.area ~ state.region, connect=list(1:2, 3:4),
++           ccol="red", pch=7 )
+> 
+> # show how to specify which means should be connected
+> plotmeans(state.area ~ state.region, connect=list(1:2, 3:4),
++           ccol="red", pch=7, mean.labels=TRUE )
+> 

@@ -1,0 +1,45 @@
+
+R : Copyright 2002, The R Development Core Team
+Version 1.5.1 Patched (2002-06-18)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+> library(gregmisc)
+Loading required package: MASS 
+
+Attaching package `gregmisc':
+
+
+	The following object(s) are masked from package:base :
+
+	 lowess plot.lm 
+
+> # plot means and 
+> data(state)
+> tmp   <- split(state.area, state.region)
+> means <- sapply(tmp, mean)
+> stdev <- sqrt(sapply(tmp, var))
+> n     <- sapply(tmp,length)
+> ciw   <- qt(0.975, n) * stdev / sqrt(n)
+> 
+> # plain
+> plotCI(x=means, uiw=ciw)     
+> 
+> # prettier 
+> plotCI(x=means, uiw=ciw, col="black", barcol="blue", lwd=1)
+> 
+> # give mean values
+> plotCI(x=means, uiw=ciw, col="black", barcol="blue",
++        labels=round(means,-3), xaxt="n", xlim=c(0,5) )
+> axis(side=1, at=1:4, labels=names(tmp), cex=0.7)
+> 
+> 

@@ -1,0 +1,192 @@
+
+R : Copyright 2002, The R Development Core Team
+Version 1.5.1 Patched (2002-06-18)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+> library(gregmisc)
+Loading required package: MASS 
+
+Attaching package `gregmisc':
+
+
+	The following object(s) are masked from package:base :
+
+	 lowess plot.lm 
+
+> # Simple cross tabulation of education versus prior induced abortions
+> # using infertility data
+> data(infert, package = "base")
+> CrossTable(infert$education, infert$induced, expected = TRUE)
+
+ 
+|-----------------|
+|               N |
+|      Expected N |
+|   N / Row Total |
+|   N / Col Total |
+| N / Table Total |
+|-----------------|
+
+ 
+Total Observations in Table:  248 
+
+ 
+                 | infert$induced 
+infert$education |         0 |         1 |         2 | Row Total | 
+-----------------|-----------|-----------|-----------|-----------|
+          0-5yrs |         4 |         2 |         6 |        12 | 
+                 |     6.919 |     3.290 |     1.790 |           | 
+                 |     0.333 |     0.167 |     0.500 |     0.048 | 
+                 |     0.028 |     0.029 |     0.162 |           | 
+                 |     0.016 |     0.008 |     0.024 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+         6-11yrs |        78 |        27 |        15 |       120 | 
+                 |    69.194 |    32.903 |    17.903 |           | 
+                 |     0.650 |     0.225 |     0.125 |     0.484 | 
+                 |     0.545 |     0.397 |     0.405 |           | 
+                 |     0.315 |     0.109 |     0.060 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+         12+ yrs |        61 |        39 |        16 |       116 | 
+                 |    66.887 |    31.806 |    17.306 |           | 
+                 |     0.526 |     0.336 |     0.138 |     0.468 | 
+                 |     0.427 |     0.574 |     0.432 |           | 
+                 |     0.246 |     0.157 |     0.065 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+    Column Total |       143 |        68 |        37 |       248 | 
+                 |     0.577 |     0.274 |     0.149 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+
+ 
+Tests for Independence of All Table Factors
+
+
+Pearson's Chi-squared test 
+
+Chi^2 =  16.53059     d.f. =  4     p =  0.002383898 
+
+ 
+Fisher's Exact Test for Count Data
+
+Alternative hypothesis: two.sided
+p =  0.007819568 
+
+ 
+Warning message: 
+Chi-squared approximation may be incorrect in: chisq.test(t, correct = correct) 
+> CrossTable(infert$education, infert$induced, expected = FALSE, correct=TRUE)
+
+ 
+|-----------------|
+|               N |
+|   N / Row Total |
+|   N / Col Total |
+| N / Table Total |
+|-----------------|
+
+ 
+Total Observations in Table:  248 
+
+ 
+                 | infert$induced 
+infert$education |         0 |         1 |         2 | Row Total | 
+-----------------|-----------|-----------|-----------|-----------|
+          0-5yrs |         4 |         2 |         6 |        12 | 
+                 |     0.333 |     0.167 |     0.500 |     0.048 | 
+                 |     0.028 |     0.029 |     0.162 |           | 
+                 |     0.016 |     0.008 |     0.024 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+         6-11yrs |        78 |        27 |        15 |       120 | 
+                 |     0.650 |     0.225 |     0.125 |     0.484 | 
+                 |     0.545 |     0.397 |     0.405 |           | 
+                 |     0.315 |     0.109 |     0.060 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+         12+ yrs |        61 |        39 |        16 |       116 | 
+                 |     0.526 |     0.336 |     0.138 |     0.468 | 
+                 |     0.427 |     0.574 |     0.432 |           | 
+                 |     0.246 |     0.157 |     0.065 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+    Column Total |       143 |        68 |        37 |       248 | 
+                 |     0.577 |     0.274 |     0.149 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+
+ 
+Tests for Independence of All Table Factors
+
+
+Pearson's Chi-squared test 
+
+Chi^2 =  16.53059     d.f. =  4     p =  0.002383898 
+
+ 
+Fisher's Exact Test for Count Data
+
+Alternative hypothesis: two.sided
+p =  0.007819568 
+
+ 
+Warning message: 
+Chi-squared approximation may be incorrect in: chisq.test(t, correct = correct) 
+> CrossTable(infert$education, infert$induced, expected = FALSE, digits=2)
+
+ 
+|-----------------|
+|               N |
+|   N / Row Total |
+|   N / Col Total |
+| N / Table Total |
+|-----------------|
+
+ 
+Total Observations in Table:  248 
+
+ 
+                 | infert$induced 
+infert$education |         0 |         1 |         2 | Row Total | 
+-----------------|-----------|-----------|-----------|-----------|
+          0-5yrs |         4 |         2 |         6 |        12 | 
+                 |      0.33 |      0.17 |      0.50 |      0.05 | 
+                 |      0.03 |      0.03 |      0.16 |           | 
+                 |      0.02 |      0.01 |      0.02 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+         6-11yrs |        78 |        27 |        15 |       120 | 
+                 |      0.65 |      0.23 |      0.12 |      0.48 | 
+                 |      0.55 |      0.40 |      0.41 |           | 
+                 |      0.31 |      0.11 |      0.06 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+         12+ yrs |        61 |        39 |        16 |       116 | 
+                 |      0.53 |      0.34 |      0.14 |      0.47 | 
+                 |      0.43 |      0.57 |      0.43 |           | 
+                 |      0.25 |      0.16 |      0.06 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+    Column Total |       143 |        68 |        37 |       248 | 
+                 |      0.58 |      0.27 |      0.15 |           | 
+-----------------|-----------|-----------|-----------|-----------|
+
+ 
+Tests for Independence of All Table Factors
+
+
+Pearson's Chi-squared test 
+
+Chi^2 =  16.53059     d.f. =  4     p =  0.002383898 
+
+ 
+Fisher's Exact Test for Count Data
+
+Alternative hypothesis: two.sided
+p =  0.007819568 
+
+ 
+Warning message: 
+Chi-squared approximation may be incorrect in: chisq.test(t, correct = correct) 
+> 

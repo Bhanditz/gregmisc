@@ -1,0 +1,47 @@
+
+R : Copyright 2002, The R Development Core Team
+Version 1.5.1 Patched (2002-06-18)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+> library(gregmisc)
+Loading required package: MASS 
+
+Attaching package `gregmisc':
+
+
+	The following object(s) are masked from package:base :
+
+	 lowess plot.lm 
+
+> factorial(4)
+[1] 24
+> factorial(NA)
+[1] NA
+> factorial(-1)
+[1] NaN
+Warning message: 
+NaNs produced in: gamma(x) 
+> factorial(0.25)
+[1] 0.9064025
+> 
+> lfactorial(40)
+[1] 110.3206
+> lfactorial(NA)
+[1] NA
+> lfactorial(-1)
+[1] Inf
+> lfactorial(0.25)
+[1] -0.09827184
+> 
+> 
+> 

@@ -1,0 +1,44 @@
+
+R : Copyright 2002, The R Development Core Team
+Version 1.5.1 Patched (2002-06-18)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+> library(gregmisc)
+Loading required package: MASS 
+
+Attaching package `gregmisc':
+
+
+	The following object(s) are masked from package:base :
+
+	 lowess plot.lm 
+
+> x <- c(1,2,3,5,NA,6,7,1,NA )
+> length(x)
+[1] 9
+> nobs(x)
+[1] 7
+> 
+> df <- data.frame(x=rnorm(100), y=rnorm(100))
+> df[1,1] <- NA
+> df[1,2] <- NA
+> df[2,1] <- NA
+> 
+> nobs(df)
+ x  y 
+98 99 
+> 
+> reg <- lm( y ~ x, data=df )
+> nobs(reg)
+[1] 98
+> 

@@ -1,0 +1,63 @@
+
+R : Copyright 2002, The R Development Core Team
+Version 1.5.1 Patched (2002-06-18)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+> library(gregmisc)
+Loading required package: MASS 
+
+Attaching package `gregmisc':
+
+
+	The following object(s) are masked from package:base :
+
+	 lowess plot.lm 
+
+> # fit a simple model
+> set.seed(1234567,"default")
+> y <- rnorm(100)
+> x <-  cut(rnorm(100, mean=y, sd=0.25),c(-4,-1.5,0,1.5,4))
+> reg <- lm(y ~ x)
+> #summary(reg)
+> 
+> # test both group 1 = group 2  and group 3 = group 4
+> C <- rbind( c(0,-1,0,0), c(0,0,-1,1) )
+> ret <- glh.test(reg, C)
+> ret  # same as 'print(ret) '
+
+	 Test of General Linear Hypothesis 	
+Call:
+glh.test(reg = reg, cm = C)
+F = 31.8797, df1 =  2, df2 = 96, p-value = 2.413e-11 
+
+> summary(ret)
+
+	 Test of General Linear Hypothesis 	
+Regression:  reg 
+
+Null Hypothesis: C %*% Beta-hat = d 
+
+C matrix: 
+     (Intercept) x(-1.5,0] x(0,1.5] x(1.5,4]
+[1,]           0        -1        0        0
+[2,]           0         0       -1        1
+
+d vector: 
+[1] 0 0
+
+C %*% Beta-hat: 
+[1] -1.078942  1.217450
+
+F = 31.8797, df1 =  2, df2 = 96, p-value = 2.413e-11 
+
+> 

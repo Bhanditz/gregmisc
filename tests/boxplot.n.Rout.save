@@ -1,0 +1,37 @@
+
+R : Copyright 2002, The R Development Core Team
+Version 1.5.1 Patched (2002-06-18)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+> library(gregmisc)
+Loading required package: MASS 
+
+Attaching package `gregmisc':
+
+
+	The following object(s) are masked from package:base :
+
+	 lowess plot.lm 
+
+> data(state)
+> 
+> # n's at bottom
+> boxplot.n( state.area ~ state.region)
+> 
+> # n's at top
+> boxplot.n( state.area ~ state.region, top=TRUE)
+> 
+> # small red text
+> boxplot.n( state.area ~ state.region, shrink=0.8, textcolor="red") 
+> 
+> 

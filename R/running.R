@@ -1,6 +1,11 @@
-# $Id: running.R,v 1.4 2002/08/01 19:37:14 warnes Exp $
+# $Id: running.R,v 1.5 2002/09/24 14:57:19 warnes Exp $
 #
 # $Log: running.R,v $
+# Revision 1.5  2002/09/24 14:57:19  warnes
+#
+# - Fixed error where running was always calling running2 with
+#   'fun=mean', ignoring the specified funtion.
+#
 # Revision 1.4  2002/08/01 19:37:14  warnes
 #
 # - Corrected documentation mismatch for ci, ci.default.
@@ -27,7 +32,7 @@
 
 "running" <- function( X, fun=mean, width=min(length(X),20),
                      allow.fewer=FALSE,...)
-  running2(X=X, fun=mean, width=width, allow.fewer=allow.fewer, ...)
+  running2(X=X, fun=fun, width=width, allow.fewer=allow.fewer, ...)
 
 "running2" <- function( X, Y=NULL, fun=mean, width=min(length(X),20),
                      allow.fewer=FALSE,...)

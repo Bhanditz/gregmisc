@@ -1,0 +1,70 @@
+
+R : Copyright 2002, The R Development Core Team
+Version 1.5.1 Patched (2002-06-18)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+> library(gregmisc)
+Loading required package: MASS 
+
+Attaching package `gregmisc':
+
+
+	The following object(s) are masked from package:base :
+
+	 lowess plot.lm 
+
+> set.seed(1324567,"default")
+> a  <-  matrix(rnorm(12),ncol=4,nrow=3)
+> b  <-  1:4
+> combine(a,b)
+          X1         X2        X3         X4 source
+1  0.9693137 -1.2081183 0.7067743 -1.1073066      a
+2 -0.3145763 -0.8051728 0.7853857 -0.1513863      a
+3 -0.1763372 -0.8045118 1.0198240  0.3651667      a
+4  1.0000000  2.0000000 3.0000000  4.0000000      b
+> 
+> combine(x=a,b)
+          X1         X2        X3         X4 source
+1  0.9693137 -1.2081183 0.7067743 -1.1073066      x
+2 -0.3145763 -0.8051728 0.7853857 -0.1513863      x
+3 -0.1763372 -0.8045118 1.0198240  0.3651667      x
+4  1.0000000  2.0000000 3.0000000  4.0000000       
+> combine(x=a,y=b)
+          X1         X2        X3         X4 source
+1  0.9693137 -1.2081183 0.7067743 -1.1073066      x
+2 -0.3145763 -0.8051728 0.7853857 -0.1513863      x
+3 -0.1763372 -0.8045118 1.0198240  0.3651667      x
+4  1.0000000  2.0000000 3.0000000  4.0000000      y
+> combine(a,b,names=c("one","two"))
+          X1         X2        X3         X4 source
+1  0.9693137 -1.2081183 0.7067743 -1.1073066    one
+2 -0.3145763 -0.8051728 0.7853857 -0.1513863    one
+3 -0.1763372 -0.8045118 1.0198240  0.3651667    one
+4  1.0000000  2.0000000 3.0000000  4.0000000    two
+> 
+> c <- 1:6
+> combine(b,c)
+   data source
+1     1      b
+2     2      b
+3     3      b
+4     4      b
+5     1      c
+6     2      c
+7     3      c
+8     4      c
+9     5      c
+10    6      c
+> 
+> 
+> 

@@ -1,6 +1,10 @@
-# $Id: glh.test.R,v 1.7 2002/04/09 00:51:29 warneg Exp $
+# $Id: glh.test.R,v 1.8 2002/09/24 19:12:42 warnes Exp $
 #
 # $Log: glh.test.R,v $
+# Revision 1.8  2002/09/24 19:12:42  warnes
+#
+# - Fixed a typo.
+#
 # Revision 1.7  2002/04/09 00:51:29  warneg
 #
 # Checkin for version 0.5.3
@@ -121,8 +125,8 @@ summary.glh.test <- function(object, digits = 4, ... )
     cat("\n")
     cat("Null Hypothesis: C %*% Beta-hat = d \n")
     cat("\n")
-    cat("C matriobject: \n")
-    print(object$matriobject, digits=digits)
+    cat("C matrix: \n")
+    print(object$matrix, digits=digits)
     cat("\n")
     cat("d vector: \n")
     print(object$null.value, digits=digits)

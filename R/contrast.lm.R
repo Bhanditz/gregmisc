@@ -1,6 +1,10 @@
-# $Id: contrast.lm.R,v 1.11 2002/08/01 19:37:14 warnes Exp $
+# $Id: contrast.lm.R,v 1.12 2002/09/24 15:55:16 warnes Exp $
 #
 # $Log: contrast.lm.R,v $
+# Revision 1.12  2002/09/24 15:55:16  warnes
+#
+# - Add ability to show confidence intervals when showall=TRUE.
+#
 # Revision 1.11  2002/08/01 19:37:14  warnes
 #
 # - Corrected documentation mismatch for ci, ci.default.
@@ -117,17 +121,18 @@ contrast.lm <- function(reg, varname, coeff, showall=FALSE, conf.int=NULL)
           retval <- retval[ind,,drop=FALSE]
         }
 
-      if(!is.null(conf.int)) # add confidence intervals
-        {
-          alpha <- 1-conf.int
-          retval <- cbind( retval,
-                          "lower CI"=retval[,1] -
-                          qt(1-alpha/2,retval[,5])*retval[,2],
-                          "lower CI"=retval[,1] +
-                          qt(1-alpha/2,retval[,5])*retval[,2] )
-        }
     }
-  
+
+  if(!is.null(conf.int)) # add confidence intervals
+    {
+      alpha <- 1-conf.int
+      retval <- cbind( retval,
+                      "lower CI"=retval[,1] -
+                      qt(1-alpha/2,retval[,5])*retval[,2],
+                      "lower CI"=retval[,1] +
+                      qt(1-alpha/2,retval[,5])*retval[,2] )
+    }
+
   return(retval[,-5])
 }
 

@@ -1,0 +1,48 @@
+
+R : Copyright 2002, The R Development Core Team
+Version 1.5.1 Patched (2002-06-18)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+> library(gregmisc)
+Loading required package: MASS 
+
+Attaching package `gregmisc':
+
+
+	The following object(s) are masked from package:base :
+
+	 lowess plot.lm 
+
+> 
+> # Create a 4 level example factor
+> set.seed(124564,"default")
+> trt <- factor( sample( c("PLACEBO","300 MG", "600 MG", "1200 MG"),
++                        100, replace=TRUE ) )
+> summary(trt)
+1200 MG  300 MG  600 MG PLACEBO 
+     18      33      25      24 
+> 
+> # Change the order to something useful
+> trt2 <- reorder(trt, c(4,2,3,1))
+> summary(trt2)
+PLACEBO  300 MG  600 MG 1200 MG 
+     24      33      25      18 
+> 
+> # drop out the '300 MG' level
+> trt3 <- reorder(trt, c(4,3,1) )
+> summary(trt3)
+PLACEBO  600 MG 1200 MG    NA's 
+     24      25      18      33 
+> 
+> 
+> 

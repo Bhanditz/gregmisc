@@ -1,0 +1,12 @@
+library(gregmisc)
+combinations(3,2,letters[1:3])
+combinations(3,2,letters[1:3],repeats=TRUE)
+combinations(2,3,repeats=TRUE)
+combinations(2,3,c('a','a','b','c'),set=T, repeats=TRUE)
+combinations(3,2,c('a','a','b'),set=F, repeats=TRUE)
+
+permutations(3,2,letters[1:3])
+permutations(3,2,letters[1:3],repeats=TRUE)
+#Not Yet: permutations(2,3,repeats=TRUE) 
+permutations(3,2,c('a','a','b','c'),set=T, repeats=TRUE)
+permutations(3,2,c('a','a','b'),set=F, repeats=TRUE)
