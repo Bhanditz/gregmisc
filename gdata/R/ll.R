@@ -1,4 +1,4 @@
-# $Id: ll.R,v 1.7 2005/02/25 23:22:36 warnes Exp $
+# $Id: ll.R,v 1.8 2005/03/22 02:51:56 warnes Exp $
 
 ll <- function(pos=1, unit=c("KB","MB","bytes"), digits=0, dimensions=FALSE,
                function.dim="", ...)
@@ -25,7 +25,7 @@ ll <- function(pos=1, unit=c("KB","MB","bytes"), digits=0, dimensions=FALSE,
   get.object.size <- function(object.name, pos)
   {
     object <- get(object.name, pos=pos)
-    size <- try(object.size(object))
+    size <- try(object.size(object), silent=TRUE)
     if(class(size) == "try-error")
       size <- 0
     return(size)

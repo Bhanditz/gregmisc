@@ -1,11 +1,11 @@
-# $Id: env.R,v 1.7 2005/02/25 23:22:36 warnes Exp $
+# $Id: env.R,v 1.8 2005/03/22 02:51:56 warnes Exp $
 
 env <- function(unit=c("KB","MB","bytes"), digits=0)
 {
   get.object.size <- function(object.name, pos)
   {
     object <- get(object.name, pos=pos)
-    size <- try(object.size(object))
+    size <- try(object.size(object), silent=TRUE)
     if(class(size) == "try-error")
       size <- 0
     return(size)

@@ -1,4 +1,4 @@
-# $Id: Args.R,v 1.2 2004/09/03 17:27:44 warneg Exp $
+# $Id: Args.R,v 1.3 2005/03/22 02:51:55 warnes Exp $
 
 Args <- function(name, sort.args=FALSE)
 {
@@ -14,7 +14,8 @@ Args <- function(name, sort.args=FALSE)
   {
     ord <- order(arg.labels)
     if(any(arg.labels == "..."))
-      ord <- c(ord[-1], length(ord))
+      ord <- c(ord[-which(arg.labels[ord]=="...")],
+               which(arg.labels=="..."))
     arg.labels <- arg.labels[ord]
     arg.values <- arg.values[ord]
   }
@@ -24,3 +25,4 @@ Args <- function(name, sort.args=FALSE)
 
   invisible(output)
 }
+
