@@ -53,7 +53,7 @@ mixedsort               Order or Sort strings with embedded numbers so
                         that the numbers are in the correct order
 nobs                    Compute the Number of Non-missing Observations
 odd                     Detect odd/even integers
-ooplot.default          Create an open-office style plot
+ooplot.default          Create an OpenOffice style plot
 overplot                Plot multiple variables on the same region,
                         with appropriate axes
 permute                 Randomly Permute the Elements of a Vector

@@ -1,0 +1,7 @@
+
+Version 0.9.0
+
+- Added ooplot() function that mimics Open-Office style plots.
+  Contributed by Lodewijk Bonebakker <bonebakker@comcast.net>
+
+- 
