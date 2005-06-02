@@ -1,11 +1,11 @@
-Bundle: gregmisc
-Contains: gtools gdata gmodels gplots gregmisc
-Title: Greg's Miscellaneous Functions
-BundleDescription: The gregmisc bundle is a repository for a variety of
-             useful functions.  See the individual packages for more
-             details.
-Version: 2.0.7
-Date: 2005-05-13
+Package: gregmisc
+Title: Backword compatibility package for gregmisc bundle
+Description: Backword compatibility package for gregmisc bundle.  This package
+             simply loads the other packages within the gregmisc bundle, in
+	     in order to simulate the old behavior when gregmisc was a single
+             package.
+Version: 2.0.8
+Depends: R (>= 1.9.0), gdata, gtools, gmodels, gplots
 Author: Gregory R. Warnes.  Includes R source code and documentation
         contributed by
 	   - Ben Bolker,
@@ -31,6 +31,6 @@ Author: Gregory R. Warnes.  Includes R source code and documentation
 	   - Spreadsheet::ParseExcel (copyright 2000-2002 by Kawai
  	     Takanori )
 	under the terms of the GNU General Public Licence (GPL).
-Maintainer: Gregory R. Warnes <Gregory.R.Warnes@Pfizer.com>
+Maintainer: Nitin Jain <nitin.jain@pfizer.com>
 License: GPL (version 2 or later)
-Packaged: Fri May 13 15:02:59 2005; jainn02
+Packaged: Thu Jun  2 12:09:45 2005; jainn02
