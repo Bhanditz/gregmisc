@@ -1,6 +1,6 @@
-# $Id: First.R 1492 2011-09-01 21:45:19Z warnes $
+# $Id: onAttach.R 1686 2013-06-28 21:37:23Z warnes $
 
-.First.lib <- function(libname, pkgname)
+.onAttach <- function(libname, pkgname)
 {
   packageStartupMessage(
           "All functionality of the `gregmisc' package has been moved",
